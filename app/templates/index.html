@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL Match Predictor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f2f5;
+            padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .header {
+            background: linear-gradient(135deg, #0078d7 0%, #00a1f1 100%);
+            color: white;
+            padding: 25px;
+            text-align: center;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .predictor-form {
+            background-color: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        .team-section {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #eaeaea;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        .team-section:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        .submit-btn {
+            background: linear-gradient(135deg, #0078d7 0%, #00a1f1 100%);
+            border: none;
+            font-size: 18px;
+            padding: 12px 40px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 120, 215, 0.4);
+        }
+        .player-list {
+            height: 220px;
+            overflow-y: auto;
+            border: 1px solid #eaeaea;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #fafafa;
+        }
+        .results-section {
+            background-color: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+        .team-card {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 5px solid #0078d7;
+        }
+        .stats-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 20px 0;
+        }
+        .stats-table th, .stats-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eaeaea;
+        }
+        .stats-table thead th {
+            background-color: #f5f5f5;
+            font-weight: 600;
+        }
+        .prediction-result {
+            text-align: center;
+            padding: 30px;
+            margin: 20px 0;
+            border-radius: 10px;
+            background-color: #f0f7ff;
+            border: 1px solid #d0e5ff;
+        }
+        .winner {
+            font-size: 32px;
+            font-weight: 700;
+            margin: 10px 0;
+            color: #0078d7;
+        }
+        .probability-bar {
+            height: 35px;
+            margin: 25px 0;
+            border-radius: 20px;
+            overflow: hidden;
+            background-color: #e9ecef;
+            position: relative;
+        }
+        .probability-fill-1 {
+            position: absolute;
+            height: 100%;
+            background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+            border-radius: 20px 0 0 20px;
+            transition: width 1s ease-in-out;
+        }
+        .probability-fill-2 {
+            position: absolute;
+            height: 100%;
+            right: 0;
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            border-radius: 0 20px 20px 0;
+            transition: width 1s ease-in-out;
+        }
+        .probability-label {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-weight: bold;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+            z-index: 1;
+            padding: 0 15px;
+        }
+        .player-badge {
+            display: inline-block;
+            background-color: #f2f2f2;
+            border-radius: 20px;
+            padding: 5px 12px;
+            margin: 5px;
+            font-size: 14px;
+        }
+        .role-batsman {
+            border-left: 3px solid #27ae60;
+        }
+        .role-bowler {
+            border-left: 3px solid #3498db;
+        }
+        .role-allrounder {
+            border-left: 3px solid #f39c12;
+        }
+        .role-wicketkeeper {
+            border-left: 3px solid #e74c3c;
+        }
+        .head-to-head {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .team-score {
+            font-size: 24px;
+            font-weight: bold;
+            padding: 10px 20px;
+        }
+        .vs-badge {
+            font-size: 18px;
+            padding: 5px 15px;
+            margin: 0 15px;
+            background-color: #f5f5f5;
+            border-radius: 20px;
+        }
+        .loader {
+            border: 6px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 6px solid #0078d7;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+            margin: 30px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>IPL Match Predictor</h1>
+            <p>Select teams, players, and venue to predict the match outcome</p>
+        </div>
+        
+        <div class="predictor-form">
+            <form id="prediction-form">
+                <div class="row mb-4">
+                    <div class="col-md-6 team-section">
+                        <h3>Team 1</h3>
+                        <div class="mb-3">
+                            <label for="team1" class="form-label">Select Team 1:</label>
+                            <select id="team1" name="team1" class="form-select" required>
+                                <option value="" selected disabled>-- Select Team --</option>
+                                {% for team in team_names %}
+                                <option value="{{ team }}">{{ team }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Select Players (at least 11):</label>
+                            <div id="team1-players" class="player-list">
+                                <p class="text-muted">Select a team first to see players</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 team-section">
+                        <h3>Team 2</h3>
+                        <div class="mb-3">
+                            <label for="team2" class="form-label">Select Team 2:</label>
+                            <select id="team2" name="team2" class="form-select" required>
+                                <option value="" selected disabled>-- Select Team --</option>
+                                {% for team in team_names %}
+                                <option value="{{ team }}">{{ team }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Select Players (at least 11):</label>
+                            <div id="team2-players" class="player-list">
+                                <p class="text-muted">Select a team first to see players</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <label for="venue" class="form-label">Select Venue:</label>
+                        <select id="venue" name="venue" class="form-select" required>
+                            <option value="" selected disabled>-- Select Venue --</option>
+                            {% for venue in venues %}
+                            <option value="{{ venue }}">{{ venue }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    
+                    <div class="col-md-6 mb-4" id="head2head-container">
+                        <!-- Head to head stats will be loaded here -->
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary submit-btn">Predict Match</button>
+                </div>
+            </form>
+        </div>
+        
+        <div id="loading" style="display:none;" class="text-center">
+            <div class="loader"></div>
+            <p>Analyzing match data and computing predictions...</p>
+        </div>
+        
+        <div id="results" class="results-section">
+            <h2 class="text-center mb-4">Match Prediction Results</h2>
+            
+            <div class="prediction-result">
+                <h3>Match Winner</h3>
+                <div class="winner" id="winner-name">Team Name</div>
+                <p id="winner-tagline">has a higher probability of winning this match</p>
+                
+                <div class="probability-bar">
+                    <div class="probability-fill-1" id="team1-prob-fill">
+                        <span class="probability-label" id="team1-prob-label">Team 1: 50%</span>
+                    </div>
+                    <div class="probability-fill-2" id="team2-prob-fill">
+                        <span class="probability-label" id="team2-prob-label">Team 2: 50%</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="team-card">
+                        <h4 id="team1-name">Team 1</h4>
+                        <div id="team1-players-display" class="mt-3">
+                            <!-- Team 1 players will be listed here -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="team-card">
+                        <h4 id="team2-name">Team 2</h4>
+                        <div id="team2-players-display" class="mt-3">
+                            <!-- Team 2 players will be listed here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-4">
+                <div class="col-12">
+                    <h4>Key Factors</h4>
+                    <table class="stats-table">
+                        <thead>
+                            <tr>
+                                <th>Factor</th>
+                                <th id="stats-team1">Team 1</th>
+                                <th id="stats-team2">Team 2</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Average Player ELO</td>
+                                <td id="team1-elo">-</td>
+                                <td id="team2-elo">-</td>
+                            </tr>
+                            <tr>
+                                <td>Average Player Form</td>
+                                <td id="team1-form">-</td>
+                                <td id="team2-form">-</td>
+                            </tr>
+                            <tr>
+                                <td>Head-to-Head Record</td>
+                                <td colspan="2" id="h2h-record" class="text-center">-</td>
+                            </tr>
+                            <tr>
+                                <td>Venue</td>
+                                <td colspan="2" id="match-venue" class="text-center">-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <button class="btn btn-secondary" onclick="resetForm()">Make Another Prediction</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('team1').addEventListener('change', function() {
+            fetchPlayers(this.value, 'team1-players', 'team1_players');
+            updateHeadToHead();
+        });
+        
+        document.getElementById('team2').addEventListener('change', function() {
+            fetchPlayers(this.value, 'team2-players', 'team2_players');
+            updateHeadToHead();
+        });
+        
+        async function fetchPlayers(teamName, containerId, fieldName) {
+            if (!teamName) return;
+            
+            const response = await fetch(`/get_players/${encodeURIComponent(teamName)}`);
+            const data = await response.json();
+            
+            const container = document.getElementById(containerId);
+            container.innerHTML = '';
+            
+            if (data.players.length === 0) {
+                container.innerHTML = '<p class="text-danger">No players found</p>';
+                return;
+            }
+            
+            // Group players by role
+            const playersByRole = {};
+            data.players.forEach(player => {
+                const role = player.role.toLowerCase();
+                if (!playersByRole[role]) {
+                    playersByRole[role] = [];
+                }
+                playersByRole[role].push(player);
+            });
+            
+            // Create checkboxes grouped by role
+            for (const role in playersByRole) {
+                const roleDiv = document.createElement('div');
+                roleDiv.innerHTML = `<h6 class="mt-2">${role[0].toUpperCase() + role.slice(1)}s:</h6>`;
+                container.appendChild(roleDiv);
+                
+                playersByRole[role].forEach(player => {
+                    const div = document.createElement('div');
+                    div.className = 'form-check';
+                    div.innerHTML = `
+                        <input class="form-check-input" type="checkbox" name="${fieldName}" value="${player.name}" id="${fieldName}_${player.name.replace(/\s+/g, '_')}">
+                        <label class="form-check-label" for="${fieldName}_${player.name.replace(/\s+/g, '_')}">
+                            ${player.name}
+                        </label>
+                    `;
+                    container.appendChild(div);
+                });
+            }
+        }
+        async function submitPrediction(e) {
+            e.preventDefault();
+            
+            // Validate team selection
+            const team1 = document.getElementById('team1').value;
+            const team2 = document.getElementById('team2').value;
+            
+            if (team1 === team2) {
+                alert('Please select different teams');
+                return;
+            }
+            
+            // Validate player selection (at least 11 players per team)
+            const team1Players = document.querySelectorAll('input[name="team1_players"]:checked');
+            const team2Players = document.querySelectorAll('input[name="team2_players"]:checked');
+            
+            if (team1Players.length < 11) {
+                alert('Please select at least 11 players for Team 1');
+                return;
+            }
+            
+            if (team2Players.length < 11) {
+                alert('Please select at least 11 players for Team 2');
+                return;
+            }
+            
+            // Get venue
+            const venue = document.getElementById('venue').value;
+            
+            if (!venue) {
+                alert('Please select a venue');
+                return;
+            }
+            
+            // Show loading indicator
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('results').style.display = 'none';
+            
+            // Create form data
+            const formData = new FormData();
+            formData.append('team1', team1);
+            formData.append('team2', team2);
+            
+            // Add selected players
+            team1Players.forEach(player => {
+                formData.append('team1_players', player.value);
+            });
+            
+            team2Players.forEach(player => {
+                formData.append('team2_players', player.value);
+            });
+            
+            formData.append('venue', venue);
+            
+            try {
+                // Send prediction request
+                const response = await fetch('/predict', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`Server responded with status: ${response.status}`);
+                }
+                
+                const result = await response.json();
+                console.log("Prediction result:", result);
+                
+                // Verify result structure
+                if (!result.prediction || !result.prediction.winner) {
+                    console.error("Invalid response structure:", result);
+                    throw new Error("Invalid prediction response format");
+                }
+                
+                displayResults(result);
+            } catch (error) {
+                console.error("Prediction error:", error);
+                alert('Error making prediction: ' + error.message);
+                document.getElementById('loading').style.display = 'none';
+            }
+        }
+        
+        // Replace the existing submit event handler
+        document.getElementById('prediction-form').addEventListener('submit', submitPrediction);
+        
+        async function updateHeadToHead() {
+            const team1 = document.getElementById('team1').value;
+            const team2 = document.getElementById('team2').value;
+            
+            if (!team1 || !team2) return;
+            
+            const container = document.getElementById('head2head-container');
+            container.innerHTML = '<p class="text-center">Loading head-to-head stats...</p>';
+            
+            try {
+                const response = await fetch(`/get_head_to_head/${encodeURIComponent(team1)}/${encodeURIComponent(team2)}`);
+                const data = await response.json();
+                
+                container.innerHTML = `
+                    <div class="card">
+                        <div class="card-header">Head-to-Head Stats</div>
+                        <div class="card-body text-center">
+                            <div class="head-to-head">
+                                <div class="team-score">${data.team_a_wins}</div>
+                                <div class="vs-badge">vs</div>
+                                <div class="team-score">${data.team_b_wins}</div>
+                            </div>
+                            <p class="mb-0">Total matches: ${data.total_matches}</p>
+                        </div>
+                    </div>
+                `;
+            } catch (error) {
+                container.innerHTML = '<p class="text-danger">Error loading head-to-head stats</p>';
+            }
+        }
+        
+        function displayResults(data) {
+            // Hide loading indicator and show results
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('results').style.display = 'block';
+            
+            try {
+                // Make sure we have the required data
+                if (!data.prediction || !data.prediction.winner || !data.team1 || !data.team2) {
+                    throw new Error("Missing required data in prediction response");
+                }
+                
+                // Update winner
+                document.getElementById('winner-name').textContent = data.prediction.winner;
+                
+                // Set the winner's probability
+                const winnerProb = data.prediction.winner === data.team1 ? 
+                    data.prediction.team1_probability : 
+                    data.prediction.team2_probability;
+                
+                document.getElementById('winner-tagline').textContent = 
+                    `has a ${winnerProb}% chance of winning this match`;
+                
+                // Update probability bar
+                const team1ProbFill = document.getElementById('team1-prob-fill');
+                const team2ProbFill = document.getElementById('team2-prob-fill');
+                const team1ProbLabel = document.getElementById('team1-prob-label');
+                const team2ProbLabel = document.getElementById('team2-prob-label');
+                
+                // Set probability bar widths
+                team1ProbFill.style.width = `${data.prediction.team1_probability}%`;
+                team2ProbFill.style.width = `${data.prediction.team2_probability}%`;
+                
+                // Set probability labels
+                team1ProbLabel.textContent = `${data.team1}: ${data.prediction.team1_probability}%`;
+                team2ProbLabel.textContent = `${data.team2}: ${data.prediction.team2_probability}%`;
+                
+                // Position labels for better visibility
+                if (data.prediction.team1_probability < 20) {
+                    team1ProbLabel.style.left = '100%';
+                    team1ProbLabel.style.color = '#333';
+                    team1ProbLabel.style.textShadow = 'none';
+                } else {
+                    team1ProbLabel.style.left = ''; // Reset to default
+                    team1ProbLabel.style.color = 'white';
+                    team1ProbLabel.style.textShadow = '0 1px 2px rgba(0,0,0,0.2)';
+                }
+                
+                if (data.prediction.team2_probability < 20) {
+                    team2ProbLabel.style.right = '100%';
+                    team2ProbLabel.style.color = '#333';
+                    team2ProbLabel.style.textShadow = 'none';
+                } else {
+                    team2ProbLabel.style.right = ''; // Reset to default
+                    team2ProbLabel.style.color = 'white';
+                    team2ProbLabel.style.textShadow = '0 1px 2px rgba(0,0,0,0.2)';
+                }
+                
+                // Update team names
+                document.getElementById('team1-name').textContent = data.team1;
+                document.getElementById('team2-name').textContent = data.team2;
+                document.getElementById('stats-team1').textContent = data.team1;
+                document.getElementById('stats-team2').textContent = data.team2;
+                
+                // Update players display
+                const team1PlayersDiv = document.getElementById('team1-players-display');
+                const team2PlayersDiv = document.getElementById('team2-players-display');
+                
+                team1PlayersDiv.innerHTML = '';
+                team2PlayersDiv.innerHTML = '';
+                
+                if (Array.isArray(data.team1_players)) {
+                    data.team1_players.forEach(player => {
+                        const span = document.createElement('span');
+                        span.className = 'player-badge role-batsman'; // Default to batsman role
+                        span.textContent = player;
+                        team1PlayersDiv.appendChild(span);
+                    });
+                }
+                
+                if (Array.isArray(data.team2_players)) {
+                    data.team2_players.forEach(player => {
+                        const span = document.createElement('span');
+                        span.className = 'player-badge role-batsman'; // Default to batsman role
+                        span.textContent = player;
+                        team2PlayersDiv.appendChild(span);
+                    });
+                }
+                
+                // Update stats
+                if (data.stats) {
+                    document.getElementById('team1-elo').textContent = data.stats.team1_avg_elo || '-';
+                    document.getElementById('team2-elo').textContent = data.stats.team2_avg_elo || '-';
+                    document.getElementById('team1-form').textContent = data.stats.team1_avg_form || '-';
+                    document.getElementById('team2-form').textContent = data.stats.team2_avg_form || '-';
+                    document.getElementById('h2h-record').textContent = data.stats.head_to_head ? 
+                        `${data.team1} ${data.stats.head_to_head} ${data.team2}` : '-';
+                }
+                
+                document.getElementById('match-venue').textContent = data.venue || '-';
+                
+                // Scroll to results
+                document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+            } catch (error) {
+                console.error("Error displaying results:", error);
+                alert("Error displaying prediction results: " + error.message);
+                document.getElementById('results').style.display = 'none';
+            }
+        }
+        
+        function resetForm() {
+            document.getElementById('prediction-form').reset();
+            document.getElementById('team1-players').innerHTML = '<p class="text-muted">Select a team first to see players</p>';
+            document.getElementById('team2-players').innerHTML = '<p class="text-muted">Select a team first to see players</p>';
+            document.getElementById('head2head-container').innerHTML = '';
+            document.getElementById('results').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

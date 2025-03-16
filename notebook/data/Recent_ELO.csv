@@ -1,0 +1,505 @@
+,Player,ELO,Role,Form,LastPlayed,DaysSinceLastMatch,FormCategory,Status
+
+1,CV Varun,1804,bowler,0.2529371047568415,2025-03-12,1,High,Active
+
+2,MA Starc,1794,bowler,0.3052097494973749,2025-03-12,1,High,Active
+
+6,Shubman Gill,1756,batsman,0.2255024375646805,2025-02-28,13,High,Active
+
+7,SP Narine,1751,bowler,0.2648039750023984,2025-03-12,1,High,Active
+
+9,Mohammed Shami,1743,bowler,0.2505735372535034,2024-12-31,72,High,Active
+
+11,VR Iyer,1742,batsman,0.2011862706491484,2025-03-12,1,High,Active
+
+13,AD Russell,1738,all-rounder,0.2071456262392586,2025-03-12,1,High,Active
+
+14,SS Iyer,1736,batsman,0.1819506873688825,2025-03-12,1,Medium,Active
+
+15,PD Salt,1735,batsman,0.3144722286685019,2025-03-01,12,High,Active
+
+16,Harshit Rana,1734,bowler,0.259977342140777,2025-03-12,1,High,Active
+
+18,Yash Dayal,1731,bowler,0.21107326007326,2025-03-10,3,High,Active
+
+20,Q de Kock,1726,batsman,0.2073845882843619,2025-03-04,9,High,Active
+
+22,Abhishek Sharma,1724,batsman,0.1885514917761261,2025-03-12,1,Medium,Active
+
+25,MM Sharma,1718,bowler,0.2534671631496116,2025-02-28,13,High,Active
+
+27,TM Head,1715,batsman,0.2518903741237257,2025-03-12,1,High,Active
+
+30,JC Buttler,1711,batsman,0.2413071925530475,2025-03-02,11,High,Active
+
+31,KV Sharma,1709,bowler,0.2053168525123545,2025-03-10,3,High,Active
+
+32,I Sharma,1708,bowler,0.1903266006269116,2025-03-04,9,Medium,Active
+
+34,LH Ferguson,1707,bowler,0.2436033489792547,2025-03-10,3,High,Active
+
+35,VG Arora,1706,bowler,0.1974702084952085,2025-03-12,1,High,Active
+
+36,SO Hetmyer,1701,batsman,0.1529589829212725,2025-03-11,2,Medium,Active
+
+38,RR Pant,1700,batsman,0.2448809000080339,2025-03-04,9,High,Active
+
+39,A Mishra,1697,bowler,0.2460261605150109,2025-02-13,28,High,Active
+
+40,Mukesh Kumar,1688,bowler,0.274120536919221,2025-03-04,9,High,Active
+
+42,DL Chahar,1687,bowler,0.2037024906362138,2025-02-18,23,High,Active
+
+43,MP Stoinis,1687,all-rounder,0.1322757008629201,2025-03-06,7,Medium,Active
+
+44,TU Deshpande,1685,bowler,0.2328151955885558,2025-03-07,6,High,Active
+
+45,V Kohli,1682,batsman,0.2266708863344226,2025-03-10,3,High,Active
+
+46,SA Yadav,1681,batsman,0.1880500272735752,2025-03-06,7,Medium,Active
+
+48,Mohammed Siraj,1680,bowler,0.2166201755652802,2025-03-10,3,High,Active
+
+49,KH Pandya,1679,all-rounder,0.1455117279731457,2025-03-06,7,Medium,Active
+
+50,AS Joseph,1678,bowler,0.1842081696837141,2025-01-10,62,Medium,Active
+
+51,Ramandeep Singh,1678,batsman,0.1227286601005437,2025-03-12,1,Medium,Active
+
+53,RD Gaikwad,1677,batsman,0.2721566253505889,2025-03-07,6,High,Active
+
+55,C Green,1676,all-rounder,0.2023753417140124,2025-03-10,3,High,Active
+
+59,WP Saha,1674,batsman,0.1288287168746103,2025-02-21,20,Medium,Active
+
+60,JR Hazlewood,1673,bowler,0.2559926932770499,2024-12-11,92,High,Active
+
+66,DP Conway,1668,batsman,0.3381288503022718,2024-12-31,72,High,Active
+
+67,TA Boult,1666,bowler,0.2491952980329608,2025-03-11,2,High,Active
+
+68,Shivam Mavi,1666,bowler,0.2135930103035365,2024-12-19,84,High,Active
+
+70,CJ Jordan,1665,bowler,0.20669290426922,2024-12-30,73,High,Active
+
+72,D Padikkal,1664,batsman,0.1537540515053282,2025-03-06,7,Medium,Active
+
+73,N Rana,1663,batsman,0.1576427864066051,2025-03-01,12,Medium,Active
+
+76,JM Bairstow,1661,batsman,0.2384661875597582,2025-03-05,8,High,Active
+
+80,Shahbaz Ahmed,1657,all-rounder,0.0978097955547407,2025-03-12,1,Low,Active
+
+81,Kuldeep Yadav,1655,bowler,0.2187157283032079,2025-03-04,9,High,Active
+
+82,Swapnil Singh,1655,bowler,0.1356704822954823,2025-03-10,3,Medium,Active
+
+84,RM Patidar,1653,batsman,0.2699242135463456,2025-03-10,3,High,Active
+
+86,MS Wade,1650,batsman,0.0597805059523809,2025-01-24,48,Low,Active
+
+87,PJ Cummins,1649,bowler,0.2382118695103382,2025-03-12,1,High,Active
+
+89,F du Plessis,1648,batsman,0.233369268756425,2025-03-10,3,High,Active
+
+91,H Klaasen,1647,batsman,0.2720699090757131,2025-03-12,1,High,Active
+
+92,MP Yadav,1647,bowler,0.3689393939393939,2025-02-17,24,High,Active
+
+93,R Tewatia,1645,all-rounder,0.113811703250095,2025-02-28,13,Medium,Active
+
+94,Rashid Khan,1645,bowler,0.2983581851650035,2025-02-28,13,High,Active
+
+95,RA Jadeja,1645,all-rounder,0.1539286921994834,2025-03-07,6,Medium,Active
+
+96,Navdeep Saini,1645,bowler,0.180170124230608,2024-12-23,80,Medium,Active
+
+98,J Fraser-McGurk,1644,batsman,0.306734649122807,2025-03-04,9,High,Active
+
+101,Mohsin Khan,1643,bowler,0.232420488046575,2025-03-06,7,High,Active
+
+102,KK Ahmed,1643,bowler,0.2457768833539839,2025-03-04,9,High,Active
+
+103,JP Behrendorff,1641,bowler,0.2248972546373474,2024-12-30,73,High,Active
+
+105,M Pathirana,1641,bowler,0.362965429805641,2025-02-15,26,High,Active
+
+107,T Natarajan,1640,bowler,0.2331904213209217,2025-03-12,1,High,Active
+
+109,N Pooran,1639,batsman,0.2258506718578914,2025-03-06,7,High,Active
+
+110,YS Chahal,1637,bowler,0.2669106193062125,2025-03-11,2,High,Active
+
+112,M Theekshana,1637,bowler,0.1924562361506805,2025-03-07,6,Medium,Active
+
+113,RK Singh,1637,batsman,0.1616275469182348,2025-03-09,4,Medium,Active
+
+116,Ravi Bishnoi,1636,bowler,0.2293909034090815,2025-03-06,7,High,Active
+
+117,OC McCoy,1635,bowler,0.2557015615962985,2024-12-09,94,High,Active
+
+121,RA Tripathi,1633,batsman,0.1672945760060535,2025-03-12,1,Medium,Active
+
+123,Mustafizur Rahman,1633,bowler,0.244628445571565,2025-02-18,23,High,Active
+
+124,T Stubbs,1633,batsman,0.2437358354608354,2025-03-04,9,High,Active
+
+125,SV Samson,1631,batsman,0.197373119228397,2025-03-11,2,High,Active
+
+126,SN Thakur,1631,bowler,0.2162527694498451,2025-03-07,6,High,Active
+
+128,Akash Madhwal,1628,bowler,0.2763644970414201,2025-02-02,39,High,Active
+
+129,WG Jacks,1628,batsman,0.2352610243055555,2025-03-03,10,High,Active
+
+134,YBK Jaiswal,1625,batsman,0.2246869911442825,2025-03-11,2,High,Active
+
+135,DA Miller,1625,batsman,0.1857113476932742,2025-02-28,13,Medium,Active
+
+136,K Kartikeya,1624,bowler,0.1661124338624338,2024-12-30,73,Medium,Active
+
+138,A Manohar,1623,batsman,0.1108807065145807,2025-02-01,40,Low,Active
+
+140,AR Patel,1622,bowler,0.2252909859232927,2025-03-04,9,High,Active
+
+141,R Sai Kishore,1621,bowler,0.2666666666666666,2025-02-14,27,High,Active
+
+143,GJ Maxwell,1621,all-rounder,0.1446695313265088,2025-03-10,3,Medium,Active
+
+144,Nithish Kumar Reddy,1618,all-rounder,0.125074927703875,2025-03-12,1,Medium,Active
+
+145,SD Hope,1618,batsman,0.1578130651340996,2025-03-04,9,Medium,Active
+
+152,UT Yadav,1617,bowler,0.2236949047511346,2025-02-28,13,High,Active
+
+153,AT Rayudu,1616,batsman,0.1516375510644489,2024-12-31,72,Medium,Active
+
+154,KL Rahul,1616,batsman,0.2634599961294793,2025-03-06,7,High,Active
+
+155,B Kumar,1616,bowler,0.2374521891847519,2025-03-12,1,High,Active
+
+158,JD Unadkat,1615,bowler,0.2030558128429101,2025-03-12,1,High,Active
+
+159,Yash Thakur,1615,bowler,0.2372986311933681,2025-02-26,15,High,Active
+
+160,J Little,1614,bowler,0.2323586744639376,2025-02-21,20,High,Active
+
+162,HH Pandya,1613,all-rounder,0.1525011171030545,2025-03-06,7,Medium,Active
+
+165,V Shankar,1612,batsman,0.0997279241131786,2025-02-21,20,Low,Active
+
+166,PBB Rajapaksa,1611,batsman,0.1609040566255334,2024-12-10,93,Medium,Active
+
+167,PP Shaw,1610,batsman,0.1645519728961204,2025-02-16,25,Medium,Active
+
+170,Avesh Khan,1609,bowler,0.2446712332415772,2025-03-11,2,High,Active
+
+172,B Sai Sudharsan,1608,batsman,0.282603862188375,2025-02-28,13,High,Active
+
+178,R Ashwin,1607,bowler,0.2280729140674212,2025-03-11,2,High,Active
+
+180,S Dube,1607,batsman,0.169496619226619,2025-03-07,6,Medium,Active
+
+182,KR Mayers,1607,batsman,0.2204468871966879,2024-12-29,74,High,Active
+
+186,NT Ellis,1604,bowler,0.2120028011204482,2025-03-05,8,High,Active
+
+189,Suyash Sharma,1602,bowler,0.1598290598290598,2025-02-05,36,Medium,Active
+
+193,MJ Santner,1601,bowler,0.2274916779127305,2025-03-07,6,High,Active
+
+195,A Zampa,1599,bowler,0.2647226689913188,2024-12-23,80,High,Active
+
+198,Noor Ahmad,1599,bowler,0.2246876659572311,2025-02-28,13,High,Active
+
+200,MJ Henry,1598,bowler,0.0879629629629629,2025-03-06,7,Low,Active
+
+202,RD Chahar,1597,bowler,0.2172163264960161,2025-03-08,5,High,Active
+
+205,Rasikh Salam,1596,bowler,0.1525402837902837,2025-03-04,9,Medium,Active
+
+206,A Raghuvanshi,1595,batsman,0.1829591836734694,2025-02-23,18,Medium,Active
+
+207,AK Markram,1595,batsman,0.155290277106692,2025-03-12,1,Medium,Active
+
+208,R Powell,1595,batsman,0.1135384269204758,2025-03-11,2,Medium,Active
+
+210,R Parag,1594,batsman,0.1285747748872338,2025-03-11,2,Medium,Active
+
+211,Sikandar Raza,1594,all-rounder,0.1236432748538011,2025-01-23,49,Medium,Active
+
+212,Ishan Kishan,1594,batsman,0.1977760820407933,2025-03-06,7,High,Active
+
+215,Dhruv Jurel,1593,batsman,0.1345182299182299,2025-03-11,2,Medium,Active
+
+219,DJ Hooda,1593,batsman,0.1009563963474852,2025-03-06,7,Low,Active
+
+223,M Markande,1592,bowler,0.1945876876876876,2025-02-10,31,High,Active
+
+225,AM Rahane,1592,batsman,0.1704620654660137,2025-03-07,6,Medium,Active
+
+228,PWH de Silva,1590,bowler,0.2581849816849816,2024-12-11,92,High,Active
+
+229,HR Shokeen,1590,bowler,0.11525584968338,2024-12-29,74,Medium,Active
+
+236,N Burger,1585,bowler,0.258225641025641,2025-03-02,11,High,Active
+
+237,Sandeep Sharma,1585,bowler,0.2472096626900922,2025-03-11,2,High,Active
+
+239,Rahmanullah Gurbaz,1583,batsman,0.1606138882394201,2025-03-12,1,Medium,Active
+
+240,K Gowtham,1583,bowler,0.1561279284828707,2025-02-26,15,Medium,Active
+
+241,KR Sen,1582,bowler,0.2163562969597452,2025-01-31,41,High,Active
+
+242,Prasidh Krishna,1582,bowler,0.2063562969597452,2025-01-31,41,High,Active
+
+246,Harpreet Brar,1581,bowler,0.1674920470860408,2025-03-08,5,Medium,Active
+
+250,PN Mankad,1580,batsman,0.1056054964539007,2024-12-29,74,Low,Active
+
+255,Simarjeet Singh,1577,bowler,0.2159157059314954,2025-03-07,6,High,Active
+
+256,A Nortje,1577,bowler,0.2483588615490788,2025-02-09,32,High,Active
+
+261,Washington Sundar,1576,bowler,0.1763686357898222,2025-02-04,37,Medium,Active
+
+262,R Ravindra,1576,batsman,0.1980694045720361,2025-03-07,6,High,Active
+
+269,Abishek Porel,1573,batsman,0.1855831642558457,2025-03-04,9,Medium,Active
+
+272,A Badoni,1572,batsman,0.108280822445793,2025-03-06,7,Low,Active
+
+273,MM Ali,1571,all-rounder,0.1579173598433476,2025-03-02,11,Medium,Active
+
+275,KD Karthik,1570,batsman,0.1563574703214194,2025-03-10,3,Medium,Active
+
+283,R Dhawan,1567,bowler,0.1634285765942656,2025-03-08,5,Medium,Active
+
+285,KS Williamson,1567,batsman,0.1936481687626162,2025-01-21,51,High,Active
+
+286,PVD Chameera,1567,bowler,0.1887617339700335,2025-02-11,30,Medium,Active
+
+288,AS Roy,1567,bowler,0.128886986697513,2025-02-11,30,Medium,Active
+
+289,JJ Roy,1567,batsman,0.2403672995647544,2024-12-25,78,High,Active
+
+299,SM Curran,1563,all-rounder,0.1702399748393887,2025-03-05,8,Medium,Active
+
+304,Akash Deep,1561,bowler,0.1794166666666666,2025-01-25,47,Medium,Active
+
+306,M Siddharth,1559,bowler,0.1007936507936508,2025-01-21,51,Low,Active
+
+308,Naveen-ul-Haq,1559,bowler,0.2879386326659984,2025-03-06,7,High,Active
+
+311,Umran Malik,1558,bowler,0.2209073557156333,2025-01-08,64,High,Active
+
+317,K Rabada,1557,bowler,0.296035056889991,2025-02-22,19,High,Active
+
+321,Vishnu Vinod,1557,batsman,0.0578571428571428,2024-12-30,73,Low,Active
+
+327,MG Bracewell,1554,all-rounder,0.1539866666666666,2024-12-27,76,Medium,Active
+
+330,S Gopal,1554,bowler,0.2097565353491823,2025-02-02,39,High,Active
+
+334,S Dhawan,1553,batsman,0.1963381316551234,2025-01-23,49,High,Active
+
+335,MK Pandey,1552,batsman,0.1583336582866147,2025-02-20,21,Medium,Active
+
+340,Sameer Rizvi,1552,batsman,0.0513392857142857,2025-03-02,11,Low,Active
+
+341,DJ Mitchell,1552,batsman,0.1498516599190283,2025-03-07,6,Medium,Active
+
+342,Vijaykumar Vyshak,1552,bowler,0.2811602387511478,2025-02-21,20,High,Active
+
+344,MS Dhoni,1550,batsman,0.178351738983808,2025-03-07,6,Medium,Active
+
+345,M Jansen,1549,bowler,0.2239515577134515,2025-02-24,17,High,Active
+
+346,JC Archer,1549,bowler,0.2692517745680245,2024-12-06,97,High,Active
+
+356,P Simran Singh,1544,batsman,0.1284401856129704,2025-03-08,5,Medium,Active
+
+366,JJ Bumrah,1740,bowler,0.2782760801331521,2025-03-01,12,High,Active
+
+367,Shashank Singh,1540,batsman,0.2043404684444188,2025-03-08,5,High,Active
+
+368,MK Lomror,1539,batsman,0.0979666181599371,2025-03-10,3,Low,Active
+
+378,Gulbadin Naib,1535,batsman,0.025,2025-03-04,9,Low,Active
+
+381,HV Patel,1534,bowler,0.273708832854635,2025-03-08,5,High,Active
+
+382,RV Patel,1533,batsman,0.030210390946502,2024-12-12,91,Low,Active
+
+383,Aman Hakim Khan,1533,batsman,0.071773691460055,2024-12-24,79,Low,Active
+
+386,Abdul Samad,1532,batsman,0.0845913716064297,2025-03-12,1,Low,Active
+
+388,Arshdeep Singh,1532,bowler,0.2336466163765759,2025-03-08,5,High,Active
+
+391,Lalit Yadav,1532,all-rounder,0.1137658660387232,2025-02-04,37,Medium,Active
+
+392,KA Maharaj,1532,bowler,0.2458333333333333,2025-01-27,45,High,Active
+
+393,WD Parnell,1532,bowler,0.2504740126586943,2024-12-27,76,High,Active
+
+396,V Viyaskanth,1531,bowler,0.1115999999999999,2025-03-09,4,Low,Active
+
+404,Mohammad Nabi,1530,bowler,0.1851583491739742,2025-02-17,24,Medium,Active
+
+414,DA Warner,1528,batsman,0.2725568769512654,2025-03-03,10,High,Active
+
+416,MW Short,1527,batsman,0.1196479076479076,2024-12-03,100,Medium,Active
+
+420,PP Chawla,1527,bowler,0.2182709018214812,2025-03-06,7,High,Active
+
+426,G Coetzee,1526,bowler,0.2109628205128205,2025-02-20,21,High,Active
+
+429,Subhransu Senapati,1525,unknown,0.1,2024-12-28,75,Low,Active
+
+430,MD Shanaka,1524,batsman,0.0551904761904762,2024-12-28,75,Low,Active
+
+431,Sumit Kumar,1524,all-rounder,0.04425,2025-02-12,29,Low,Active
+
+433,KS Sharma,1524,batsman,0.0,2024-12-25,78,Low,Active
+
+435,RG Sharma,1643,batsman,0.1838980942660165,2025-03-06,7,Medium,Active
+
+436,AJ Turner,1523,batsman,0.0012142857142857,2025-02-23,18,Low,Active
+
+445,Anuj Rawat,1521,batsman,0.1170449488094577,2025-01-30,42,Medium,Active
+
+446,TH David,1521,batsman,0.1820415711452102,2025-03-01,12,Medium,Active
+
+447,Azmatullah Omarzai,1521,bowler,0.1095488721804511,2025-02-14,27,Low,Active
+
+463,Arshad Khan,1516,all-rounder,0.1297917833800186,2025-03-06,7,Medium,Active
+
+464,D Ferreira,1516,batsman,0.0375,2025-03-10,3,Low,Active
+
+467,Tanush Kotian,1516,batsman,0.05,2025-01-27,45,Low,Active
+
+469,SS Prabhudessai,1516,batsman,0.0844938271604938,2025-02-05,36,Low,Active
+
+477,Kartik Tyagi,1514,bowler,0.1430924108458591,2025-02-28,13,Medium,Active
+
+480,C Sakariya,1513,bowler,0.2205610966548018,2024-12-24,79,High,Active
+
+482,KM Asif,1513,bowler,0.1858216970998925,2024-12-17,86,Medium,Active
+
+488,JE Root,1512,all-rounder,0.065,2024-12-17,86,Low,Active
+
+490,Arjun Tendulkar,1512,bowler,0.1759487179487179,2025-03-06,7,Medium,Active
+
+495,S Sandeep Warrier,1511,bowler,0.1633771929824561,2025-02-28,13,Medium,Active
+
+498,R Shepherd,1510,all-rounder,0.10628,2025-03-06,7,Low,Active
+
+499,Mukesh Choudhary,1509,bowler,0.2159741019214703,2025-01-18,54,High,Active
+
+500,Sanvir Singh,1509,batsman,0.0460925925925925,2025-03-09,4,Low,Active
+
+501,SH Johnson,1509,bowler,0.1352666666666666,2025-02-01,40,Medium,Active
+
+504,K Yadav,1509,bowler,0.1388888888888889,2024-12-09,94,Medium,Active
+
+509,HC Brook,1508,batsman,0.0981339005821764,2024-12-26,77,Low,Active
+
+512,RR Rossouw,1508,batsman,0.1658511193598718,2025-03-08,5,Medium,Active
+
+514,M Ashwin,1507,bowler,0.1748431838629207,2024-12-09,94,Medium,Active
+
+520,GD Phillips,1506,all-rounder,0.0670555555555555,2024-12-26,77,Low,Active
+
+522,Tanay Thyagarajan,1506,unknown,0.1,2025-01-11,61,Low,Active
+
+523,AA Kulkarni,1506,batsman,0.0,2025-02-23,18,Low,Active
+
+526,YV Dhull,1505,batsman,0.03,2024-12-24,79,Low,Active
+
+527,LB Williams,1505,bowler,0.10025,2025-02-16,25,Low,Active
+
+534,A Kamboj,1502,bowler,0.1664561403508772,2025-03-06,7,Medium,Active
+
+541,Harpreet Singh,1500,batsman,0.0619836309523809,2025-02-06,35,Low,Active
+
+542,Vivrant Sharma,1499,all-rounder,0.1526679748822606,2024-12-26,77,Medium,Active
+
+547,SB Dubey,1499,batsman,0.0201481481481481,2025-03-02,11,Low,Active
+
+548,Anmolpreet Singh,1499,batsman,0.0820531358024691,2025-02-19,22,Low,Active
+
+550,RJ Gleeson,1498,bowler,0.102,2025-02-22,19,Low,Active
+
+551,T Kohler-Cadmore,1498,batsman,0.0166666666666666,2025-03-11,2,Low,Active
+
+557,Yudhvir Singh,1496,bowler,0.1408187134502924,2025-03-04,9,Medium,Active
+
+558,P Dubey,1496,all-rounder,0.062826923076923,2024-12-16,87,Low,Active
+
+566,M Shahrukh Khan,1493,batsman,0.1051424945626983,2025-02-28,13,Low,Active
+
+576,Arshad Khan (2),1492,bowler,0.0,2025-01-28,44,Low,Active
+
+580,S Joseph,1492,bowler,0.0,2025-01-28,44,Low,Active
+
+582,BR Sharath,1492,batsman,0.05,2025-01-21,51,Low,Active
+
+590,MJ Suthar,1491,bowler,0.0,2025-02-21,20,Low,Active
+
+603,R Goyal,1489,bowler,0.0666666666666666,2024-12-06,97,Low,Active
+
+605,Shivam Singh,1489,batsman,0.1075555555555555,2025-03-08,5,Low,Active
+
+610,DG Nalkande,1488,bowler,0.1816239316239316,2025-01-21,51,Medium,Active
+
+613,H Sharma,1488,bowler,0.0,2025-01-19,53,Low,Active
+
+621,JM Sharma,1486,batsman,0.1142938538056979,2025-03-08,5,Medium,Active
+639,SK Ahmed,1485,bowler,0.1457768833539839,2025-03-04,9,High,Active
+
+640,JA Richardson,1482,bowler,0.1277777777777777,2025-01-20,52,Medium,Active
+
+641,V Kaverappa,1482,bowler,0.3,2025-02-27,14,High,Active
+
+645,Tilak Varma,1482,batsman,0.2505186651991991,2025-03-01,12,High,Active
+
+646,SZ Mulani,1481,bowler,0.0241842105263157,2025-01-08,64,Low,Active
+
+654,KT Maphaka,1478,bowler,0.075,2025-01-14,58,Low,Active
+
+657,MR Marsh,1477,all-rounder,0.1531330786829259,2025-01-16,56,Medium,Active
+
+660,L Wood,1477,bowler,0.0851249999999999,2025-02-12,29,Low,Active
+
+661,LS Livingstone,1477,all-rounder,0.146603582689294,2025-02-27,14,Medium,Active
+
+663,Saurav Chauhan,1476,batsman,0.0,2025-01-30,42,Low,Active
+
+667,Kumar Kushagra,1474,batsman,0.0166666666666666,2025-03-03,10,Low,Active
+
+669,Ashutosh Sharma,1474,batsman,0.197949157523511,2025-03-08,5,High,Active
+
+677,RJW Topley,1470,bowler,0.1904333333333333,2025-01-30,42,Medium,Active
+
+680,RK Bhui,1469,batsman,0.0,2025-01-09,63,Low,Active
+
+681,KM Jadhav,1468,batsman,0.1031625041643168,2024-12-11,92,Low,Active
+
+682,N Wadhera,1468,batsman,0.1458598943755168,2025-03-06,7,Medium,Active
+
+695,MA Agarwal,1461,batsman,0.1326358675391244,2025-02-24,17,Medium,Active
+
+711,Mayank Dagar,1447,bowler,0.0955269607843137,2025-01-19,53,Low,Active
+
+715,Atharva Taide,1439,batsman,0.1899824640316458,2025-03-08,5,Medium,Active
+
+719,Fazalhaq Farooqi,1436,bowler,0.1787193260930103,2024-12-19,84,Medium,Active
+
+721,N Thushara,1431,bowler,0.2076923076923077,2025-03-06,7,High,Active
+
+729,D Brevis,1423,batsman,0.1509983306751728,2025-03-06,7,Medium,Active
+
+732,Naman Dhir,1421,batsman,0.1585681286549707,2025-03-06,7,Medium,Active
+

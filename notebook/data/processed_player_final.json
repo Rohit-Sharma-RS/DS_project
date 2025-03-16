@@ -1,0 +1,1620 @@
+{
+  "teams": {
+    "Chennai Super Kings": [
+      {
+        "name": "RD Gaikwad",
+        "ELO": 1677,
+        "Role": "batsman",
+        "Form": 0.2721566253505889,
+        "present": true
+      },
+      {
+        "name": "RA Jadeja",
+        "ELO": 1645,
+        "Role": "all-rounder",
+        "Form": 0.1539286921994834,
+        "present": true
+      },
+      {
+        "name": "M Pathirana",
+        "ELO": 1641,
+        "Role": "bowler",
+        "Form": 0.362965429805641,
+        "present": true
+      },
+      {
+        "name": "S Dube",
+        "ELO": 1607,
+        "Role": "batsman",
+        "Form": 0.169496619226619,
+        "present": true
+      },
+      {
+        "name": "MS Dhoni",
+        "ELO": 1550,
+        "Role": "batsman",
+        "Form": 0.178351738983808,
+        "present": true
+      },
+      {
+        "name": "DP Conway",
+        "ELO": 1668,
+        "Role": "batsman",
+        "Form": 0.3381288503022718,
+        "present": true
+      },
+      {
+        "name": "RA Tripathi",
+        "ELO": 1633,
+        "Role": "batsman",
+        "Form": 0.1672945760060535,
+        "present": true
+      },
+      {
+        "name": "R Ravindra",
+        "ELO": 1576,
+        "Role": "batsman",
+        "Form": 0.1980694045720361,
+        "present": true
+      },
+      {
+        "name": "R Ashwin",
+        "ELO": 1607,
+        "Role": "bowler",
+        "Form": 0.2280729140674212,
+        "present": true
+      },
+      {
+        "name": "SK Ahmed",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "N Ahmad",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "V Shankar",
+        "ELO": 1612,
+        "Role": "batsman",
+        "Form": 0.0997279241131786,
+        "present": true
+      },
+      {
+        "name": "SM Curran",
+        "ELO": 1563,
+        "Role": "all-rounder",
+        "Form": 0.1702399748393887,
+        "present": true
+      },
+      {
+        "name": "Shaik Rasheed",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "Anshul Kamboj",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "Mukesh Choudhary",
+        "ELO": 1509,
+        "Role": "bowler",
+        "Form": 0.2159741019214703,
+        "present": true
+      },
+      {
+        "name": "DJ Hooda",
+        "ELO": 1593,
+        "Role": "batsman",
+        "Form": 0.1009563963474852,
+        "present": true
+      },
+      {
+        "name": "Gurjapneet Singh",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "NT Ellis",
+        "ELO": 1604,
+        "Role": "bowler",
+        "Form": 0.2120028011204482,
+        "present": true
+      },
+      {
+        "name": "Ramakrishna Ghosh",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "Kamlesh Nagarkoti",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "Jamie Overton",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "S Gopal",
+        "ELO": 1554,
+        "Role": "bowler",
+        "Form": 0.2097565353491823,
+        "present": true
+      },
+      {
+        "name": "Vansh Bedi",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "C Andre Siddarth",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      }
+    ],
+    "Delhi Capitals": [
+      {
+        "name": "AR Patel",
+        "ELO": 1622,
+        "Role": "bowler",
+        "Form": 0.2252909859232927,
+        "present": true
+      },
+      {
+        "name": "K Yadav",
+        "ELO": 1509,
+        "Role": "bowler",
+        "Form": 0.1388888888888889,
+        "present": true
+      },
+      {
+        "name": "T Stubbs",
+        "ELO": 1633,
+        "Role": "batsman",
+        "Form": 0.2437358354608354,
+        "present": true
+      },
+      {
+        "name": "Abishek Porel",
+        "ELO": 1573,
+        "Role": "batsman",
+        "Form": 0.1855831642558457,
+        "present": true
+      },
+      {
+        "name": "MA Starc",
+        "ELO": 1794,
+        "Role": "bowler",
+        "Form": 0.3052097494973749,
+        "present": true
+      },
+      {
+        "name": "KL Rahul",
+        "ELO": 1616,
+        "Role": "batsman",
+        "Form": 0.2634599961294793,
+        "present": true
+      },
+      {
+        "name": "J Fraser-Mcgurk",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "T Natarajan",
+        "ELO": 1640,
+        "Role": "bowler",
+        "Form": 0.2331904213209217,
+        "present": true
+      },
+      {
+        "name": "Karun Nair",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "Sameer Rizvi",
+        "ELO": 1552,
+        "Role": "batsman",
+        "Form": 0.0513392857142857,
+        "present": true
+      },
+      {
+        "name": "Ashutosh Sharma",
+        "ELO": 1474,
+        "Role": "batsman",
+        "Form": 0.197949157523511,
+        "present": true
+      },
+      {
+        "name": "MM Sharma",
+        "ELO": 1718,
+        "Role": "bowler",
+        "Form": 0.2534671631496116,
+        "present": true
+      },
+      {
+        "name": "F du Plessis",
+        "ELO": 1648,
+        "Role": "batsman",
+        "Form": 0.233369268756425,
+        "present": true
+      },
+      {
+        "name": "Mukesh Kumar",
+        "ELO": 1688,
+        "Role": "bowler",
+        "Form": 0.274120536919221,
+        "present": true
+      },
+      {
+        "name": "DG Nalkande",
+        "ELO": 1488,
+        "Role": "bowler",
+        "Form": 0.1816239316239316,
+        "present": true
+      },
+      {
+        "name": "Vipraj Nigam",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "Dushmantha Chameera",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "Donovan Ferreira",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "Ajay Mandal",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "Manvanth Kumar",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "Madhav Tiwari",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "Tripurana Vijay",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      }
+    ],
+    "Gujarat Titans": [
+      {
+        "name": "Rashid Khan",
+        "ELO": 1645,
+        "Role": "bowler",
+        "Form": 0.2983581851650035,
+        "present": true
+      },
+      {
+        "name": "Shubman Gill",
+        "ELO": 1756,
+        "Role": "batsman",
+        "Form": 0.2255024375646805,
+        "present": true
+      },
+      {
+        "name": "B Sai Sudharsan",
+        "ELO": 1608,
+        "Role": "batsman",
+        "Form": 0.282603862188375,
+        "present": true
+      },
+      {
+        "name": "R Tewatia",
+        "ELO": 1645,
+        "Role": "all-rounder",
+        "Form": 0.113811703250095,
+        "present": true
+      },
+      {
+        "name": "M Shahrukh Khan",
+        "ELO": 1493,
+        "Role": "batsman",
+        "Form": 0.1051424945626983,
+        "present": true
+      },
+      {
+        "name": "K Rabada",
+        "ELO": 1557,
+        "Role": "bowler",
+        "Form": 0.296035056889991,
+        "present": true
+      },
+      {
+        "name": "JC Buttler",
+        "ELO": 1711,
+        "Role": "batsman",
+        "Form": 0.2413071925530475,
+        "present": true
+      },
+      {
+        "name": "Mohammed Siraj",
+        "ELO": 1680,
+        "Role": "bowler",
+        "Form": 0.2166201755652802,
+        "present": true
+      },
+      {
+        "name": "Prasidh Krishna",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "Nishant Sindhu",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "Mahipal Lomror",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "Kumar Kushagra",
+        "ELO": 1474,
+        "Role": "batsman",
+        "Form": 0.0166666666666666,
+        "present": true
+      },
+      {
+        "name": "Anuj Rawat",
+        "ELO": 1521,
+        "Role": "batsman",
+        "Form": 0.1170449488094577,
+        "present": true
+      },
+      {
+        "name": "Manav Suthar",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "Washington Sundar",
+        "ELO": 1576,
+        "Role": "bowler",
+        "Form": 0.1763686357898222,
+        "present": true
+      },
+      {
+        "name": "G Coetzee",
+        "ELO": 1526,
+        "Role": "bowler",
+        "Form": 0.2109628205128205,
+        "present": true
+      },
+      {
+        "name": "Arshad Khan",
+        "ELO": 1516,
+        "Role": "all-rounder",
+        "Form": 0.1297917833800186,
+        "present": true
+      },
+      {
+        "name": "Gurnoor Brar",
+        "ELO": 1492,
+        "Role": "bowler",
+        "Form": 0.0,
+        "present": true
+      },
+      {
+        "name": "Sherfane Rutherford",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "R Sai Kishore",
+        "ELO": 1621,
+        "Role": "bowler",
+        "Form": 0.2666666666666666,
+        "present": true
+      },
+      {
+        "name": "Ishant Sharma",
+        "ELO": 1708,
+        "Role": "bowler",
+        "Form": 0.1990876,
+        "present": true
+      },
+      {
+        "name": "Jayant Yadav",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "GD Phillips",
+        "ELO": 1506,
+        "Role": "all-rounder",
+        "Form": 0.0670555555555555,
+        "present": true
+      },
+      {
+        "name": "Karim Janat",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "Kulwant Khejroliya",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      }
+    ],
+    "Kolkata Knight Riders": [
+      {
+        "name": "RK Singh",
+        "ELO": 1637,
+        "Role": "batsman",
+        "Form": 0.1616275469182348,
+        "present": true
+      },
+      {
+        "name": "CV Varun",
+        "ELO": 1804,
+        "Role": "bowler",
+        "Form": 0.2529371047568415,
+        "present": true
+      },
+      {
+        "name": "SP Narine",
+        "ELO": 1751,
+        "Role": "bowler",
+        "Form": 0.2648039750023984,
+        "present": true
+      },
+      {
+        "name": "AD Russell",
+        "ELO": 1738,
+        "Role": "all-rounder",
+        "Form": 0.2071456262392586,
+        "present": true
+      },
+      {
+        "name": "Harshit Rana",
+        "ELO": 1734,
+        "Role": "bowler",
+        "Form": 0.259977342140777,
+        "present": true
+      },
+      {
+        "name": "Ramandeep Singh",
+        "ELO": 1678,
+        "Role": "batsman",
+        "Form": 0.1227286601005437,
+        "present": true
+      },
+      {
+        "name": "VR Iyer",
+        "ELO": 1742,
+        "Role": "batsman",
+        "Form": 0.2011862706491484,
+        "present": true
+      },
+      {
+        "name": "Q de Kock",
+        "ELO": 1726,
+        "Role": "batsman",
+        "Form": 0.2073845882843619,
+        "present": true
+      },
+      {
+        "name": "Rahmanullah Gurbaz",
+        "ELO": 1583,
+        "Role": "batsman",
+        "Form": 0.1606138882394201,
+        "present": true
+      },
+      {
+        "name": "A Nortje",
+        "ELO": 1577,
+        "Role": "bowler",
+        "Form": 0.2483588615490788,
+        "present": true
+      },
+      {
+        "name": "A Raghuvanshi",
+        "ELO": 1595,
+        "Role": "batsman",
+        "Form": 0.1829591836734694,
+        "present": true
+      },
+      {
+        "name": "VG Arora",
+        "ELO": 1706,
+        "Role": "bowler",
+        "Form": 0.1974702084952085,
+        "present": true
+      },
+      {
+        "name": "M Markande",
+        "ELO": 1592,
+        "Role": "bowler",
+        "Form": 0.1945876876876876,
+        "present": true
+      },
+      {
+        "name": "R Powell",
+        "ELO": 1595,
+        "Role": "batsman",
+        "Form": 0.1135384269204758,
+        "present": true
+      },
+      {
+        "name": "MK Pandey",
+        "ELO": 1552,
+        "Role": "batsman",
+        "Form": 0.1583336582866147,
+        "present": true
+      },
+      {
+        "name": "SH Johnson",
+        "ELO": 1509,
+        "Role": "bowler",
+        "Form": 0.1352666666666666,
+        "present": true
+      },
+      {
+        "name": "Luvnith Sisodia",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "AM Rahane",
+        "ELO": 1592,
+        "Role": "batsman",
+        "Form": 0.1704620654660137,
+        "present": true
+      },
+      {
+        "name": "Anukul Roy",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "MM Ali",
+        "ELO": 1571,
+        "Role": "all-rounder",
+        "Form": 0.1579173598433476,
+        "present": true
+      },
+      {
+        "name": "Umran Malik",
+        "ELO": 1558,
+        "Role": "bowler",
+        "Form": 0.2209073557156333,
+        "present": true
+      }
+    ],
+    "Lucknow Super Giants": [
+      {
+        "name": "N Pooran",
+        "ELO": 1639,
+        "Role": "batsman",
+        "Form": 0.2258506718578914,
+        "present": true
+      },
+      {
+        "name": "Ravi Bishnoi",
+        "ELO": 1636,
+        "Role": "bowler",
+        "Form": 0.2293909034090815,
+        "present": true
+      },
+      {
+        "name": "MP Yadav",
+        "ELO": 1647,
+        "Role": "bowler",
+        "Form": 0.3689393939393939,
+        "present": true
+      },
+      {
+        "name": "Mohsin Khan",
+        "ELO": 1643,
+        "Role": "bowler",
+        "Form": 0.232420488046575,
+        "present": true
+      },
+      {
+        "name": "A Badoni",
+        "ELO": 1572,
+        "Role": "batsman",
+        "Form": 0.108280822445793,
+        "present": true
+      },
+      {
+        "name": "RR Pant",
+        "ELO": 1700,
+        "Role": "batsman",
+        "Form": 0.2448809000080339,
+        "present": true
+      },
+      {
+        "name": "DA Miller",
+        "ELO": 1625,
+        "Role": "batsman",
+        "Form": 0.1857113476932742,
+        "present": true
+      },
+      {
+        "name": "MR Marsh",
+        "ELO": 1477,
+        "Role": "all-rounder",
+        "Form": 0.1531330786829259,
+        "present": true
+      },
+      {
+        "name": "AK Markram",
+        "ELO": 1595,
+        "Role": "batsman",
+        "Form": 0.155290277106692,
+        "present": true
+      },
+      {
+        "name": "Avesh Khan",
+        "ELO": 1609,
+        "Role": "bowler",
+        "Form": 0.2446712332415772,
+        "present": true
+      },
+      {
+        "name": "Abdul Samad",
+        "ELO": 1532,
+        "Role": "batsman",
+        "Form": 0.0845913716064297,
+        "present": true
+      },
+      {
+        "name": "Aryan Juyal",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "Akash Deep",
+        "ELO": 1561,
+        "Role": "bowler",
+        "Form": 0.1794166666666666,
+        "present": true
+      },
+      {
+        "name": "Himmat Singh",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "M Siddharth",
+        "ELO": 1559,
+        "Role": "bowler",
+        "Form": 0.1007936507936508,
+        "present": true
+      },
+      {
+        "name": "Digvesh Singh",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "Shahbaz Ahmed",
+        "ELO": 1657,
+        "Role": "all-rounder",
+        "Form": 0.0978097955547407,
+        "present": true
+      },
+      {
+        "name": "Akash Singh",
+        "ELO": 1553,
+        "Role": "bowler",
+        "Form": 0.1398730158730158,
+        "present": true
+      },
+      {
+        "name": "Shamar Joseph",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "Prince Yadav",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "Yuvraj Chaudhary",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "Rajvardhan Hangargekar",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "Arshin Kulkarni",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "Matthew Breetzke",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      }
+    ],
+    "Mumbai Indians": [
+      {
+        "name": "JJ Bumrah",
+        "ELO": 1740,
+        "Role": "bowler",
+        "Form": 0.2782760801331521,
+        "present": true
+      },
+      {
+        "name": "SA Yadav",
+        "ELO": 1681,
+        "Role": "batsman",
+        "Form": 0.1880500272735752,
+        "present": true
+      },
+      {
+        "name": "HH Pandya",
+        "ELO": 1613,
+        "Role": "all-rounder",
+        "Form": 0.1525011171030545,
+        "present": true
+      },
+      {
+        "name": "RG Sharma",
+        "ELO": 1623,
+        "Role": "batsman",
+        "Form": 0.1838980942660165,
+        "present": true
+      },
+      {
+        "name": "Tilak Varma",
+        "ELO": 1582,
+        "Role": "batsman",
+        "Form": 0.2505186651991991,
+        "present": true
+      },
+      {
+        "name": "TA Boult",
+        "ELO": 1666,
+        "Role": "bowler",
+        "Form": 0.2491952980329608,
+        "present": true
+      },
+      {
+        "name": "Naman Dhir",
+        "ELO": 1421,
+        "Role": "batsman",
+        "Form": 0.1585681286549707,
+        "present": true
+      },
+      {
+        "name": "Robin Minz",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "KV Sharma",
+        "ELO": 1709,
+        "Role": "bowler",
+        "Form": 0.2053168525123545,
+        "present": true
+      },
+      {
+        "name": "Ryan Rickelton",
+        "ELO": 1500,
+        "Role": "batsman",
+        "Form": 0.15,
+        "present": true
+      },
+      {
+        "name": "DL Chahar",
+        "ELO": 1687,
+        "Role": "bowler",
+        "Form": 0.2037024906362138,
+        "present": true
+      },
+      {
+        "name": "Mujeeb-ur-Rahman",
+        "ELO": 1500,
+        "Role": "bowler",
+        "Form": 0.15,
+        "present": true
+      },
+      {
+        "name": "Allah Ghazanfar",
+        "ELO": 1550,
+        "Role": "bowler",
+        "Form": 0.18,
+        "present": true
+      },
+      {
+        "name": "WG Jacks",
+        "ELO": 1628,
+        "Role": "batsman",
+        "Form": 0.2352610243055555,
+        "present": true
+      },
+      {
+        "name": "Ashwani Kumar",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "MJ Santner",
+        "ELO": 1601,
+        "Role": "bowler",
+        "Form": 0.2274916779127305,
+        "present": true
+      },
+      {
+        "name": "RJW Topley",
+        "ELO": 1470,
+        "Role": "bowler",
+        "Form": 0.1904333333333333,
+        "present": true
+      },
+      {
+        "name": "Shrijith Krishnan",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "Raj Bawa",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "Satyanarayana Raju",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "Bevon Jacobs",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "Arjun Tendulkar",
+        "ELO": 1512,
+        "Role": "bowler",
+        "Form": 0.1759487179487179,
+        "present": true
+      },
+      {
+        "name": "Corbin Bosch",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "Vignesh Puthur",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      }
+    ],
+    "Punjab Kings": [
+      {
+        "name": "Shashank Singh",
+        "ELO": 1540,
+        "Role": "batsman",
+        "Form": 0.2043404684444188,
+        "present": true
+      },
+      {
+        "name": "P Simran Singh",
+        "ELO": 1544,
+        "Role": "batsman",
+        "Form": 0.1284401856129704,
+        "present": true
+      },
+      {
+        "name": "Arshdeep Singh",
+        "ELO": 1532,
+        "Role": "bowler",
+        "Form": 0.2336466163765759,
+        "present": true
+      },
+      {
+        "name": "SS Iyer",
+        "ELO": 1736,
+        "Role": "batsman",
+        "Form": 0.1819506873688825,
+        "present": true
+      },
+      {
+        "name": "YS Chahal",
+        "ELO": 1637,
+        "Role": "bowler",
+        "Form": 0.2669106193062125,
+        "present": true
+      },
+      {
+        "name": "MP Stoinis",
+        "ELO": 1687,
+        "Role": "all-rounder",
+        "Form": 0.1322757008629201,
+        "present": true
+      },
+      {
+        "name": "GJ Maxwell",
+        "ELO": 1621,
+        "Role": "all-rounder",
+        "Form": 0.1446695313265088,
+        "present": true
+      },
+      {
+        "name": "N Wadhera",
+        "ELO": 1468,
+        "Role": "batsman",
+        "Form": 0.1458598943755168,
+        "present": true
+      },
+      {
+        "name": "Harpreet Brar",
+        "ELO": 1581,
+        "Role": "bowler",
+        "Form": 0.1674920470860408,
+        "present": true
+      },
+      {
+        "name": "Vishnu Vinod",
+        "ELO": 1557,
+        "Role": "batsman",
+        "Form": 0.0578571428571428,
+        "present": true
+      },
+      {
+        "name": "Vijaykumar Vyshak",
+        "ELO": 1552,
+        "Role": "bowler",
+        "Form": 0.2811602387511478,
+        "present": true
+      },
+      {
+        "name": "Yash Thakur",
+        "ELO": 1615,
+        "Role": "bowler",
+        "Form": 0.2372986311933681,
+        "present": true
+      },
+      {
+        "name": "Marco Jansen",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "Josh Inglis",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "LH Ferguson",
+        "ELO": 1707,
+        "Role": "bowler",
+        "Form": 0.2436033489792547,
+        "present": true
+      },
+      {
+        "name": "Azmatullah Omarzai",
+        "ELO": 1521,
+        "Role": "bowler",
+        "Form": 0.1095488721804511,
+        "present": true
+      },
+      {
+        "name": "Harnoor Pannu",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "KR Sen",
+        "ELO": 1582,
+        "Role": "bowler",
+        "Form": 0.2163562969597452,
+        "present": true
+      },
+      {
+        "name": "Priyansh Arya",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "Aaron Hardie",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "Suryash Shedge",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "Musheer Khan",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "Xavier Bartlett",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "Pyla Avinash",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "P Dubey",
+        "ELO": 1496,
+        "Role": "all-rounder",
+        "Form": 0.062826923076923,
+        "present": true
+      }
+    ],
+    "Rajasthan Royals": [
+      {
+        "name": "SV Samson",
+        "ELO": 1631,
+        "Role": "batsman",
+        "Form": 0.197373119228397,
+        "present": true
+      },
+      {
+        "name": "YBK Jaiswal",
+        "ELO": 1625,
+        "Role": "batsman",
+        "Form": 0.2246869911442825,
+        "present": true
+      },
+      {
+        "name": "R Parag",
+        "ELO": 1594,
+        "Role": "batsman",
+        "Form": 0.1285747748872338,
+        "present": true
+      },
+      {
+        "name": "Dhruv Jurel",
+        "ELO": 1593,
+        "Role": "batsman",
+        "Form": 0.1345182299182299,
+        "present": true
+      },
+      {
+        "name": "SO Hetmyer",
+        "ELO": 1701,
+        "Role": "batsman",
+        "Form": 0.1529589829212725,
+        "present": true
+      },
+      {
+        "name": "Sandeep Sharma",
+        "ELO": 1585,
+        "Role": "bowler",
+        "Form": 0.2472096626900922,
+        "present": true
+      },
+      {
+        "name": "JC Archer",
+        "ELO": 1549,
+        "Role": "bowler",
+        "Form": 0.2692517745680245,
+        "present": true
+      },
+      {
+        "name": "M Theekshana",
+        "ELO": 1637,
+        "Role": "bowler",
+        "Form": 0.1924562361506805,
+        "present": true
+      },
+      {
+        "name": "Wanindu Hasaranga",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "Akash Madhwal",
+        "ELO": 1628,
+        "Role": "bowler",
+        "Form": 0.2763644970414201,
+        "present": true
+      },
+      {
+        "name": "Kumar Kartikeya Singh",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "Nitish Rana",
+        "ELO": 1663,
+        "Role": "bastsman",
+        "Form": 0.157,
+        "present": true
+      },
+      {
+        "name": "Tushar Deshpande",
+        "ELO": 1685,
+        "Role": "bowler",
+        "Form": 0.22,
+        "present": true
+      },
+      {
+        "name": "Shubham Dubey",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "Yudhvir Charak",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "Fazalhaq Farooqi",
+        "ELO": 1436,
+        "Role": "bowler",
+        "Form": 0.1787193260930103,
+        "present": true
+      },
+      {
+        "name": "Vaibhav Suryavanshi",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "Kwena Maphaka",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "Ashok Sharma",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "Kunal Singh Rathore",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      }
+    ],
+    "Royal Challengers Bengaluru": [
+      {
+        "name": "V Kohli",
+        "ELO": 1682,
+        "Role": "batsman",
+        "Form": 0.2266708863344226,
+        "present": true
+      },
+      {
+        "name": "RM Patidar",
+        "ELO": 1653,
+        "Role": "batsman",
+        "Form": 0.2699242135463456,
+        "present": true
+      },
+      {
+        "name": "Yash Dayal",
+        "ELO": 1731,
+        "Role": "bowler",
+        "Form": 0.21107326007326,
+        "present": true
+      },
+      {
+        "name": "LS Livingstone",
+        "ELO": 1477,
+        "Role": "all-rounder",
+        "Form": 0.146603582689294,
+        "present": true
+      },
+      {
+        "name": "PD Salt",
+        "ELO": 1735,
+        "Role": "batsman",
+        "Form": 0.3144722286685019,
+        "present": true
+      },
+      {
+        "name": "JM Sharma",
+        "ELO": 1486,
+        "Role": "batsman",
+        "Form": 0.1142938538056979,
+        "present": true
+      },
+      {
+        "name": "JR Hazlewood",
+        "ELO": 1673,
+        "Role": "bowler",
+        "Form": 0.2559926932770499,
+        "present": true
+      },
+      {
+        "name": "Rasikh Dar",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "Suyash Sharma",
+        "ELO": 1602,
+        "Role": "bowler",
+        "Form": 0.1598290598290598,
+        "present": true
+      },
+      {
+        "name": "KH Pandya",
+        "ELO": 1679,
+        "Role": "all-rounder",
+        "Form": 0.1455117279731457,
+        "present": true
+      },
+      {
+        "name": "B Kumar",
+        "ELO": 1616,
+        "Role": "bowler",
+        "Form": 0.2374521891847519,
+        "present": true
+      },
+      {
+        "name": "Swapnil Singh",
+        "ELO": 1655,
+        "Role": "bowler",
+        "Form": 0.1356704822954823,
+        "present": true
+      },
+      {
+        "name": "TH David",
+        "ELO": 1521,
+        "Role": "batsman",
+        "Form": 0.1820415711452102,
+        "present": true
+      },
+      {
+        "name": "R Shepherd",
+        "ELO": 1510,
+        "Role": "all-rounder",
+        "Form": 0.10628,
+        "present": true
+      },
+      {
+        "name": "N Thushara",
+        "ELO": 1431,
+        "Role": "bowler",
+        "Form": 0.2076923076923077,
+        "present": true
+      },
+      {
+        "name": "Manoj Bhandage",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "Jacob Bethell",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "D Padikkal",
+        "ELO": 1664,
+        "Role": "batsman",
+        "Form": 0.1537540515053282,
+        "present": true
+      },
+      {
+        "name": "Swastik Chikara",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "Mohit Rathee",
+        "ELO": 1490,
+        "Role": "bowler",
+        "Form": 0.0004999999999999,
+        "present": true
+      },
+      {
+        "name": "Abhinandan Singh",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "Lungi Ngidi",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      }
+    ],
+    "Sunrisers Hyderabad": [
+      {
+        "name": "H Klaasen",
+        "ELO": 1647,
+        "Role": "batsman",
+        "Form": 0.2720699090757131,
+        "present": true
+      },
+      {
+        "name": "PJ Cummins",
+        "ELO": 1649,
+        "Role": "bowler",
+        "Form": 0.2382118695103382,
+        "present": true
+      },
+      {
+        "name": "Abhishek Sharma",
+        "ELO": 1724,
+        "Role": "batsman",
+        "Form": 0.1885514917761261,
+        "present": true
+      },
+      {
+        "name": "TM Head",
+        "ELO": 1715,
+        "Role": "batsman",
+        "Form": 0.2518903741237257,
+        "present": true
+      },
+      {
+        "name": "Nithish Kumar Reddy",
+        "ELO": 1618,
+        "Role": "all-rounder",
+        "Form": 0.125074927703875,
+        "present": true
+      },
+      {
+        "name": "Mohammed Shami",
+        "ELO": 1743,
+        "Role": "bowler",
+        "Form": 0.2505735372535034,
+        "present": true
+      },
+      {
+        "name": "HV Patel",
+        "ELO": 1534,
+        "Role": "bowler",
+        "Form": 0.273708832854635,
+        "present": true
+      },
+      {
+        "name": "Ishan Kishan",
+        "ELO": 1594,
+        "Role": "batsman",
+        "Form": 0.1977760820407933,
+        "present": true
+      },
+      {
+        "name": "RD Chahar",
+        "ELO": 1597,
+        "Role": "bowler",
+        "Form": 0.2172163264960161,
+        "present": true
+      },
+      {
+        "name": "A Zampa",
+        "ELO": 1599,
+        "Role": "bowler",
+        "Form": 0.2647226689913188,
+        "present": true
+      },
+      {
+        "name": "Atharva Taide",
+        "ELO": 1439,
+        "Role": "batsman",
+        "Form": 0.1899824640316458,
+        "present": true
+      },
+      {
+        "name": "A Manohar",
+        "ELO": 1623,
+        "Role": "batsman",
+        "Form": 0.1108807065145807,
+        "present": true
+      },
+      {
+        "name": "Simarjeet Singh",
+        "ELO": 1577,
+        "Role": "bowler",
+        "Form": 0.2159157059314954,
+        "present": true
+      },
+      {
+        "name": "Zeeshan Ansari",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "JD Unadkat",
+        "ELO": 1615,
+        "Role": "bowler",
+        "Form": 0.2030558128429101,
+        "present": true
+      },
+      {
+        "name": "Wiaan Mulder",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "Kamindu Mendis",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "Aniket Verma",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "Eshan Malinga",
+        "ELO": 1500,
+        "Role": "unknown",
+        "Form": 0.15,
+        "present": false
+      },
+      {
+        "name": "Sachin Baby",
+        "ELO": 1520,
+        "Role": "batsman",
+        "Form": 0.0716341565244791,
+        "present": true
+      }
+    ]
+  }
+}
