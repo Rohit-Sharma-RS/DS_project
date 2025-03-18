@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Analysis - Cricket Analytics Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* IPL Cricket Analytics Dashboard Styles */
+        :root {
+            --ipl-blue: #004ba0;
+            --ipl-light-blue: #0078d7;
+            --ipl-orange: #ff9933;
+            --ipl-red: #d32f2f;
+            --ipl-green: #1ea44f;
+            --ipl-purple: #7b1fa2;
+            --bg-color: #f8f9fa;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* IPL-themed Header */
+        .ipl-header {
+            position: relative;
+            height: 250px;
+            background-image: url('/api/placeholder/1200/300');
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 75, 160, 0.9) 0%, rgba(255, 153, 51, 0.8) 100%);
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 60px 20px;
+            color: white;
+        }
+
+        .header-content h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .header-content p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Analysis Navigation */
+        .analysis-nav {
+            background-color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            padding: 15px 0;
+            margin-bottom: 30px;
+        }
+
+        .analyzer-btn {
+            width: 100%;
+            background: linear-gradient(135deg, var(--ipl-blue) 0%, var(--ipl-light-blue) 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 15px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .analyzer-btn i {
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+
+        .analyzer-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 75, 160, 0.4);
+        }
+
+        .analyzer-btn.active {
+            background: linear-gradient(135deg, var(--ipl-orange) 0%, var(--ipl-red) 90%);
+            box-shadow: 0 4px 10px rgba(211, 47, 47, 0.4);
+        }
+
+        /* Player Analyzer specific */
+        #player-analyzer-btn {
+            background: linear-gradient(135deg, var(--ipl-green) 0%, var(--ipl-blue) 100%);
+        }
+
+        /* Team Analyzer specific */
+        #team-analyzer-btn {
+            background: linear-gradient(135deg, var(--ipl-orange) 0%, var(--ipl-red) 100%);
+        }
+
+        /* Venue Analyzer specific */
+        #venue-analyzer-btn {
+            background: linear-gradient(135deg, var(--ipl-purple) 0%, var(--ipl-blue) 100%);
+        }
+
+        /* Cards and Content */
+        .card {
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            margin-bottom: 25px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, var(--ipl-blue) 0%, var(--ipl-light-blue) 100%);
+            color: white;
+            border-radius: 12px 12px 0 0 !important;
+            border: none;
+            padding: 15px 20px;
+        }
+
+        .team-card .card-header {
+            background: linear-gradient(135deg, var(--ipl-orange) 0%, var(--ipl-red) 100%);
+        }
+
+        .player-card .card-header {
+            background: linear-gradient(135deg, var(--ipl-green) 0%, var(--ipl-blue) 100%);
+        }
+
+        .venue-card .card-header {
+            background: linear-gradient(135deg, var(--ipl-purple) 0%, var(--ipl-blue) 100%);
+        }
+
+        .card-title {
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        /* Stats and Info Cards */
+        .stat-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            border-left: 5px solid var(--ipl-blue);
+            transition: transform 0.2s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .batting-stat {
+            border-left-color: var(--ipl-orange);
+        }
+
+        .bowling-stat {
+            border-left-color: var(--ipl-green);
+        }
+
+        .fielding-stat {
+            border-left-color: var(--ipl-purple);
+        }
+
+        .stat-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #777;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Form Controls */
+        select.form-control, .form-select {
+            border-radius: 8px;
+            padding: 12px 15px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        select.form-control:focus, .form-select:focus {
+            border-color: var(--ipl-blue);
+            box-shadow: 0 0 0 3px rgba(0, 75, 160, 0.2);
+        }
+
+        /* Tables */
+        .table {
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+
+        .table thead th {
+            background-color: rgba(0, 75, 160, 0.1);
+            border-bottom: 2px solid var(--ipl-blue);
+            padding: 12px 15px;
+            font-weight: 600;
+            color: #444;
+        }
+
+        .table tbody tr:hover {
+            background-color: rgba(0, 120, 215, 0.05);
+        }
+
+        .table td {
+            padding: 12px 15px;
+            border-top: 1px solid #eee;
+            vertical-align: middle;
+        }
+
+        /* Player Items */
+        .player-item {
+            border-radius: 8px;
+            background-color: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            padding: 15px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            transition: transform 0.2s;
+        }
+
+        .player-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .player-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+            background: linear-gradient(135deg, #e0e0e0 0%, #f5f5f5 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .player-info {
+            flex: 1;
+        }
+
+        .player-name {
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 3px;
+            color: #333;
+        }
+
+        .player-role {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .player-stats {
+            font-size: 13px;
+            color: #888;
+        }
+
+        /* Tabs */
+        .nav-tabs {
+            border-bottom: none;
+            gap: 5px;
+        }
+
+        .nav-tabs .nav-link {
+            background-color: #f1f3f5;
+            color: #495057;
+            border: none;
+            border-radius: 8px 8px 0 0;
+            padding: 12px 20px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .nav-tabs .nav-link:hover {
+            background-color: #e9ecef;
+        }
+
+        .nav-tabs .nav-link.active {
+            background: linear-gradient(135deg, var(--ipl-blue) 0%, var(--ipl-light-blue) 100%);
+            color: white;
+            border: none;
+        }
+
+        /* Charts */
+        .chart-container {
+            position: relative;
+            height: 300px;
+            margin-bottom: 25px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        .ipl-header {
+            position: relative;
+            height: 300px;
+            background-image: url('/api/placeholder/1200/300');
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+        }
+
+        /* Progress Bars */
+        .progress {
+            height: 10px;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.05);
+            margin-bottom: 15px;
+        }
+
+        .progress-bar {
+            border-radius: 5px;
+        }
+
+        .progress-bar-batting {
+            background: linear-gradient(to right, var(--ipl-orange), var(--ipl-red));
+        }
+
+        .progress-bar-bowling {
+            background: linear-gradient(to right, var(--ipl-green), var(--ipl-blue));
+        }
+
+        .progress-bar-fielding {
+            background: linear-gradient(to right, var(--ipl-purple), var(--ipl-blue));
+        }
+
+        /* Team Logo */
+        .team-logo {
+            max-width: 120px;
+            max-height: 120px;
+            margin: 0 auto 20px;
+            display: block;
+            filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.1));
+            transition: transform 0.3s ease;
+        }
+
+        .team-logo:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--ipl-blue) 0%, var(--ipl-light-blue) 100%);
+            color: white;
+            padding: 25px 0;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .ipl-header {
+                height: 200px;
+            }
+            
+            .header-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .header-content p {
+                font-size: 1rem;
+            }
+            
+            .analyzer-btn {
+                margin-bottom: 10px;
+            }
+            
+            .stat-value {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ipl-header">
+        <div class="overlay"></div>
+        <div class="header-content">
+            <h1>Team Analysis</h1>
+            <p>Comprehensive statistics and performance metrics for IPL teams</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row mb-4 analysis-nav">
+            <div class="col-md-4 mb-3 mb-md-0">
+                <a href="/home" class="analyzer-btn">
+                    <i class="fas fa-home"></i> Home
+                </a>
+            </div>
+            <div class="col-md-4 mb-3 mb-md-0">
+                <a href="/playeranalyzer" class="analyzer-btn" id="player-analyzer-btn">
+                    <i class="fas fa-user"></i> Player Analysis
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="/teamanalyzer" class="analyzer-btn active" id="team-analyzer-btn">
+                    <i class="fas fa-users"></i> Team Analysis
+                </a>
+            </div>
+        </div>
+
+        <!-- Team Analysis Section -->
+        <div id="teamAnalysisSection">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="form-group mb-4">
+                        <label for="teamSelect" class="form-label fw-bold mb-2">Select Team:</label>
+                        <select id="teamSelect" class="form-select">
+                            <option value="">Select a team</option>
+                            {% for team in teams %}
+                            <option value="{{ team }}">{{ team }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="teamDetails" class="mt-4" style="display: none;">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card team-card">
+                            <div class="card-header">
+                                <h5 class="card-title">Team Info</h5>
+                            </div>
+                            <div class="card-body text-center">
+                                <img id="teamLogo" src="/api/placeholder/120/120" alt="Team Logo" class="team-logo">
+                                <h4 id="teamName" class="mb-3"></h4>
+                                <div class="stat-card batting-stat">
+                                    <div class="stat-value" id="teamWinPercentage">0</div>
+                                    <div class="stat-label">Win Percentage</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <p><strong>Matches:</strong> <span id="teamMatches">0</span></p>
+                                    </div>
+                                    <div class="col-6">
+                                        <p><strong>Wins:</strong> <span id="teamWins">0</span></p>
+                                    </div>
+                                </div>
+                                <p><strong>Titles:</strong> <span id="teamTitles">0</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="card-title">Performance Summary</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="stat-card batting-stat">
+                                            <div class="stat-value" id="totalTeamRuns">0</div>
+                                            <div class="stat-label">Total Runs</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="stat-card bowling-stat">
+                                            <div class="stat-value" id="totalTeamWickets">0</div>
+                                            <div class="stat-label">Total Wickets</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="stat-card batting-stat">
+                                            <div class="stat-value" id="avgTeamScore">0</div>
+                                            <div class="stat-label">Average Score</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="stat-card bowling-stat">
+                                            <div class="stat-value" id="teamEconomy">0</div>
+                                            <div class="stat-label">Bowling Economy</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-4">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <ul class="nav nav-tabs card-header-tabs" id="teamTabs" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="team-batting-tab" data-bs-toggle="tab" href="#team-batting" role="tab">
+                                            <i class="fas fa-baseball-bat"></i> Batting
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="team-bowling-tab" data-bs-toggle="tab" href="#team-bowling" role="tab">
+                                            <i class="fas fa-bowling-ball"></i> Bowling
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="head-to-head-tab" data-bs-toggle="tab" href="#head-to-head" role="tab">
+                                            <i class="fas fa-handshake"></i> Head to Head
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="team-players-tab" data-bs-toggle="tab" href="#team-players" role="tab">
+                                            <i class="fas fa-user-friends"></i> Top Players
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="team-recent-tab" data-bs-toggle="tab" href="#team-recent" role="tab">
+                                            <i class="fas fa-history"></i> Recent Form
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="team-visualization-tab" data-bs-toggle="tab" href="#team-visualization" role="tab">
+                                            <i class="fas fa-chart-pie"></i> Visualization
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="card-body">
+                                <div class="tab-content" id="teamTabContent">
+                                    <div class="tab-pane fade show active" id="team-batting" role="tabpanel">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h5 class="mb-3">Team Batting Statistics</h5>
+                                                <table class="table table-striped">
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>Total Runs</th>
+                                                            <td id="battingTotalRuns">0</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Highest Score</th>
+                                                            <td id="battingHighestScore">0</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Average Score</th>
+                                                            <td id="battingAverageScore">0</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Run Rate</th>
+                                                            <td id="battingRunRate">0</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <h5 class="mb-3">Run Distribution</h5>
+                                                <div class="chart-container">
+                                                    <canvas id="runDistributionChart"></canvas>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="team-bowling" role="tabpanel">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h5 class="mb-3">Team Bowling Statistics</h5>
+                                                <table class="table table-striped">
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>Total Wickets</th>
+                                                            <td id="bowlingTotalWickets">0</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Economy Rate</th>
+                                                            <td id="bowlingEconomyRate">0</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Best Bowling</th>
+                                                            <td id="bowlingBestFigures">0/0</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <h5 class="mb-3">Wicket Distribution</h5>
+                                                <div class="chart-container">
+                                                    <canvas id="wicketDistributionChart"></canvas>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="head-to-head" role="tabpanel">
+                                        <h5 class="mb-3">Head to Head Records</h5>
+                                        <div class="table-responsive">
+                                            <table class="table table-striped" id="headToHeadTable">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Opponent</th>
+                                                        <th>Played</th>
+                                                        <th>Won</th>
+                                                        <th>Lost</th>
+                                                        <th>No Result</th>
+                                                        <th>Win %</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="headToHeadList">
+                                                    <!-- Will be populated by JavaScript -->
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="team-players" role="tabpanel">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h5 class="mb-3">Top Batters</h5>
+                                                <div id="topBattersList">
+                                                    <!-- Will be populated by JavaScript -->
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <h5 class="mb-3">Top Bowlers</h5>
+                                                <div id="topBowlersList">
+                                                    <!-- Will be populated by JavaScript -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="team-recent" role="tabpanel">
+                                        <h5 class="mb-3">Recent Form</h5>
+                                        <div class="table-responsive">
+                                            <table class="table table-striped" id="recentFormTable">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Date</th>
+                                                        <th>Opponent</th>
+                                                        <th>Venue</th>
+                                                        <th>Result</th>
+                                                        <th>Margin</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="recentFormList">
+                                                    <!-- Will be populated by JavaScript -->
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="team-visualization" role="tabpanel">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h5 class="mb-3">Win/Loss Distribution</h5>
+                                                <div class="chart-container">
+                                                    <canvas id="winLossChart"></canvas>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <h5 class="mb-3">Team Strengths</h5>
+                                                <div class="chart-container">
+                                                    <canvas id="performanceChart"></canvas>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-4">
+                                            <div class="col-md-12">
+                                                <h5 class="mb-3">Performance Trend</h5>
+                                                <div class="chart-container">
+                                                    <canvas id="formTrendChart"></canvas>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>IPL Cricket Analytics Dashboard &copy; 2025</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Single, clean implementation of the script
+document.addEventListener('DOMContentLoaded', function() {
+    const teamSelect = document.getElementById('teamSelect');
+    
+    // Fetch team list from API
+    fetch('/api/teams')
+        .then(response => response.json())
+        .then(teams => {
+            // Populate dropdown
+            teams.forEach(team => {
+                const option = document.createElement('option');
+                option.value = team;
+                option.textContent = team;
+                teamSelect.appendChild(option);
+            });
+        })
+        .catch(error => console.error('Error loading team list:', error));
+
+    // Team selection handler
+    teamSelect.addEventListener('change', function() {
+        const selectedTeam = this.value;
+        if (selectedTeam) {
+            fetch(`/api/teams-stats/${selectedTeam}`)
+                .then(response => response.json())
+                .then(data => {
+                    displayTeamDetails(data);
+                })
+                .catch(error => console.error('Error loading team data:', error));
+        } else {
+            document.getElementById('teamDetails').style.display = 'none';
+        }
+    });
+});
+
+function displayTeamDetails(team) {
+    if (!team) return;
+
+    // Display team details section
+    const teamDetails = document.getElementById('teamDetails');
+    teamDetails.style.display = 'block';
+
+    // Basic info updates
+    document.getElementById('teamName').textContent = team.name;
+    document.getElementById('teamLogo').src = team.logo || "/api/placeholder/100/100";
+    document.getElementById('teamMatches').textContent = team.matches_played;
+    document.getElementById('teamWins').textContent = team.matches_won;
+    
+    // Use the win_percentage from the data rather than calculating it
+    document.getElementById('teamWinPercentage').textContent = team.win_percentage;
+    document.getElementById('teamTitles').textContent = team.titles || 0;
+
+    // Performance summary
+    document.getElementById('totalTeamRuns').textContent = team.batting_stats.total_runs;
+    document.getElementById('totalTeamWickets').textContent = team.bowling_stats.total_wickets;
+    document.getElementById('avgTeamScore').textContent = team.batting_stats.average_score.toFixed(1);
+    document.getElementById('teamEconomy').textContent = team.bowling_stats.economy_rate.toFixed(2);
+
+    // Batting statistics
+    document.getElementById('battingTotalRuns').textContent = team.batting_stats.total_runs;
+    document.getElementById('battingHighestScore').textContent = team.batting_stats.highest_score;
+    document.getElementById('battingAverageScore').textContent = team.batting_stats.average_score;
+    document.getElementById('battingRunRate').textContent = team.batting_stats.run_rate.toFixed(2);
+
+    // Bowling statistics
+    document.getElementById('bowlingTotalWickets').textContent = team.bowling_stats.total_wickets;
+    document.getElementById('bowlingEconomyRate').textContent = team.bowling_stats.economy_rate.toFixed(2);
+    document.getElementById('bowlingBestFigures').textContent = team.bowling_stats.best_bowling;
+
+    // Populate head to head records
+    const headToHeadEntries = Object.entries(team.head_to_head || {});
+    const headToHeadList = document.getElementById('headToHeadList');
+    headToHeadList.innerHTML = '';
+
+    headToHeadEntries.forEach(([opponent, stats]) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${opponent}</td>
+            <td>${stats.played}</td>
+            <td>${stats.won}</td>
+            <td>${stats.lost}</td>
+            <td>${stats.no_result}</td>
+            <td>${((stats.won / stats.played) * 100).toFixed(1)}%</td>
+        `;
+        headToHeadList.appendChild(row);
+    });
+
+    const topBattersList = document.getElementById('topBattersList');
+    topBattersList.innerHTML = '';
+    team.top_batters.forEach(batter => {
+        const playerCard = document.createElement('div');
+        playerCard.className = 'player-card';
+        
+        // Calculate contribution as percentage of total team runs
+        const contribution = (batter.runs / team.batting_stats.total_runs * 100).toFixed(1);
+        
+        playerCard.innerHTML = `
+            <h6>${batter.name}</h6>
+            <p>Runs: ${batter.runs} | SR: ${batter.strike_rate.toFixed(2)}</p>
+            <div class="progress">
+                <div class="progress-bar bg-primary" role="progressbar" style="width: ${contribution}%"></div>
+            </div>
+        `;
+        topBattersList.appendChild(playerCard);
+    });
+    
+    const topBowlersList = document.getElementById('topBowlersList');
+    topBowlersList.innerHTML = '';
+    team.top_bowlers.forEach(bowler => {
+        const playerCard = document.createElement('div');
+        playerCard.className = 'player-card';
+        
+        // Calculate contribution as percentage of total team wickets
+        const contribution = (bowler.wickets / team.bowling_stats.total_wickets * 100).toFixed(1);
+        
+        playerCard.innerHTML = `
+            <h6>${bowler.name}</h6>
+            <p>Wickets: ${bowler.wickets} | Economy: ${bowler.economy.toFixed(2)}</p>
+            <div class="progress">
+                <div class="progress-bar bg-success" role="progressbar" style="width: ${contribution}%"></div>
+            </div>
+        `;
+        topBowlersList.appendChild(playerCard);
+    });
+
+    // Recent form
+    const recentFormList = document.getElementById('recentFormList');
+    recentFormList.innerHTML = '';
+    team.recent_form.forEach(match => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${match.date}</td>
+            <td>${match.opponent}</td>
+            <td>${match.venue}</td>
+            <td class="${match.result === 'won' ? 'text-success' : 'text-danger'}">${match.result}</td>
+            <td>${match.margin}</td>
+        `;
+        recentFormList.appendChild(row);
+    });
+
+    // Create charts with mock data since actual distribution data is missing
+    createCharts(team);
+}
+
+function createCharts(team) {
+    // Create mock distribution data since it's not in the JSON
+    const mockRunDistribution = [40, 30, 20, 10]; // Singles, Boundaries, Sixes, Extras
+    const mockWicketDistribution = [25, 15, 35, 10, 10, 5]; // Bowled, LBW, Caught, Stumped, Run Out, Others
+    
+    // Run distribution chart
+    const runCtx = document.getElementById('runDistributionChart').getContext('2d');
+    new Chart(runCtx, {
+        type: 'pie',
+        data: {
+            labels: ['Singles', 'Boundaries', 'Sixes', 'Extras'],
+            datasets: [{
+                data: mockRunDistribution,
+                backgroundColor: [
+                    'rgba(54, 162, 235, 0.7)',
+                    'rgba(255, 99, 132, 0.7)',
+                    'rgba(255, 206, 86, 0.7)',
+                    'rgba(75, 192, 192, 0.7)'
+                ]
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false
+        }
+    });
+
+    // Wicket distribution chart
+    const wicketCtx = document.getElementById('wicketDistributionChart').getContext('2d');
+    new Chart(wicketCtx, {
+        type: 'pie',
+        data: {
+            labels: ['Bowled', 'LBW', 'Caught', 'Stumped', 'Run Out', 'Others'],
+            datasets: [{
+                data: mockWicketDistribution,
+                backgroundColor: [
+                    'rgba(54, 162, 235, 0.7)',
+                    'rgba(255, 99, 132, 0.7)',
+                    'rgba(255, 206, 86, 0.7)',
+                    'rgba(75, 192, 192, 0.7)',
+                    'rgba(153, 102, 255, 0.7)',
+                    'rgba(255, 159, 64, 0.7)'
+                ]
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false
+        }
+    });
+
+    // Win/Loss chart
+    const winLossCtx = document.getElementById('winLossChart').getContext('2d');
+    new Chart(winLossCtx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Won', 'Lost', 'No Result'],
+            datasets: [{
+                data: [
+                    team.matches_won, 
+                    team.matches_played - team.matches_won, 
+                    0 // No data for no_result in the provided JSON
+                ],
+                backgroundColor: [
+                    'rgba(75, 192, 192, 0.7)',
+                    'rgba(255, 99, 132, 0.7)',
+                    'rgba(255, 206, 86, 0.7)'
+                ]
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false
+        }
+    });
+
+    // Performance chart with mock data
+    const perfCtx = document.getElementById('performanceChart').getContext('2d');
+    const mockPerformanceMetrics = [8, 7, 6, 8, 9]; // Batting, Bowling, Fielding, Experience, Form
+    
+    new Chart(perfCtx, {
+        type: 'radar',
+        data: {
+            labels: ['Batting', 'Bowling', 'Fielding', 'Experience', 'Form'],
+            datasets: [{
+                label: team.name,
+                data: mockPerformanceMetrics,
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgb(54, 162, 235)',
+                pointBackgroundColor: 'rgb(54, 162, 235)',
+                pointHoverBackgroundColor: '#fff',
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scale: {
+                ticks: {
+                    beginAtZero: true,
+                    max: 10
+                }
+            }
+        }
+    });
+
+    // Form trend chart with data from recent_form
+    const formCtx = document.getElementById('formTrendChart').getContext('2d');
+    
+    // Extract labels and data from recent_form
+    const formLabels = team.recent_form.map(match => match.date);
+    // Create a performance index: 10 for win, 3 for loss
+    const formData = team.recent_form.map(match => match.result === 'won' ? 10 : 3);
+    
+    new Chart(formCtx, {
+        type: 'line',
+        data: {
+            labels: formLabels,
+            datasets: [{
+                label: 'Performance Index',
+                data: formData,
+                borderColor: 'rgb(75, 192, 192)',
+                tension: 0.1,
+                fill: false
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false
+        }
+    });
+}
+            </script>
+    </body>
+</html>

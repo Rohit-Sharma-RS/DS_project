@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Analytics Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --ipl-blue: #004ba0;
+            --ipl-light-blue: #0078d7;
+            --ipl-orange: #ff9933;
+            --ipl-red: #d32f2f;
+            --ipl-green: #1ea44f;
+            --ipl-purple: #7b1fa2;
+            --bg-color: #f8f9fa;
+        }
+        
+        body {
+            background-color: var(--bg-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Header styling to match IPL Predictor */
+        .header {
+            position: relative;
+            height: 300px;
+            background-image: url('/api/placeholder/1200/300');
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 75, 160, 0.9) 0%, rgba(255, 153, 51, 0.8) 100%);
+        }
+        
+        .header .container {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 80px 20px;
+            color: white;
+        }
+        
+        .header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        /* Navigation buttons styling */
+        .container .row.mb-4 {
+            margin-bottom: 30px;
+        }
+        
+        .container .row.mb-4 .btn-primary {
+            background: linear-gradient(135deg, var(--ipl-blue) 0%, var(--ipl-light-blue) 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 15px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .container .row.mb-4 .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 75, 160, 0.4);
+        }
+        
+        /* Different colors for different buttons */
+        .container .row.mb-4 .col-md-4:nth-child(1) .btn-primary {
+            background: linear-gradient(135deg, var(--ipl-blue) 0%, var(--ipl-light-blue) 100%);
+        }
+        
+        .container .row.mb-4 .col-md-4:nth-child(2) .btn-primary {
+            background: linear-gradient(135deg, var(--ipl-purple) 0%, var(--ipl-blue) 100%);
+        }
+        
+        .container .row.mb-4 .col-md-4:nth-child(3) .btn-primary {
+            background: linear-gradient(135deg, var(--ipl-orange) 0%, var(--ipl-red) 100%);
+        }
+        
+        /* Card styling */
+        .card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-header {
+            background: linear-gradient(135deg, var(--ipl-blue) 0%, var(--ipl-light-blue) 100%);
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            font-weight: 600;
+        }
+        
+        .card-body {
+            padding: 20px;
+        }
+        
+        /* Form elements */
+        #playerSelect, #teamSelect {
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 20px;
+            width: 100%;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            font-size: 1rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        
+        #playerSelect:focus, #teamSelect:focus {
+            border-color: var(--ipl-blue);
+            box-shadow: 0 0 0 3px rgba(0, 75, 160, 0.25);
+            outline: none;
+        }
+        
+        /* Stat cards */
+        .stat-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--ipl-blue);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-3px);
+        }
+        .ipl-header {
+            position: relative;
+            height: 300px;
+            background-image: url('/api/placeholder/1200/300');
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+        }
+        
+        .stat-value {
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--ipl-blue);
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: #6c757d;
+            margin-top: 5px;
+        }
+        
+        /* Tab styling */
+        .nav-tabs {
+            border-bottom: none;
+            gap: 5px;
+        }
+        
+        .nav-tabs .nav-link {
+            background-color: #f1f3f5;
+            color: #495057;
+            border: none;
+            border-radius: 8px 8px 0 0;
+            padding: 12px 20px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        
+        .nav-tabs .nav-link:hover {
+            background-color: #e9ecef;
+        }
+        
+        .nav-tabs .nav-link.active {
+            background: linear-gradient(135deg, var(--ipl-blue) 0%, var(--ipl-light-blue) 100%);
+            color: white;
+            border: none;
+        }
+        
+        .tab-content {
+            padding: 25px;
+            background-color: white;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Tables */
+        .table-striped tbody tr:nth-of-type(odd) {
+            background-color: rgba(0, 75, 160, 0.05);
+        }
+        
+        .table th {
+            font-weight: 600;
+            color: var(--ipl-blue);
+        }
+        
+        /* Charts */
+        .chart-container {
+            position: relative;
+            height: 300px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            background-color: white;
+            padding: 15px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--ipl-blue) 0%, var(--ipl-light-blue) 100%);
+            color: white;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+        
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .header {
+                height: 200px;
+            }
+            
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .stat-card {
+                margin-bottom: 10px;
+            }
+            
+            .chart-container {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1>Player Analysis</h1>
+            <p>Comprehensive statistics and performance metrics for currently active players</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <a href="/home" class="btn btn-primary w-100">Home</a>
+            </div>
+            <div class="col-md-4">
+                <a href="/playeranalyzer" class="btn btn-primary w-100">Player Analysis</a>
+            </div>
+            <div class="col-md-4">
+                <a href="/teamanalyzer" class="btn btn-primary w-100">Team Analysis</a>
+            </div>
+        </div>
+
+        <!-- Player Analysis Section -->
+        <div id="playerAnalysisSection">
+            <h2 class="text-center mb-4">Player Analysis</h2>
+            
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="form-group">
+                        <label for="playerSelect">Select Player:</label>
+                        <select id="playerSelect" class="form-control">
+                            <option value="">Select a player</option>
+                            {% for player in players %}
+                            <option value="{{ player }}">{{ player }}</option>
+                            {% endfor %}  
+                           </select>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="playerDetails" class="mt-4" style="display: none;">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="mb-0">Player Info</h5>
+                            </div>
+                            <div class="card-body">
+                                <h4 id="playerName"></h4>
+                                <p><strong>Role:</strong> <span id="playerRole"></span></p>
+                                <p><strong>Status:</strong> <span id="playerStatus"></span></p>
+                                <p><strong>Form:</strong> <span id="playerForm"></span></p>
+                                <p><strong>Last Played:</strong> <span id="playerLastPlayed"></span></p>
+                                <p><strong>Matches Played:</strong> <span id="playerMatches"></span></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="mb-0">Performance Summary</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="stat-card">
+                                            <div class="stat-value" id="totalRuns">0</div>
+                                            <div class="stat-label">Total Runs</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="stat-card">
+                                            <div class="stat-value" id="totalWickets">0</div>
+                                            <div class="stat-label">Total Wickets</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="stat-card">
+                                            <div class="stat-value" id="battingStrikeRate">0</div>
+                                            <div class="stat-label">Batting Strike Rate</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="stat-card">
+                                            <div class="stat-value" id="bowlingEconomy">0</div>
+                                            <div class="stat-label">Bowling Economy</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-4">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <ul class="nav nav-tabs card-header-tabs" id="playerTabs" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="batting-tab" data-bs-toggle="tab" href="#batting" role="tab">Batting</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="bowling-tab" data-bs-toggle="tab" href="#bowling" role="tab">Bowling</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="recent-form-tab" data-bs-toggle="tab" href="#recent-form" role="tab">Recent Form</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="visualization-tab" data-bs-toggle="tab" href="#visualization" role="tab">Visualization</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="card-body">
+                                <div class="tab-content" id="playerTabContent">
+                                    <div class="tab-pane fade show active" id="batting" role="tabpanel">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h5>Batting Statistics</h5>
+                                                <table class="table table-striped">
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>Innings</th>
+                                                            <td id="battingInnings">0</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Runs</th>
+                                                            <td id="battingRuns">0</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Balls Faced</th>
+                                                            <td id="battingBallsFaced">0</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Average</th>
+                                                            <td id="battingAverage">0</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Strike Rate</th>
+                                                            <td id="battingStrikeRateDetail">0</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <h5>Batting Achievements</h5>
+                                                <table class="table table-striped">
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>Highest Score</th>
+                                                            <td id="battingHighestScore">0</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>50s</th>
+                                                            <td id="battingFifties">0</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>100s</th>
+                                                            <td id="battingHundreds">0</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Fours</th>
+                                                            <td id="battingFours">0</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Sixes</th>
+                                                            <td id="battingSixes">0</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="bowling" role="tabpanel">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h5>Bowling Statistics</h5>
+                                                <table class="table table-striped">
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>Innings</th>
+                                                            <td id="bowlingInnings">0</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Wickets</th>
+                                                            <td id="bowlingWickets">0</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Balls Bowled</th>
+                                                            <td id="bowlingBallsBowled">0</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Runs Conceded</th>
+                                                            <td id="bowlingRunsConceded">0</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Economy</th>
+                                                            <td id="bowlingEconomyDetail">0</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <h5>Bowling Achievements</h5>
+                                                <table class="table table-striped">
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>Average</th>
+                                                            <td id="bowlingAverage">0</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Best Figures</th>
+                                                            <td id="bowlingBestFigures">0/0</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="recent-form" role="tabpanel">
+                                        <h5>Recent Performances</h5>
+                                        <div class="table-responsive">
+                                            <table class="table table-striped" id="recentPerformancesTable">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Date</th>
+                                                        <th>Match ID</th>
+                                                        <th>Batting (Runs/Balls)</th>
+                                                        <th>Bowling (Wickets/Runs)</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="recentPerformancesList">
+                                                    <!-- Will be populated by JavaScript -->
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="visualization" role="tabpanel">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="chart-container">
+                                                    <canvas id="battingChart"></canvas>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="chart-container">
+                                                    <canvas id="bowlingChart"></canvas>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-4">
+                                            <div class="col-md-12">
+                                                <div class="chart-container">
+                                                    <canvas id="recentFormChart"></canvas>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <div class="container">
+            <p>Cricket Analytics Dashboard &copy; 2025</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Load player data
+        let playerData = {};
+        const selectedPlayer = document.getElementById('playerSelect')
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const playerSelect = document.getElementById('playerSelect');
+        
+            // Fetch player data from JSON file
+            playerSelect.addEventListener('change', function() {
+                const selectedPlayer = this.value;
+                if (selectedPlayer) {
+                    fetch(`/api/player-stats/${selectedPlayer}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            playerData = data;
+                            displayPlayerDetails(); // No parameter needed
+                        })
+                        .catch(error => console.error('Error loading player data:', error));
+                } else {
+                    document.getElementById('playerDetails').style.display = 'none';
+                }
+            });
+        });
+        
+        function populatePlayerDropdown() {
+            const playerSelect = document.getElementById('playerSelect');
+            const playerNames = Object.keys(playerData).sort();
+            
+            playerNames.forEach(player => {
+                const option = document.createElement('option');
+                option.value = player;
+                option.textContent = player;
+                playerSelect.appendChild(option);
+            });
+        }
+        
+        function displayPlayerDetails(playerName) {
+            const player = playerData;
+            if (!player) return;
+            
+            // Display player details section
+            document.getElementById('playerDetails').style.display = 'block';
+            
+            // Basic info
+            document.getElementById('playerName').textContent = player.name;
+            document.getElementById('playerRole').textContent = player.role;
+            document.getElementById('playerStatus').textContent = player.status;
+            document.getElementById('playerForm').textContent = player.form;
+            document.getElementById('playerLastPlayed').textContent = player.last_played || 'Unknown';
+            document.getElementById('playerMatches').textContent = player.matches_played;
+            
+            // Performance summary
+            document.getElementById('totalRuns').textContent = player.batting_stats.runs;
+            document.getElementById('totalWickets').textContent = player.bowling_stats.wickets;
+            document.getElementById('battingStrikeRate').textContent = player.batting_stats.strike_rate;
+            document.getElementById('bowlingEconomy').textContent = player.bowling_stats.economy;
+            
+            // Batting details
+            document.getElementById('battingInnings').textContent = player.batting_stats.innings;
+            document.getElementById('battingRuns').textContent = player.batting_stats.runs;
+            document.getElementById('battingBallsFaced').textContent = player.batting_stats.balls_faced;
+            document.getElementById('battingAverage').textContent = player.batting_stats.average;
+            document.getElementById('battingStrikeRateDetail').textContent = player.batting_stats.strike_rate;
+            document.getElementById('battingHighestScore').textContent = player.batting_stats.highest_score;
+            document.getElementById('battingFifties').textContent = player.batting_stats.fifties;
+            document.getElementById('battingHundreds').textContent = player.batting_stats.hundreds;
+            document.getElementById('battingFours').textContent = player.batting_stats.fours;
+            document.getElementById('battingSixes').textContent = player.batting_stats.sixes;
+            
+            document.getElementById('bowlingInnings').textContent = player.bowling_stats.innings;
+            document.getElementById('bowlingWickets').textContent = player.bowling_stats.wickets;
+            document.getElementById('bowlingBallsBowled').textContent = player.bowling_stats.balls_bowled;
+            document.getElementById('bowlingRunsConceded').textContent = player.bowling_stats.runs_conceded;
+            document.getElementById('bowlingEconomyDetail').textContent = player.bowling_stats.economy;
+            document.getElementById('bowlingAverage').textContent = player.bowling_stats.average;
+            document.getElementById('bowlingBestFigures').textContent = player.bowling_stats.best_figures;
+            
+            // Recent performances
+            const recentPerformancesList = document.getElementById('recentPerformancesList');
+            recentPerformancesList.innerHTML = '';
+            
+            player.recent_performances.forEach(performance => {
+                const row = document.createElement('tr');
+                
+                const dateCell = document.createElement('td');
+                dateCell.textContent = performance.date;
+                row.appendChild(dateCell);
+                
+                const matchCell = document.createElement('td');
+                matchCell.textContent = performance.match_id;
+                row.appendChild(matchCell);
+                
+                const battingCell = document.createElement('td');
+                battingCell.textContent = `${performance.batting.runs}/${performance.batting.balls}`;
+                row.appendChild(battingCell);
+                
+                const bowlingCell = document.createElement('td');
+                bowlingCell.textContent = `${performance.bowling.wickets}/${performance.bowling.runs_conceded} (${performance.bowling.balls} balls)`;
+                row.appendChild(bowlingCell);
+                
+                recentPerformancesList.appendChild(row);
+            });
+            
+            // Generate charts
+            generateBattingChart(player);
+            generateBowlingChart(player);
+            generateRecentFormChart(player);
+        }
+        
+        function generateBattingChart(player) {
+            const ctx = document.getElementById('battingChart').getContext('2d');
+            
+            // Check if there's an existing chart and destroy it
+            if (window.battingChart instanceof Chart) {
+                window.battingChart.destroy();
+            }
+            
+            window.battingChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Runs', 'Balls Faced', 'Strike Rate'],
+                    datasets: [{
+                        label: 'Batting Performance',
+                        data: [
+                            player.batting_stats.runs,
+                            player.batting_stats.balls_faced,
+                            player.batting_stats.strike_rate
+                        ],
+                        backgroundColor: [
+                            'rgba(54, 162, 235, 0.7)',
+                            'rgba(75, 192, 192, 0.7)',
+                            'rgba(153, 102, 255, 0.7)'
+                        ],
+                        borderColor: [
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    },
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Batting Performance Overview'
+                        }
+                    }
+                }
+            });
+        }
+        
+        function generateBowlingChart(player) {
+            const ctx = document.getElementById('bowlingChart').getContext('2d');
+            
+            // Check if there's an existing chart and destroy it
+            if (window.bowlingChart instanceof Chart) {
+                window.bowlingChart.destroy();
+            }
+            
+            window.bowlingChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Wickets', 'Balls Bowled', 'Economy'],
+                    datasets: [{
+                        label: 'Bowling Performance',
+                        data: [
+                            player.bowling_stats.wickets,
+                            player.bowling_stats.balls_bowled,
+                            player.bowling_stats.economy
+                        ],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.7)',
+                            'rgba(255, 159, 64, 0.7)',
+                            'rgba(255, 205, 86, 0.7)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(255, 159, 64, 1)',
+                            'rgba(255, 205, 86, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    },
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Bowling Performance Overview'
+                        }
+                    }
+                }
+            });
+        }
+        
+        function generateRecentFormChart(player) {
+            const ctx = document.getElementById('recentFormChart').getContext('2d');
+            
+            // Prepare data for recent performances
+            const dates = [];
+            const battingRuns = [];
+            const bowlingWickets = [];
+            
+            player.recent_performances.forEach(performance => {
+                dates.push(performance.date);
+                battingRuns.push(performance.batting.runs);
+                bowlingWickets.push(performance.bowling.wickets);
+            });
+            
+            // Check if there's an existing chart and destroy it
+            if (window.recentFormChart instanceof Chart) {
+                window.recentFormChart.destroy();
+            }
+            
+            window.recentFormChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: dates,
+                    datasets: [
+                        {
+                            label: 'Runs',
+                            data: battingRuns,
+                            borderColor: 'rgba(54, 162, 235, 1)',
+                            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                            yAxisID: 'y',
+                            tension: 0.1
+                        },
+                        {
+                            label: 'Wickets',
+                            data: bowlingWickets,
+                            borderColor: 'rgba(255, 99, 132, 1)',
+                            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                            yAxisID: 'y1',
+                            tension: 0.1
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            type: 'linear',
+                            display: true,
+                            position: 'left',
+                            title: {
+                                display: true,
+                                text: 'Runs'
+                            }
+                        },
+                        y1: {
+                            type: 'linear',
+                            display: true,
+                            position: 'right',
+                            title: {
+                                display: true,
+                                text: 'Wickets'
+                            },
+                            grid: {
+                                drawOnChartArea: false
+                            }
+                        }
+                    },
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Recent Form'
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

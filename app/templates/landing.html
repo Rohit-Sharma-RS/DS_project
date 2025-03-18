@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL Predictor - Forecast Match Results with AI</title>
+    <style>
+        :root {
+            --primary: #0078d7;
+            --secondary: #ff9933;
+            --accent: #138808;
+            --light: #f8f9fa;
+            --dark: #1e2a3a;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .btn {
+            background-color: var(--secondary);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #e68a00;
+            transform: translateY(-2px);
+        }
+        
+        .hero {
+            background: url('/api/placeholder/1000/600') center/cover;
+            height: 70vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-content {
+            position: relative;
+            color: white;
+            text-align: center;
+            max-width: 800px;
+            padding: 2rem;
+        }
+        
+        .hero-content h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .features {
+            padding: 5rem 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .white-head{
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .white-head h2 {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .white-head p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin: 0 auto;
+        } 
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Make text visible on dark backgrounds */
+        .stats .section-title p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background-color: var(--light);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .predictor-demo {
+            padding: 5rem 0;
+            background-color: #f3f4f6;
+        }
+        
+        .demo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .teams-selection {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+        
+        .team-select {
+            flex: 1;
+            margin: 0 1rem;
+        }
+        
+        select, input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            margin-top: 0.5rem;
+        }
+        
+        .prediction-result {
+            background-color: #f3f4f6;
+            width: 100%;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .prediction-percentage {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 1rem 0;
+        }
+        
+        .stats {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 8px;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+        
+        .testimonials {
+            padding: 5rem 0;
+            background-color: white;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .testimonial-card {
+            background-color: var(--light);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 1rem;
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+        
+        .author-info p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .cta {
+            padding: 5rem 0;
+            background-color: var(--light);
+            text-align: center;
+        }
+        
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .cta-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .cta-content p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #666;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .social-icons {
+            display: flex;
+            margin-top: 1rem;
+        }
+        
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            margin-right: 1rem;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-content h2 {
+                font-size: 2rem;
+            }
+            
+            .teams-selection {
+                flex-direction: column;
+            }
+            
+            .team-select {
+                margin: 0.5rem 0;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animated {
+          animation: fadeIn 1s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="../../static/logo/ipl.png" alt="IPL Predictor Logo">
+                    <h1>IPL Predictor</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="/home">Try It</a></li>
+                    <li><a href="#stats">Stats</a></li>
+                    <!--<li><a href="#testimonials">Testimonials</a></li>-->
+                </ul>
+                <button class="btn">Sign Up Free</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content animated">
+            <h2>Predict IPL Match Results with AI</h2>
+            <p>Our advanced machine learning algorithm predicts match outcomes with around 70% accuracy. Stay ahead of the game!</p>
+            <a href="/home" class="btn">Try Predictor Now</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Powerful Features</h2>
+                <p>Our IPL Predictor uses advanced analytics and machine learning to give you the most accurate match predictions</p>
+            </div>
+            <div class="feature-grid">
+                <div class="feature-card animated">
+                    <div class="feature-icon">📊</div>
+                    <h3>Data-Driven Predictions</h3>
+                    <p>Leveraging historical match data, player performance, and pitch conditions to predict outcomes.</p>
+                </div>
+                <div class="feature-card animated">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Venue, Player and Team Analysis</h3>
+                    <p>Comprehensive statistics and performance metrics for currently active players and teams</p>
+                </div>
+                <div class="feature-card animated">
+                    <div class="feature-icon">📱</div>
+                    <h3>Mobile Friendly</h3>
+                    <p>Access predictions on any device, anytime, anywhere during the IPL season.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Predictor Demo Section -->
+    <section class="predictor-demo" id="predictor">
+        <div class="container">
+            <div class="section-title">
+                <h2>Try Our Predictor</h2>
+                <p>Select two teams to see our prediction for their next match</p>
+            </div>
+            <div class="demo-container animated">
+                <div class="teams-selection">
+                    <div class="team-select">
+                        <label for="team1">Team 1</label>
+                        <select id="team1">
+                            <option value="">Select Team</option>
+                            <option value="csk">Chennai Super Kings</option>
+                            <option value="mi">Mumbai Indians</option>
+                            <option value="rcb">Royal Challengers Bangalore</option>
+                            <option value="kkr">Kolkata Knight Riders</option>
+                            <option value="dc">Delhi Capitals</option>
+                            <option value="srh">Sunrisers Hyderabad</option>
+                            <option value="rr">Rajasthan Royals</option>
+                            <option value="pbks">Punjab Kings</option>
+                            <option value="gt">Gujarat Titans</option>
+                            <option value="lsg">Lucknow Super Giants</option>
+                        </select>
+                    </div>
+                    <div class="team-select">
+                        <label for="team2">Team 2</label>
+                        <select id="team2">
+                            <option value="">Select Team</option>
+                            <option value="csk">Chennai Super Kings</option>
+                            <option value="mi">Mumbai Indians</option>
+                            <option value="rcb">Royal Challengers Bangalore</option>
+                            <option value="kkr">Kolkata Knight Riders</option>
+                            <option value="dc">Delhi Capitals</option>
+                            <option value="srh">Sunrisers Hyderabad</option>
+                            <option value="rr">Rajasthan Royals</option>
+                            <option value="pbks">Punjab Kings</option>
+                            <option value="gt">Gujarat Titans</option>
+                            <option value="lsg">Lucknow Super Giants</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="btn" id="predict-btn">Get Prediction</button>
+                <div class="prediction-result" id="prediction-result">
+                    <h3>Match Prediction</h3>
+                    <div class="prediction-percentage">Select teams to see prediction</div>
+                    <p>Our AI analyzes team performance, head-to-head history, venue stats, current form, and player availability to generate this prediction.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats" id="stats">
+        <div class="container">
+            <div class="white-head">
+                <h2 class="white-head">Our Prediction Stats</h2>
+                <p>We take pride in our accurate predictions throughout IPL seasons</p>
+            </div>
+            <div class="stats-grid animated">
+                <div class="stat-card">
+                    <div class="stat-number">71%</div>
+                    <p>Prediction Accuracy</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">17</div>
+                    <p>Years of Data Analyzed Ball by Ball</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">1000+</div>
+                    <p>Matches Analyzed</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">700+</div>
+                    <p>Players and contributions over the matches Analyzed</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section 
+     <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Users Say</h2>
+                <p>Don't just take our word for it - hear from cricket enthusiasts who use our platform</p>
+            </div>
+            <div class="testimonial-grid animated">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"IPL Predictor has transformed how I watch matches. I've won several fantasy leagues thanks to the insights provided!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="/api/placeholder/50/50" alt="User Avatar">
+                        </div>
+                        <div class="author-info">
+                            <h4>Rahul Sharma</h4>
+                            <p>Cricket Enthusiast</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"The accuracy of predictions is remarkable. I've been following IPL for years, and this tool gives insights even seasoned fans might miss."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="/api/placeholder/50/50" alt="User Avatar">
+                        </div>
+                        <div class="author-info">
+                            <h4>Priya Patel</h4>
+                            <p>Fantasy League Player</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Clean interface, fast predictions, and surprisingly accurate. This has become my go-to before every IPL match."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="/api/placeholder/50/50" alt="User Avatar">
+                        </div>
+                        <div class="author-info">
+                            <h4>Arjun Kumar</h4>
+                            <p>Sports Analyst</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content animated">
+                <h2>Ready to Enhance Your IPL Experience?</h2>
+                <p>Join thousands of cricket fans who are already using our predictor to stay ahead of the game. Sign up today - it's free!</p>
+                <button class="btn">Sign Up Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>IPL Predictor</h3>
+                    <p>Advanced AI-powered cricket match prediction platform providing accurate forecasts for IPL matches.</p>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/rohit-sharma-b26200282/"><span>in</span></a>
+                        <a href="https://github.com/Rohit-Sharma-RS"><span>gh</span></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="/home">Try Predictor</a></li>
+                        <li><a href="#stats">Our Stats</a></li>
+                        <!--<li><a href="#testimonials">Testimonials</a></li>-->
+                    </ul>
+                </div>
+                <!--<div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">API Documentation</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">IPL News</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>-->
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li>Email: rohitrnc5458@gmail.com</li>
+                        <li>Phone: +91 84049 84747</li>
+                        <li>Address: Kalindi, Kolkata, India</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 IPL Predictor. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple script to demonstrate the prediction functionality
+        document.getElementById('predict-btn').addEventListener('click', function() {
+            const team1 = document.getElementById('team1').value;
+            const team2 = document.getElementById('team2').value;
+            
+            if (team1 && team2 && team1 !== team2) {
+                // In a real app, this would make an API call to your FastAPI backend
+                // For demo purposes, we'll just show a random prediction
+                const randomPrediction = Math.floor(Math.random() * 30) + 50; // Random number between 50-80
+                const predictionElement = document.getElementById('prediction-result');
+                
+                const team1Name = document.getElementById('team1').options[document.getElementById('team1').selectedIndex].text;
+                const team2Name = document.getElementById('team2').options[document.getElementById('team2').selectedIndex].text;
+                
+                predictionElement.querySelector('.prediction-percentage').innerHTML = 
+                    `${team1Name}: <strong>${randomPrediction}%</strong> vs ${team2Name}: <strong>${100-randomPrediction}%</strong>`;
+            } else {
+                alert('Please select two different teams');
+            }
+        });
+    </script>
+</body>
+</html>

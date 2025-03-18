@@ -1,6 +1,8 @@
-from fastapi import FastAPI, Request, Form
-from fastapi.responses import HTMLResponse, JSONResponse
+from fastapi import FastAPI, Request, Form,APIRouter, HTTPException, Response
+from fastapi.responses import HTMLResponse, JSONResponse, FileResponse
 from fastapi.templating import Jinja2Templates
+from PIL import Image
+import io
 from fastapi.staticfiles import StaticFiles
 import json
 import pandas as pd
@@ -14,17 +16,17 @@ app = FastAPI(title="IPL Match Predictor")
 templates = Jinja2Templates(directory=r"D:\data-science-end\app\templates")
 
 # Mount static files directory (for CSS, JS, etc.)
-# app.mount("/static", StaticFiles(directory="static"), name="static")
+app.mount("/static", StaticFiles(directory=r"D:\data-science-end\app\static"), name="static")
 
 # Load team and player data
-with open(r"D:\data-science-end\notebook\processed_player_final.json", "r") as f:
+with open(r"D:\data-science-end\notebook\data\processed_player_final.json", "r") as f:
     teams_data = json.load(f)
 
 # Load head-to-head data
 head_to_head_df = pd.read_csv(r"D:\data-science-end\notebook\data\head_to_head_dataset.csv")
 
 # Load ML models and scaler
-model = joblib.load(r"D:\data-science-end\app\new_model.joblib")
+model = joblib.load(r"D:\data-science-end\app\model.joblib")
 scaler = joblib.load(r"D:\data-science-end\app\scaler.joblib")
 
 # Get all team names for one-hot encoding
@@ -56,6 +58,42 @@ venues = [
     "Ekana Cricket Stadium",
     "Barsapara Cricket Stadium"
 ]
+
+venue_stats = {}
+
+player_stats = {}
+team_stats = {}
+
+def load_player_stats():
+    global player_stats
+    try:
+        with open(r"D:\data-science-end\notebook\data\player_analysis.json", "r") as f:
+            player_stats = json.load(f)
+        print("Player stats loaded successfully")
+    except Exception as e:
+        print(f"Error loading player stats: {e}")
+
+def load_team_stats():
+    global team_stats
+    try:
+        with open(r"D:\data-science-end\notebook\data\team_analysis.json", "r") as f:
+            team_stats = json.load(f)
+        print("Team stats loaded successfully")
+    except Exception as e:
+        print(f"Error loading team stats: {e}")
+
+def load_venue_stats():
+    global venue_stats
+    try:
+        # Load from wherever you have your venue data stored
+        # For example, from a JSON file:
+        with open(r"D:\data-science-end\notebook\data\venue_stats.json", "r") as f:
+            venue_stats = json.load(f)
+        print("Venue stats loaded successfully")
+    except Exception as e:
+        print(f"Error loading venue stats: {e}")
+
+load_venue_stats()
 
 def align_feature_names(df_encoded):
     """Ensure feature names match exactly what the model was trained on"""
@@ -104,7 +142,11 @@ def align_feature_names(df_encoded):
     
     return df_encoded
 
-@app.get("/", response_class=HTMLResponse)
+@app.get("/")
+async def get_landing_page(request: Request):
+    return templates.TemplateResponse("landing.html", {"request": request})
+
+@app.get("/home", response_class=HTMLResponse)
 async def index(request: Request):
     # Get list of team names
     team_names = list(teams_data["teams"].keys())
@@ -113,6 +155,55 @@ async def index(request: Request):
         "index.html", 
         {"request": request, "team_names": team_names, "venues": venues}
     )
+@app.get("/playeranalyzer/", response_class=HTMLResponse)
+async def playeranalyzer(request: Request):
+    """
+    Render the player analyzer page
+    """
+    # Load player stats
+    load_player_stats()
+    
+    return templates.TemplateResponse(
+        "playeranalyzer.html",
+        {"request": request, "players": list(player_stats.keys())}
+    )
+
+@app.get("/api/placeholder/{width}/{height}")
+async def placeholder_image(width: int, height: int):
+    # Create a simple placeholder image with the specified dimensions
+    img = Image.new('RGB', (width, height), color=(200, 200, 200))
+    img_byte_arr = io.BytesIO()
+    img.save(img_byte_arr, format='PNG')
+    img_byte_arr.seek(0)
+    
+    return Response(content=img_byte_arr.getvalue(), media_type="image/png")
+
+@app.get("/teamanalyzer/", response_class=HTMLResponse)
+async def teamanalyzer(request: Request):
+    """
+    Render the team analyzer page
+    """
+    # Load team stats
+    load_team_stats()
+    
+    return templates.TemplateResponse(
+        "teamanalyzer.html",
+        {"request": request, "teams": list(team_stats.keys())}
+    )
+
+
+@app.get("/venueanalyzer/", response_class=HTMLResponse)
+async def venueanalyzer(request: Request):
+    """
+    Render the venue analyzer page
+    """
+    venues = list(venue_stats.keys())   
+    
+    return templates.TemplateResponse(
+        "venueanalyzer.html",
+        {"request": request, "venues": venues}
+    )
+
 
 @app.get("/get_players/{team_name}")
 async def get_players(team_name: str):
@@ -125,6 +216,35 @@ async def get_players(team_name: str):
         return {"players": players_info}
     return {"players": []}
 
+@app.get("/api/venue-stats/{venue_name}")
+async def get_venue_stats(venue_name: str):
+    """Get statistics for a specific venue"""
+    if venue_name in venue_stats:
+        return venue_stats[venue_name]
+    else:
+        raise HTTPException(status_code=404, detail="Venue not found")
+    
+@app.get("/api/venues")
+async def get_venues():
+    """Get list of available venues"""
+    return {"venues": list(venue_stats.keys())}
+
+@app.get("/api/player-stats/{player_name}")
+async def get_player_stats(player_name: str):
+    """Get statistics for a specific player"""
+    if player_name in player_stats:
+        return player_stats[player_name]
+    else:
+        raise HTTPException(status_code=404, detail="Player not found")
+
+@app.get("/api/teams-stats/{team_name}")
+async def get_team_stats(team_name: str):
+    """Get statistics for a specific team"""
+    if team_name in team_stats:
+        return team_stats[team_name]
+    else:
+        raise HTTPException(status_code=404, detail="Team not found")
+    
 @app.get("/get_head_to_head/{team1}/{team2}")
 async def get_head_to_head(team1: str, team2: str):
     """Get head-to-head statistics for two teams"""
