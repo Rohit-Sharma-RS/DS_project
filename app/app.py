@@ -13,21 +13,18 @@ import uvicorn
 
 app = FastAPI(title="IPL Match Predictor")
 
-templates = Jinja2Templates(directory=r"D:\data-science-end\app\templates")
+templates = Jinja2Templates(directory=r".\app\templates")
 
-# Mount static files directory (for CSS, JS, etc.)
-app.mount("/static", StaticFiles(directory=r"D:\data-science-end\app\static"), name="static")
+app.mount("/static", StaticFiles(directory=r".\app\static"), name="static")
 
-# Load team and player data
-with open(r"D:\data-science-end\notebook\data\processed_player_final.json", "r") as f:
+with open(r"notebook\data\processed_player_final.json", "r") as f:
     teams_data = json.load(f)
 
-# Load head-to-head data
-head_to_head_df = pd.read_csv(r"D:\data-science-end\notebook\data\head_to_head_dataset.csv")
+head_to_head_df = pd.read_csv(r"notebook\data\head_to_head_dataset.csv")
 
 # Load ML models and scaler
-model = joblib.load(r"D:\data-science-end\app\model.joblib")
-scaler = joblib.load(r"D:\data-science-end\app\scaler.joblib")
+model = joblib.load(r".\app\model.joblib")
+scaler = joblib.load(r".\app\scaler.joblib")
 
 # Get all team names for one-hot encoding
 all_teams = list(teams_data["teams"].keys())
@@ -67,7 +64,7 @@ team_stats = {}
 def load_player_stats():
     global player_stats
     try:
-        with open(r"D:\data-science-end\notebook\data\player_analysis.json", "r") as f:
+        with open(r".\notebook\data\player_analysis.json", "r") as f:
             player_stats = json.load(f)
         print("Player stats loaded successfully")
     except Exception as e:
@@ -76,7 +73,7 @@ def load_player_stats():
 def load_team_stats():
     global team_stats
     try:
-        with open(r"D:\data-science-end\notebook\data\team_analysis.json", "r") as f:
+        with open(r".\notebook\data\team_analysis.json", "r") as f:
             team_stats = json.load(f)
         print("Team stats loaded successfully")
     except Exception as e:
@@ -87,7 +84,7 @@ def load_venue_stats():
     try:
         # Load from wherever you have your venue data stored
         # For example, from a JSON file:
-        with open(r"D:\data-science-end\notebook\data\venue_stats.json", "r") as f:
+        with open(r".\notebook\data\venue_stats.json", "r") as f:
             venue_stats = json.load(f)
         print("Venue stats loaded successfully")
     except Exception as e:
