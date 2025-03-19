@@ -1,0 +1,2282 @@
+{
+    "M Chinnaswamy Stadium": {
+        "total_matches": 94,
+        "highest_runs": 227.0,
+        "batting_first_wins": 44,
+        "bowling_first_wins": 50,
+        "batting_first_win_rate": 46.81,
+        "bowling_first_win_rate": 53.19,
+        "team_stats": {
+            "Kolkata Knight Riders": {
+                "matches_played": 15,
+                "matches_won": 10,
+                "win_rate": 66.67
+            },
+            "Delhi Capitals": {
+                "matches_played": 12,
+                "matches_won": 4,
+                "win_rate": 33.33
+            },
+            "Gujarat Titans": {
+                "matches_played": 5,
+                "matches_won": 2,
+                "win_rate": 40.0
+            },
+            "Chennai Super Kings": {
+                "matches_played": 11,
+                "matches_won": 6,
+                "win_rate": 54.55
+            },
+            "Mumbai Indians": {
+                "matches_played": 13,
+                "matches_won": 9,
+                "win_rate": 69.23
+            },
+            "Pune Warriors": {
+                "matches_played": 5,
+                "matches_won": 1,
+                "win_rate": 20.0
+            },
+            "Sunrisers Hyderabad": {
+                "matches_played": 12,
+                "matches_won": 4,
+                "win_rate": 33.33
+            },
+            "Royal Challengers Bangalore": {
+                "matches_played": 90,
+                "matches_won": 44,
+                "win_rate": 48.89
+            },
+            "Kochi Tuskers": {
+                "matches_played": 1,
+                "matches_won": 0,
+                "win_rate": 0.0
+            },
+            "Lucknow Super Giants": {
+                "matches_played": 2,
+                "matches_won": 2,
+                "win_rate": 100.0
+            },
+            "Rajasthan Royals": {
+                "matches_played": 9,
+                "matches_won": 4,
+                "win_rate": 44.44
+            },
+            "Punjab Kings": {
+                "matches_played": 13,
+                "matches_won": 5,
+                "win_rate": 38.46
+            }
+        },
+        "season_matches": {
+            "2007/08": 7,
+            "2009/10": 7,
+            "2011": 6,
+            "2012": 8,
+            "2013": 8,
+            "2014": 6,
+            "2015": 7,
+            "2016": 9,
+            "2017": 8,
+            "2018": 7,
+            "2019": 7,
+            "2023": 7,
+            "2024": 7
+        },
+        "city": "Bangalore"
+    },
+    "Punjab Cricket Association IS Bindra Stadium": {
+        "total_matches": 61,
+        "highest_runs": 258.0,
+        "batting_first_wins": 27,
+        "bowling_first_wins": 34,
+        "batting_first_win_rate": 44.26,
+        "bowling_first_win_rate": 55.74,
+        "team_stats": {
+            "Kolkata Knight Riders": {
+                "matches_played": 8,
+                "matches_won": 4,
+                "win_rate": 50.0
+            },
+            "Delhi Capitals": {
+                "matches_played": 7,
+                "matches_won": 1,
+                "win_rate": 14.29
+            },
+            "Gujarat Titans": {
+                "matches_played": 3,
+                "matches_won": 3,
+                "win_rate": 100.0
+            },
+            "Chennai Super Kings": {
+                "matches_played": 6,
+                "matches_won": 3,
+                "win_rate": 50.0
+            },
+            "Mumbai Indians": {
+                "matches_played": 9,
+                "matches_won": 5,
+                "win_rate": 55.56
+            },
+            "Pune Warriors": {
+                "matches_played": 4,
+                "matches_won": 1,
+                "win_rate": 25.0
+            },
+            "Sunrisers Hyderabad": {
+                "matches_played": 8,
+                "matches_won": 4,
+                "win_rate": 50.0
+            },
+            "Royal Challengers Bangalore": {
+                "matches_played": 8,
+                "matches_won": 5,
+                "win_rate": 62.5
+            },
+            "Lucknow Super Giants": {
+                "matches_played": 1,
+                "matches_won": 1,
+                "win_rate": 100.0
+            },
+            "Rajasthan Royals": {
+                "matches_played": 7,
+                "matches_won": 3,
+                "win_rate": 42.86
+            },
+            "Punjab Kings": {
+                "matches_played": 61,
+                "matches_won": 31,
+                "win_rate": 50.82
+            }
+        },
+        "season_matches": {
+            "2007/08": 7,
+            "2009/10": 5,
+            "2011": 4,
+            "2012": 6,
+            "2013": 6,
+            "2014": 3,
+            "2015": 4,
+            "2016": 7,
+            "2017": 4,
+            "2018": 3,
+            "2019": 7,
+            "2023": 5
+        },
+        "city": "Chandigarh"
+    },
+    "Arun Jaitley Stadium": {
+        "total_matches": 90,
+        "highest_runs": 232.0,
+        "batting_first_wins": 43,
+        "bowling_first_wins": 47,
+        "batting_first_win_rate": 47.78,
+        "bowling_first_win_rate": 52.22,
+        "team_stats": {
+            "Kolkata Knight Riders": {
+                "matches_played": 11,
+                "matches_won": 5,
+                "win_rate": 45.45
+            },
+            "Delhi Capitals": {
+                "matches_played": 82,
+                "matches_won": 37,
+                "win_rate": 45.12
+            },
+            "Gujarat Titans": {
+                "matches_played": 5,
+                "matches_won": 2,
+                "win_rate": 40.0
+            },
+            "Chennai Super Kings": {
+                "matches_played": 11,
+                "matches_won": 8,
+                "win_rate": 72.73
+            },
+            "Mumbai Indians": {
+                "matches_played": 15,
+                "matches_won": 7,
+                "win_rate": 46.67
+            },
+            "Pune Warriors": {
+                "matches_played": 4,
+                "matches_won": 2,
+                "win_rate": 50.0
+            },
+            "Sunrisers Hyderabad": {
+                "matches_played": 16,
+                "matches_won": 10,
+                "win_rate": 62.5
+            },
+            "Royal Challengers Bangalore": {
+                "matches_played": 10,
+                "matches_won": 6,
+                "win_rate": 60.0
+            },
+            "Kochi Tuskers": {
+                "matches_played": 1,
+                "matches_won": 1,
+                "win_rate": 100.0
+            },
+            "Lucknow Super Giants": {
+                "matches_played": 1,
+                "matches_won": 0,
+                "win_rate": 0.0
+            },
+            "Rajasthan Royals": {
+                "matches_played": 12,
+                "matches_won": 5,
+                "win_rate": 41.67
+            },
+            "Punjab Kings": {
+                "matches_played": 12,
+                "matches_won": 6,
+                "win_rate": 50.0
+            }
+        },
+        "season_matches": {
+            "2007/08": 6,
+            "2009/10": 7,
+            "2011": 7,
+            "2012": 8,
+            "2013": 8,
+            "2014": 5,
+            "2015": 5,
+            "2016": 7,
+            "2017": 7,
+            "2018": 7,
+            "2019": 7,
+            "2021": 4,
+            "2023": 7,
+            "2024": 5
+        },
+        "city": "Delhi"
+    },
+    "Wankhede Stadium": {
+        "total_matches": 118,
+        "highest_runs": 231.0,
+        "batting_first_wins": 54,
+        "bowling_first_wins": 64,
+        "batting_first_win_rate": 45.76,
+        "bowling_first_win_rate": 54.24,
+        "team_stats": {
+            "Kolkata Knight Riders": {
+                "matches_played": 17,
+                "matches_won": 5,
+                "win_rate": 29.41
+            },
+            "Delhi Capitals": {
+                "matches_played": 18,
+                "matches_won": 6,
+                "win_rate": 33.33
+            },
+            "Gujarat Titans": {
+                "matches_played": 7,
+                "matches_won": 4,
+                "win_rate": 57.14
+            },
+            "Chennai Super Kings": {
+                "matches_played": 25,
+                "matches_won": 13,
+                "win_rate": 52.0
+            },
+            "Mumbai Indians": {
+                "matches_played": 85,
+                "matches_won": 52,
+                "win_rate": 61.18
+            },
+            "Pune Warriors": {
+                "matches_played": 6,
+                "matches_won": 4,
+                "win_rate": 66.67
+            },
+            "Sunrisers Hyderabad": {
+                "matches_played": 15,
+                "matches_won": 3,
+                "win_rate": 20.0
+            },
+            "Royal Challengers Bangalore": {
+                "matches_played": 18,
+                "matches_won": 8,
+                "win_rate": 44.44
+            },
+            "Kochi Tuskers": {
+                "matches_played": 1,
+                "matches_won": 1,
+                "win_rate": 100.0
+            },
+            "Lucknow Super Giants": {
+                "matches_played": 5,
+                "matches_won": 3,
+                "win_rate": 60.0
+            },
+            "Rajasthan Royals": {
+                "matches_played": 20,
+                "matches_won": 10,
+                "win_rate": 50.0
+            },
+            "Punjab Kings": {
+                "matches_played": 19,
+                "matches_won": 9,
+                "win_rate": 47.37
+            }
+        },
+        "season_matches": {
+            "2007/08": 6,
+            "2011": 9,
+            "2012": 8,
+            "2013": 8,
+            "2014": 6,
+            "2015": 8,
+            "2016": 4,
+            "2017": 8,
+            "2018": 9,
+            "2019": 7,
+            "2021": 10,
+            "2022": 21,
+            "2023": 7,
+            "2024": 7
+        },
+        "city": "Mumbai"
+    },
+    "Eden Gardens": {
+        "total_matches": 93,
+        "highest_runs": 262.0,
+        "batting_first_wins": 38,
+        "bowling_first_wins": 55,
+        "batting_first_win_rate": 40.86,
+        "bowling_first_win_rate": 59.14,
+        "team_stats": {
+            "Kolkata Knight Riders": {
+                "matches_played": 88,
+                "matches_won": 52,
+                "win_rate": 59.09
+            },
+            "Delhi Capitals": {
+                "matches_played": 10,
+                "matches_won": 2,
+                "win_rate": 20.0
+            },
+            "Gujarat Titans": {
+                "matches_played": 4,
+                "matches_won": 4,
+                "win_rate": 100.0
+            },
+            "Chennai Super Kings": {
+                "matches_played": 12,
+                "matches_won": 6,
+                "win_rate": 50.0
+            },
+            "Mumbai Indians": {
+                "matches_played": 14,
+                "matches_won": 10,
+                "win_rate": 71.43
+            },
+            "Pune Warriors": {
+                "matches_played": 3,
+                "matches_won": 1,
+                "win_rate": 33.33
+            },
+            "Sunrisers Hyderabad": {
+                "matches_played": 13,
+                "matches_won": 3,
+                "win_rate": 23.08
+            },
+            "Royal Challengers Bangalore": {
+                "matches_played": 13,
+                "matches_won": 5,
+                "win_rate": 38.46
+            },
+            "Kochi Tuskers": {
+                "matches_played": 1,
+                "matches_won": 1,
+                "win_rate": 100.0
+            },
+            "Lucknow Super Giants": {
+                "matches_played": 3,
+                "matches_won": 1,
+                "win_rate": 33.33
+            },
+            "Rajasthan Royals": {
+                "matches_played": 12,
+                "matches_won": 4,
+                "win_rate": 33.33
+            },
+            "Punjab Kings": {
+                "matches_played": 13,
+                "matches_won": 4,
+                "win_rate": 30.77
+            }
+        },
+        "season_matches": {
+            "2007/08": 7,
+            "2009/10": 7,
+            "2011": 7,
+            "2012": 7,
+            "2013": 8,
+            "2014": 4,
+            "2015": 7,
+            "2016": 7,
+            "2017": 7,
+            "2018": 9,
+            "2019": 7,
+            "2022": 2,
+            "2023": 7,
+            "2024": 7
+        },
+        "city": "Kolkata"
+    },
+    "Sawai Mansingh Stadium": {
+        "total_matches": 57,
+        "highest_runs": 192.0,
+        "batting_first_wins": 20,
+        "bowling_first_wins": 37,
+        "batting_first_win_rate": 35.09,
+        "bowling_first_win_rate": 64.91,
+        "team_stats": {
+            "Kolkata Knight Riders": {
+                "matches_played": 6,
+                "matches_won": 3,
+                "win_rate": 50.0
+            },
+            "Delhi Capitals": {
+                "matches_played": 7,
+                "matches_won": 2,
+                "win_rate": 28.57
+            },
+            "Gujarat Titans": {
+                "matches_played": 2,
+                "matches_won": 2,
+                "win_rate": 100.0
+            },
+            "Chennai Super Kings": {
+                "matches_played": 7,
+                "matches_won": 3,
+                "win_rate": 42.86
+            },
+            "Mumbai Indians": {
+                "matches_played": 8,
+                "matches_won": 2,
+                "win_rate": 25.0
+            },
+            "Pune Warriors": {
+                "matches_played": 3,
+                "matches_won": 0,
+                "win_rate": 0.0
+            },
+            "Sunrisers Hyderabad": {
+                "matches_played": 6,
+                "matches_won": 2,
+                "win_rate": 33.33
+            },
+            "Royal Challengers Bangalore": {
+                "matches_played": 9,
+                "matches_won": 4,
+                "win_rate": 44.44
+            },
+            "Kochi Tuskers": {
+                "matches_played": 1,
+                "matches_won": 0,
+                "win_rate": 0.0
+            },
+            "Lucknow Super Giants": {
+                "matches_played": 2,
+                "matches_won": 1,
+                "win_rate": 50.0
+            },
+            "Rajasthan Royals": {
+                "matches_played": 57,
+                "matches_won": 37,
+                "win_rate": 64.91
+            },
+            "Punjab Kings": {
+                "matches_played": 6,
+                "matches_won": 1,
+                "win_rate": 16.67
+            }
+        },
+        "season_matches": {
+            "2007/08": 7,
+            "2009/10": 3,
+            "2011": 7,
+            "2012": 8,
+            "2013": 8,
+            "2018": 7,
+            "2019": 7,
+            "2023": 5,
+            "2024": 5
+        },
+        "city": "Jaipur"
+    },
+    "Rajiv Gandhi International Stadium": {
+        "total_matches": 77,
+        "highest_runs": 215.0,
+        "batting_first_wins": 34,
+        "bowling_first_wins": 43,
+        "batting_first_win_rate": 44.16,
+        "bowling_first_win_rate": 55.84,
+        "team_stats": {
+            "Kolkata Knight Riders": {
+                "matches_played": 9,
+                "matches_won": 6,
+                "win_rate": 66.67
+            },
+            "Delhi Capitals": {
+                "matches_played": 9,
+                "matches_won": 6,
+                "win_rate": 66.67
+            },
+            "Gujarat Titans": {
+                "matches_played": 2,
+                "matches_won": 0,
+                "win_rate": 0.0
+            },
+            "Chennai Super Kings": {
+                "matches_played": 7,
+                "matches_won": 3,
+                "win_rate": 42.86
+            },
+            "Mumbai Indians": {
+                "matches_played": 13,
+                "matches_won": 8,
+                "win_rate": 61.54
+            },
+            "Pune Warriors": {
+                "matches_played": 5,
+                "matches_won": 3,
+                "win_rate": 60.0
+            },
+            "Sunrisers Hyderabad": {
+                "matches_played": 75,
+                "matches_won": 39,
+                "win_rate": 52.0
+            },
+            "Royal Challengers Bangalore": {
+                "matches_played": 12,
+                "matches_won": 4,
+                "win_rate": 33.33
+            },
+            "Lucknow Super Giants": {
+                "matches_played": 2,
+                "matches_won": 1,
+                "win_rate": 50.0
+            },
+            "Rajasthan Royals": {
+                "matches_played": 8,
+                "matches_won": 3,
+                "win_rate": 37.5
+            },
+            "Punjab Kings": {
+                "matches_played": 12,
+                "matches_won": 4,
+                "win_rate": 33.33
+            }
+        },
+        "season_matches": {
+            "2007/08": 7,
+            "2011": 7,
+            "2012": 4,
+            "2013": 8,
+            "2014": 4,
+            "2015": 4,
+            "2016": 7,
+            "2017": 8,
+            "2018": 7,
+            "2019": 8,
+            "2023": 7,
+            "2024": 6
+        },
+        "city": "Hyderabad"
+    },
+    "MA Chidambaram Stadium, Chepauk": {
+        "total_matches": 85,
+        "highest_runs": 201.0,
+        "batting_first_wins": 49,
+        "bowling_first_wins": 36,
+        "batting_first_win_rate": 57.65,
+        "bowling_first_win_rate": 42.35,
+        "team_stats": {
+            "Kolkata Knight Riders": {
+                "matches_played": 15,
+                "matches_won": 5,
+                "win_rate": 33.33
+            },
+            "Delhi Capitals": {
+                "matches_played": 11,
+                "matches_won": 4,
+                "win_rate": 36.36
+            },
+            "Gujarat Titans": {
+                "matches_played": 2,
+                "matches_won": 0,
+                "win_rate": 0.0
+            },
+            "Chennai Super Kings": {
+                "matches_played": 71,
+                "matches_won": 50,
+                "win_rate": 70.42
+            },
+            "Mumbai Indians": {
+                "matches_played": 15,
+                "matches_won": 8,
+                "win_rate": 53.33
+            },
+            "Pune Warriors": {
+                "matches_played": 3,
+                "matches_won": 1,
+                "win_rate": 33.33
+            },
+            "Sunrisers Hyderabad": {
+                "matches_played": 16,
+                "matches_won": 4,
+                "win_rate": 25.0
+            },
+            "Royal Challengers Bangalore": {
+                "matches_played": 13,
+                "matches_won": 5,
+                "win_rate": 38.46
+            },
+            "Kochi Tuskers": {
+                "matches_played": 1,
+                "matches_won": 0,
+                "win_rate": 0.0
+            },
+            "Lucknow Super Giants": {
+                "matches_played": 3,
+                "matches_won": 1,
+                "win_rate": 33.33
+            },
+            "Rajasthan Royals": {
+                "matches_played": 10,
+                "matches_won": 2,
+                "win_rate": 20.0
+            },
+            "Punjab Kings": {
+                "matches_played": 10,
+                "matches_won": 5,
+                "win_rate": 50.0
+            }
+        },
+        "season_matches": {
+            "2007/08": 7,
+            "2009/10": 7,
+            "2011": 9,
+            "2012": 10,
+            "2013": 8,
+            "2015": 7,
+            "2018": 1,
+            "2019": 8,
+            "2021": 10,
+            "2023": 9,
+            "2024": 9
+        },
+        "city": "Chennai"
+    },
+    "Dr DY Patil Sports Academy": {
+        "total_matches": 37,
+        "highest_runs": 206.0,
+        "batting_first_wins": 17,
+        "bowling_first_wins": 20,
+        "batting_first_win_rate": 45.95,
+        "bowling_first_win_rate": 54.05,
+        "team_stats": {
+            "Kolkata Knight Riders": {
+                "matches_played": 6,
+                "matches_won": 3,
+                "win_rate": 50.0
+            },
+            "Delhi Capitals": {
+                "matches_played": 6,
+                "matches_won": 3,
+                "win_rate": 50.0
+            },
+            "Gujarat Titans": {
+                "matches_played": 4,
+                "matches_won": 2,
+                "win_rate": 50.0
+            },
+            "Chennai Super Kings": {
+                "matches_played": 8,
+                "matches_won": 6,
+                "win_rate": 75.0
+            },
+            "Pune Warriors": {
+                "matches_played": 7,
+                "matches_won": 2,
+                "win_rate": 28.57
+            },
+            "Mumbai Indians": {
+                "matches_played": 11,
+                "matches_won": 6,
+                "win_rate": 54.55
+            },
+            "Sunrisers Hyderabad": {
+                "matches_played": 10,
+                "matches_won": 5,
+                "win_rate": 50.0
+            },
+            "Royal Challengers Bangalore": {
+                "matches_played": 6,
+                "matches_won": 3,
+                "win_rate": 50.0
+            },
+            "Kochi Tuskers": {
+                "matches_played": 1,
+                "matches_won": 0,
+                "win_rate": 0.0
+            },
+            "Lucknow Super Giants": {
+                "matches_played": 4,
+                "matches_won": 3,
+                "win_rate": 75.0
+            },
+            "Rajasthan Royals": {
+                "matches_played": 6,
+                "matches_won": 2,
+                "win_rate": 33.33
+            },
+            "Punjab Kings": {
+                "matches_played": 5,
+                "matches_won": 2,
+                "win_rate": 40.0
+            }
+        },
+        "season_matches": {
+            "2007/08": 4,
+            "2009/10": 6,
+            "2011": 7,
+            "2022": 20
+        },
+        "city": "Mumbai"
+    },
+    "Newlands": {
+        "total_matches": 7,
+        "highest_runs": 140.0,
+        "batting_first_wins": 5,
+        "bowling_first_wins": 2,
+        "batting_first_win_rate": 71.43,
+        "bowling_first_win_rate": 28.57,
+        "team_stats": {
+            "Kolkata Knight Riders": {
+                "matches_played": 2,
+                "matches_won": 0,
+                "win_rate": 0.0
+            },
+            "Delhi Capitals": {
+                "matches_played": 1,
+                "matches_won": 1,
+                "win_rate": 100.0
+            },
+            "Chennai Super Kings": {
+                "matches_played": 1,
+                "matches_won": 0,
+                "win_rate": 0.0
+            },
+            "Mumbai Indians": {
+                "matches_played": 1,
+                "matches_won": 1,
+                "win_rate": 100.0
+            },
+            "Sunrisers Hyderabad": {
+                "matches_played": 2,
+                "matches_won": 2,
+                "win_rate": 100.0
+            },
+            "Royal Challengers Bangalore": {
+                "matches_played": 2,
+                "matches_won": 1,
+                "win_rate": 50.0
+            },
+            "Rajasthan Royals": {
+                "matches_played": 3,
+                "matches_won": 1,
+                "win_rate": 33.33
+            },
+            "Punjab Kings": {
+                "matches_played": 2,
+                "matches_won": 1,
+                "win_rate": 50.0
+            }
+        },
+        "season_matches": {
+            "2009": 7
+        },
+        "city": "Cape Town"
+    },
+    "St George's Park": {
+        "total_matches": 7,
+        "highest_runs": 154.0,
+        "batting_first_wins": 3,
+        "bowling_first_wins": 4,
+        "batting_first_win_rate": 42.86,
+        "bowling_first_win_rate": 57.14,
+        "team_stats": {
+            "Kolkata Knight Riders": {
+                "matches_played": 2,
+                "matches_won": 0,
+                "win_rate": 0.0
+            },
+            "Delhi Capitals": {
+                "matches_played": 1,
+                "matches_won": 1,
+                "win_rate": 100.0
+            },
+            "Chennai Super Kings": {
+                "matches_played": 2,
+                "matches_won": 2,
+                "win_rate": 100.0
+            },
+            "Mumbai Indians": {
+                "matches_played": 3,
+                "matches_won": 2,
+                "win_rate": 66.67
+            },
+            "Sunrisers Hyderabad": {
+                "matches_played": 1,
+                "matches_won": 0,
+                "win_rate": 0.0
+            },
+            "Royal Challengers Bangalore": {
+                "matches_played": 3,
+                "matches_won": 0,
+                "win_rate": 0.0
+            },
+            "Rajasthan Royals": {
+                "matches_played": 1,
+                "matches_won": 1,
+                "win_rate": 100.0
+            },
+            "Punjab Kings": {
+                "matches_played": 1,
+                "matches_won": 1,
+                "win_rate": 100.0
+            }
+        },
+        "season_matches": {
+            "2009": 7
+        },
+        "city": "Port Elizabeth"
+    },
+    "Kingsmead": {
+        "total_matches": 15,
+        "highest_runs": 212.0,
+        "batting_first_wins": 8,
+        "bowling_first_wins": 7,
+        "batting_first_win_rate": 53.33,
+        "bowling_first_win_rate": 46.67,
+        "team_stats": {
+            "Kolkata Knight Riders": {
+                "matches_played": 4,
+                "matches_won": 2,
+                "win_rate": 50.0
+            },
+            "Delhi Capitals": {
+                "matches_played": 3,
+                "matches_won": 3,
+                "win_rate": 100.0
+            },
+            "Chennai Super Kings": {
+                "matches_played": 4,
+                "matches_won": 1,
+                "win_rate": 25.0
+            },
+            "Mumbai Indians": {
+                "matches_played": 3,
+                "matches_won": 0,
+                "win_rate": 0.0
+            },
+            "Sunrisers Hyderabad": {
+                "matches_played": 3,
+                "matches_won": 2,
+                "win_rate": 66.67
+            },
+            "Royal Challengers Bangalore": {
+                "matches_played": 4,
+                "matches_won": 3,
+                "win_rate": 75.0
+            },
+            "Rajasthan Royals": {
+                "matches_played": 3,
+                "matches_won": 2,
+                "win_rate": 66.67
+            },
+            "Punjab Kings": {
+                "matches_played": 6,
+                "matches_won": 2,
+                "win_rate": 33.33
+            }
+        },
+        "season_matches": {
+            "2009": 15
+        },
+        "city": "Durban"
+    },
+    "SuperSport Park": {
+        "total_matches": 12,
+        "highest_runs": 187.0,
+        "batting_first_wins": 4,
+        "bowling_first_wins": 8,
+        "batting_first_win_rate": 33.33,
+        "bowling_first_win_rate": 66.67,
+        "team_stats": {
+            "Kolkata Knight Riders": {
+                "matches_played": 2,
+                "matches_won": 1,
+                "win_rate": 50.0
+            },
+            "Delhi Capitals": {
+                "matches_played": 4,
+                "matches_won": 2,
+                "win_rate": 50.0
+            },
+            "Chennai Super Kings": {
+                "matches_played": 3,
+                "matches_won": 2,
+                "win_rate": 66.67
+            },
+            "Mumbai Indians": {
+                "matches_played": 3,
+                "matches_won": 1,
+                "win_rate": 33.33
+            },
+            "Sunrisers Hyderabad": {
+                "matches_played": 4,
+                "matches_won": 2,
+                "win_rate": 50.0
+            },
+            "Royal Challengers Bangalore": {
+                "matches_played": 3,
+                "matches_won": 2,
+                "win_rate": 66.67
+            },
+            "Rajasthan Royals": {
+                "matches_played": 3,
+                "matches_won": 2,
+                "win_rate": 66.67
+            },
+            "Punjab Kings": {
+                "matches_played": 2,
+                "matches_won": 0,
+                "win_rate": 0.0
+            }
+        },
+        "season_matches": {
+            "2009": 12
+        },
+        "city": "Centurion"
+    },
+    "Buffalo Park": {
+        "total_matches": 3,
+        "highest_runs": 179.0,
+        "batting_first_wins": 2,
+        "bowling_first_wins": 1,
+        "batting_first_win_rate": 66.67,
+        "bowling_first_win_rate": 33.33,
+        "team_stats": {
+            "Kolkata Knight Riders": {
+                "matches_played": 1,
+                "matches_won": 0,
+                "win_rate": 0.0
+            },
+            "Delhi Capitals": {
+                "matches_played": 1,
+                "matches_won": 1,
+                "win_rate": 100.0
+            },
+            "Chennai Super Kings": {
+                "matches_played": 1,
+                "matches_won": 1,
+                "win_rate": 100.0
+            },
+            "Mumbai Indians": {
+                "matches_played": 2,
+                "matches_won": 1,
+                "win_rate": 50.0
+            },
+            "Sunrisers Hyderabad": {
+                "matches_played": 1,
+                "matches_won": 0,
+                "win_rate": 0.0
+            }
+        },
+        "season_matches": {
+            "2009": 3
+        },
+        "city": "East London"
+    },
+    "New Wanderers Stadium": {
+        "total_matches": 8,
+        "highest_runs": 135.0,
+        "batting_first_wins": 3,
+        "bowling_first_wins": 5,
+        "batting_first_win_rate": 37.5,
+        "bowling_first_win_rate": 62.5,
+        "team_stats": {
+            "Kolkata Knight Riders": {
+                "matches_played": 2,
+                "matches_won": 0,
+                "win_rate": 0.0
+            },
+            "Delhi Capitals": {
+                "matches_played": 3,
+                "matches_won": 1,
+                "win_rate": 33.33
+            },
+            "Chennai Super Kings": {
+                "matches_played": 2,
+                "matches_won": 1,
+                "win_rate": 50.0
+            },
+            "Mumbai Indians": {
+                "matches_played": 1,
+                "matches_won": 0,
+                "win_rate": 0.0
+            },
+            "Sunrisers Hyderabad": {
+                "matches_played": 3,
+                "matches_won": 2,
+                "win_rate": 66.67
+            },
+            "Royal Challengers Bangalore": {
+                "matches_played": 4,
+                "matches_won": 3,
+                "win_rate": 75.0
+            },
+            "Punjab Kings": {
+                "matches_played": 1,
+                "matches_won": 1,
+                "win_rate": 100.0
+            }
+        },
+        "season_matches": {
+            "2009": 8
+        },
+        "city": "Johannesburg"
+    },
+    "De Beers Diamond Oval": {
+        "total_matches": 3,
+        "highest_runs": 169.0,
+        "batting_first_wins": 1,
+        "bowling_first_wins": 2,
+        "batting_first_win_rate": 33.33,
+        "bowling_first_win_rate": 66.67,
+        "team_stats": {
+            "Rajasthan Royals": {
+                "matches_played": 2,
+                "matches_won": 0,
+                "win_rate": 0.0
+            },
+            "Punjab Kings": {
+                "matches_played": 1,
+                "matches_won": 1,
+                "win_rate": 100.0
+            },
+            "Chennai Super Kings": {
+                "matches_played": 1,
+                "matches_won": 1,
+                "win_rate": 100.0
+            },
+            "Sunrisers Hyderabad": {
+                "matches_played": 2,
+                "matches_won": 1,
+                "win_rate": 50.0
+            }
+        },
+        "season_matches": {
+            "2009": 3
+        },
+        "city": "Kimberley"
+    },
+    "OUTsurance Oval": {
+        "total_matches": 2,
+        "highest_runs": 121.0,
+        "batting_first_wins": 1,
+        "bowling_first_wins": 1,
+        "batting_first_win_rate": 50.0,
+        "bowling_first_win_rate": 50.0,
+        "team_stats": {
+            "Delhi Capitals": {
+                "matches_played": 2,
+                "matches_won": 1,
+                "win_rate": 50.0
+            },
+            "Rajasthan Royals": {
+                "matches_played": 1,
+                "matches_won": 0,
+                "win_rate": 0.0
+            },
+            "Punjab Kings": {
+                "matches_played": 1,
+                "matches_won": 1,
+                "win_rate": 100.0
+            }
+        },
+        "season_matches": {
+            "2009": 2
+        },
+        "city": "Bloemfontein"
+    },
+    "Brabourne Stadium": {
+        "total_matches": 27,
+        "highest_runs": 210.0,
+        "batting_first_wins": 14,
+        "bowling_first_wins": 13,
+        "batting_first_win_rate": 51.85,
+        "bowling_first_win_rate": 48.15,
+        "team_stats": {
+            "Kolkata Knight Riders": {
+                "matches_played": 5,
+                "matches_won": 0,
+                "win_rate": 0.0
+            },
+            "Delhi Capitals": {
+                "matches_played": 6,
+                "matches_won": 4,
+                "win_rate": 66.67
+            },
+            "Gujarat Titans": {
+                "matches_played": 3,
+                "matches_won": 2,
+                "win_rate": 66.67
+            },
+            "Chennai Super Kings": {
+                "matches_played": 5,
+                "matches_won": 1,
+                "win_rate": 20.0
+            },
+            "Mumbai Indians": {
+                "matches_played": 11,
+                "matches_won": 7,
+                "win_rate": 63.64
+            },
+            "Sunrisers Hyderabad": {
+                "matches_played": 5,
+                "matches_won": 3,
+                "win_rate": 60.0
+            },
+            "Royal Challengers Bangalore": {
+                "matches_played": 4,
+                "matches_won": 1,
+                "win_rate": 25.0
+            },
+            "Lucknow Super Giants": {
+                "matches_played": 3,
+                "matches_won": 2,
+                "win_rate": 66.67
+            },
+            "Rajasthan Royals": {
+                "matches_played": 7,
+                "matches_won": 5,
+                "win_rate": 71.43
+            },
+            "Punjab Kings": {
+                "matches_played": 5,
+                "matches_won": 2,
+                "win_rate": 40.0
+            }
+        },
+        "season_matches": {
+            "2009/10": 7,
+            "2014": 1,
+            "2015": 3,
+            "2022": 16
+        },
+        "city": "Mumbai"
+    },
+    "Sardar Patel Stadium, Motera": {
+        "total_matches": 12,
+        "highest_runs": 192.0,
+        "batting_first_wins": 6,
+        "bowling_first_wins": 6,
+        "batting_first_win_rate": 50.0,
+        "bowling_first_win_rate": 50.0,
+        "team_stats": {
+            "Kolkata Knight Riders": {
+                "matches_played": 2,
+                "matches_won": 0,
+                "win_rate": 0.0
+            },
+            "Delhi Capitals": {
+                "matches_played": 2,
+                "matches_won": 1,
+                "win_rate": 50.0
+            },
+            "Chennai Super Kings": {
+                "matches_played": 2,
+                "matches_won": 0,
+                "win_rate": 0.0
+            },
+            "Mumbai Indians": {
+                "matches_played": 2,
+                "matches_won": 1,
+                "win_rate": 50.0
+            },
+            "Sunrisers Hyderabad": {
+                "matches_played": 2,
+                "matches_won": 1,
+                "win_rate": 50.0
+            },
+            "Royal Challengers Bangalore": {
+                "matches_played": 1,
+                "matches_won": 1,
+                "win_rate": 100.0
+            },
+            "Rajasthan Royals": {
+                "matches_played": 12,
+                "matches_won": 7,
+                "win_rate": 58.33
+            },
+            "Punjab Kings": {
+                "matches_played": 1,
+                "matches_won": 1,
+                "win_rate": 100.0
+            }
+        },
+        "season_matches": {
+            "2009/10": 4,
+            "2014": 4,
+            "2015": 4
+        },
+        "city": "Ahmedabad"
+    },
+    "Barabati Stadium": {
+        "total_matches": 7,
+        "highest_runs": 232.0,
+        "batting_first_wins": 4,
+        "bowling_first_wins": 3,
+        "batting_first_win_rate": 57.14,
+        "bowling_first_win_rate": 42.86,
+        "team_stats": {
+            "Kolkata Knight Riders": {
+                "matches_played": 3,
+                "matches_won": 3,
+                "win_rate": 100.0
+            },
+            "Delhi Capitals": {
+                "matches_played": 1,
+                "matches_won": 0,
+                "win_rate": 0.0
+            },
+            "Chennai Super Kings": {
+                "matches_played": 1,
+                "matches_won": 0,
+                "win_rate": 0.0
+            },
+            "Pune Warriors": {
+                "matches_played": 1,
+                "matches_won": 0,
+                "win_rate": 0.0
+            },
+            "Mumbai Indians": {
+                "matches_played": 1,
+                "matches_won": 0,
+                "win_rate": 0.0
+            },
+            "Sunrisers Hyderabad": {
+                "matches_played": 4,
+                "matches_won": 3,
+                "win_rate": 75.0
+            },
+            "Punjab Kings": {
+                "matches_played": 3,
+                "matches_won": 1,
+                "win_rate": 33.33
+            }
+        },
+        "season_matches": {
+            "2009/10": 2,
+            "2012": 2,
+            "2014": 3
+        },
+        "city": "Cuttack"
+    },
+    "Vidarbha Cricket Association Stadium, Jamtha": {
+        "total_matches": 3,
+        "highest_runs": 160.0,
+        "batting_first_wins": 2,
+        "bowling_first_wins": 1,
+        "batting_first_win_rate": 66.67,
+        "bowling_first_win_rate": 33.33,
+        "team_stats": {
+            "Royal Challengers Bangalore": {
+                "matches_played": 1,
+                "matches_won": 0,
+                "win_rate": 0.0
+            },
+            "Chennai Super Kings": {
+                "matches_played": 1,
+                "matches_won": 0,
+                "win_rate": 0.0
+            },
+            "Rajasthan Royals": {
+                "matches_played": 1,
+                "matches_won": 1,
+                "win_rate": 100.0
+            },
+            "Sunrisers Hyderabad": {
+                "matches_played": 3,
+                "matches_won": 2,
+                "win_rate": 66.67
+            }
+        },
+        "season_matches": {
+            "2009/10": 3
+        },
+        "city": "Nagpur"
+    },
+    "Himachal Pradesh Cricket Association Stadium": {
+        "total_matches": 13,
+        "highest_runs": 242.0,
+        "batting_first_wins": 8,
+        "bowling_first_wins": 5,
+        "batting_first_win_rate": 61.54,
+        "bowling_first_win_rate": 38.46,
+        "team_stats": {
+            "Delhi Capitals": {
+                "matches_played": 4,
+                "matches_won": 2,
+                "win_rate": 50.0
+            },
+            "Chennai Super Kings": {
+                "matches_played": 3,
+                "matches_won": 2,
+                "win_rate": 66.67
+            },
+            "Mumbai Indians": {
+                "matches_played": 1,
+                "matches_won": 0,
+                "win_rate": 0.0
+            },
+            "Sunrisers Hyderabad": {
+                "matches_played": 2,
+                "matches_won": 2,
+                "win_rate": 100.0
+            },
+            "Royal Challengers Bangalore": {
+                "matches_played": 2,
+                "matches_won": 1,
+                "win_rate": 50.0
+            },
+            "Rajasthan Royals": {
+                "matches_played": 1,
+                "matches_won": 1,
+                "win_rate": 100.0
+            },
+            "Punjab Kings": {
+                "matches_played": 13,
+                "matches_won": 5,
+                "win_rate": 38.46
+            }
+        },
+        "season_matches": {
+            "2009/10": 2,
+            "2011": 3,
+            "2012": 2,
+            "2013": 2,
+            "2023": 2,
+            "2024": 2
+        },
+        "city": "Dharamsala"
+    },
+    "Nehru Stadium": {
+        "total_matches": 5,
+        "highest_runs": 162.0,
+        "batting_first_wins": 3,
+        "bowling_first_wins": 2,
+        "batting_first_win_rate": 60.0,
+        "bowling_first_win_rate": 40.0,
+        "team_stats": {
+            "Kolkata Knight Riders": {
+                "matches_played": 1,
+                "matches_won": 0,
+                "win_rate": 0.0
+            },
+            "Delhi Capitals": {
+                "matches_played": 1,
+                "matches_won": 1,
+                "win_rate": 100.0
+            },
+            "Chennai Super Kings": {
+                "matches_played": 1,
+                "matches_won": 0,
+                "win_rate": 0.0
+            },
+            "Sunrisers Hyderabad": {
+                "matches_played": 1,
+                "matches_won": 1,
+                "win_rate": 100.0
+            },
+            "Royal Challengers Bangalore": {
+                "matches_played": 1,
+                "matches_won": 1,
+                "win_rate": 100.0
+            },
+            "Kochi Tuskers": {
+                "matches_played": 5,
+                "matches_won": 2,
+                "win_rate": 40.0
+            }
+        },
+        "season_matches": {
+            "2011": 5
+        },
+        "city": "Kochi"
+    },
+    "Holkar Cricket Stadium": {
+        "total_matches": 9,
+        "highest_runs": 246.0,
+        "batting_first_wins": 1,
+        "bowling_first_wins": 8,
+        "batting_first_win_rate": 11.11,
+        "bowling_first_win_rate": 88.89,
+        "team_stats": {
+            "Kolkata Knight Riders": {
+                "matches_played": 1,
+                "matches_won": 1,
+                "win_rate": 100.0
+            },
+            "Pune Warriors": {
+                "matches_played": 1,
+                "matches_won": 0,
+                "win_rate": 0.0
+            },
+            "Mumbai Indians": {
+                "matches_played": 2,
+                "matches_won": 2,
+                "win_rate": 100.0
+            },
+            "Royal Challengers Bangalore": {
+                "matches_played": 2,
+                "matches_won": 1,
+                "win_rate": 50.0
+            },
+            "Kochi Tuskers": {
+                "matches_played": 2,
+                "matches_won": 1,
+                "win_rate": 50.0
+            },
+            "Rajasthan Royals": {
+                "matches_played": 2,
+                "matches_won": 0,
+                "win_rate": 0.0
+            },
+            "Punjab Kings": {
+                "matches_played": 8,
+                "matches_won": 4,
+                "win_rate": 50.0
+            }
+        },
+        "season_matches": {
+            "2011": 2,
+            "2017": 3,
+            "2018": 4
+        },
+        "city": "Indore"
+    },
+    "Dr. Y.S. Rajasekhara Reddy ACA-VDCA Cricket Stadium": {
+        "total_matches": 15,
+        "highest_runs": 173.0,
+        "batting_first_wins": 8,
+        "bowling_first_wins": 7,
+        "batting_first_win_rate": 53.33,
+        "bowling_first_win_rate": 46.67,
+        "team_stats": {
+            "Kolkata Knight Riders": {
+                "matches_played": 2,
+                "matches_won": 1,
+                "win_rate": 50.0
+            },
+            "Delhi Capitals": {
+                "matches_played": 7,
+                "matches_won": 3,
+                "win_rate": 42.86
+            },
+            "Chennai Super Kings": {
+                "matches_played": 3,
+                "matches_won": 2,
+                "win_rate": 66.67
+            },
+            "Pune Warriors": {
+                "matches_played": 3,
+                "matches_won": 2,
+                "win_rate": 66.67
+            },
+            "Mumbai Indians": {
+                "matches_played": 4,
+                "matches_won": 2,
+                "win_rate": 50.0
+            },
+            "Sunrisers Hyderabad": {
+                "matches_played": 8,
+                "matches_won": 3,
+                "win_rate": 37.5
+            },
+            "Rajasthan Royals": {
+                "matches_played": 1,
+                "matches_won": 1,
+                "win_rate": 100.0
+            },
+            "Punjab Kings": {
+                "matches_played": 2,
+                "matches_won": 1,
+                "win_rate": 50.0
+            }
+        },
+        "season_matches": {
+            "2012": 2,
+            "2015": 3,
+            "2016": 6,
+            "2019": 2,
+            "2024": 2
+        },
+        "city": "Visakhapatnam"
+    },
+    "Subrata Roy Sahara Stadium": {
+        "total_matches": 16,
+        "highest_runs": 167.0,
+        "batting_first_wins": 10,
+        "bowling_first_wins": 6,
+        "batting_first_win_rate": 62.5,
+        "bowling_first_win_rate": 37.5,
+        "team_stats": {
+            "Kolkata Knight Riders": {
+                "matches_played": 3,
+                "matches_won": 3,
+                "win_rate": 100.0
+            },
+            "Delhi Capitals": {
+                "matches_played": 3,
+                "matches_won": 1,
+                "win_rate": 33.33
+            },
+            "Chennai Super Kings": {
+                "matches_played": 2,
+                "matches_won": 1,
+                "win_rate": 50.0
+            },
+            "Pune Warriors": {
+                "matches_played": 15,
+                "matches_won": 4,
+                "win_rate": 26.67
+            },
+            "Mumbai Indians": {
+                "matches_played": 2,
+                "matches_won": 2,
+                "win_rate": 100.0
+            },
+            "Sunrisers Hyderabad": {
+                "matches_played": 1,
+                "matches_won": 1,
+                "win_rate": 100.0
+            },
+            "Royal Challengers Bangalore": {
+                "matches_played": 2,
+                "matches_won": 2,
+                "win_rate": 100.0
+            },
+            "Rajasthan Royals": {
+                "matches_played": 2,
+                "matches_won": 1,
+                "win_rate": 50.0
+            },
+            "Punjab Kings": {
+                "matches_played": 2,
+                "matches_won": 1,
+                "win_rate": 50.0
+            }
+        },
+        "season_matches": {
+            "2012": 9,
+            "2013": 7
+        },
+        "city": "Pune"
+    },
+    "Maharashtra Cricket Association Stadium": {
+        "total_matches": 35,
+        "highest_runs": 199.0,
+        "batting_first_wins": 18,
+        "bowling_first_wins": 17,
+        "batting_first_win_rate": 51.43,
+        "bowling_first_win_rate": 48.57,
+        "team_stats": {
+            "Kolkata Knight Riders": {
+                "matches_played": 6,
+                "matches_won": 5,
+                "win_rate": 83.33
+            },
+            "Delhi Capitals": {
+                "matches_played": 4,
+                "matches_won": 2,
+                "win_rate": 50.0
+            },
+            "Gujarat Titans": {
+                "matches_played": 5,
+                "matches_won": 4,
+                "win_rate": 80.0
+            },
+            "Chennai Super Kings": {
+                "matches_played": 9,
+                "matches_won": 6,
+                "win_rate": 66.67
+            },
+            "Pune Warriors": {
+                "matches_played": 12,
+                "matches_won": 5,
+                "win_rate": 41.67
+            },
+            "Mumbai Indians": {
+                "matches_played": 6,
+                "matches_won": 2,
+                "win_rate": 33.33
+            },
+            "Sunrisers Hyderabad": {
+                "matches_played": 6,
+                "matches_won": 1,
+                "win_rate": 16.67
+            },
+            "Royal Challengers Bangalore": {
+                "matches_played": 7,
+                "matches_won": 4,
+                "win_rate": 57.14
+            },
+            "Lucknow Super Giants": {
+                "matches_played": 3,
+                "matches_won": 2,
+                "win_rate": 66.67
+            },
+            "Rajasthan Royals": {
+                "matches_played": 5,
+                "matches_won": 3,
+                "win_rate": 60.0
+            },
+            "Punjab Kings": {
+                "matches_played": 7,
+                "matches_won": 1,
+                "win_rate": 14.29
+            }
+        },
+        "season_matches": {
+            "2013": 1,
+            "2015": 4,
+            "2016": 4,
+            "2017": 7,
+            "2018": 6,
+            "2022": 13
+        },
+        "city": "Pune"
+    },
+    "Shaheed Veer Narayan Singh International Stadium": {
+        "total_matches": 6,
+        "highest_runs": 139.0,
+        "batting_first_wins": 2,
+        "bowling_first_wins": 4,
+        "batting_first_win_rate": 33.33,
+        "bowling_first_win_rate": 66.67,
+        "team_stats": {
+            "Kolkata Knight Riders": {
+                "matches_played": 1,
+                "matches_won": 0,
+                "win_rate": 0.0
+            },
+            "Delhi Capitals": {
+                "matches_played": 6,
+                "matches_won": 4,
+                "win_rate": 66.67
+            },
+            "Chennai Super Kings": {
+                "matches_played": 1,
+                "matches_won": 0,
+                "win_rate": 0.0
+            },
+            "Pune Warriors": {
+                "matches_played": 1,
+                "matches_won": 0,
+                "win_rate": 0.0
+            },
+            "Sunrisers Hyderabad": {
+                "matches_played": 2,
+                "matches_won": 1,
+                "win_rate": 50.0
+            },
+            "Royal Challengers Bangalore": {
+                "matches_played": 1,
+                "matches_won": 1,
+                "win_rate": 100.0
+            }
+        },
+        "season_matches": {
+            "2013": 2,
+            "2015": 2,
+            "2016": 2
+        },
+        "city": "Raipur"
+    },
+    "JSCA International Stadium Complex": {
+        "total_matches": 7,
+        "highest_runs": 149.0,
+        "batting_first_wins": 2,
+        "bowling_first_wins": 5,
+        "batting_first_win_rate": 28.57,
+        "bowling_first_win_rate": 71.43,
+        "team_stats": {
+            "Kolkata Knight Riders": {
+                "matches_played": 3,
+                "matches_won": 1,
+                "win_rate": 33.33
+            },
+            "Chennai Super Kings": {
+                "matches_played": 5,
+                "matches_won": 3,
+                "win_rate": 60.0
+            },
+            "Pune Warriors": {
+                "matches_played": 1,
+                "matches_won": 1,
+                "win_rate": 100.0
+            },
+            "Sunrisers Hyderabad": {
+                "matches_played": 1,
+                "matches_won": 1,
+                "win_rate": 100.0
+            },
+            "Royal Challengers Bangalore": {
+                "matches_played": 3,
+                "matches_won": 1,
+                "win_rate": 33.33
+            },
+            "Rajasthan Royals": {
+                "matches_played": 1,
+                "matches_won": 0,
+                "win_rate": 0.0
+            }
+        },
+        "season_matches": {
+            "2013": 2,
+            "2014": 4,
+            "2015": 1
+        },
+        "city": "Ranchi"
+    },
+    "Sheikh Zayed Stadium": {
+        "total_matches": 29,
+        "highest_runs": 206.0,
+        "batting_first_wins": 13,
+        "bowling_first_wins": 16,
+        "batting_first_win_rate": 44.83,
+        "bowling_first_win_rate": 55.17,
+        "team_stats": {
+            "Kolkata Knight Riders": {
+                "matches_played": 11,
+                "matches_won": 6,
+                "win_rate": 54.55
+            },
+            "Delhi Capitals": {
+                "matches_played": 6,
+                "matches_won": 2,
+                "win_rate": 33.33
+            },
+            "Chennai Super Kings": {
+                "matches_played": 6,
+                "matches_won": 3,
+                "win_rate": 50.0
+            },
+            "Mumbai Indians": {
+                "matches_played": 9,
+                "matches_won": 6,
+                "win_rate": 66.67
+            },
+            "Sunrisers Hyderabad": {
+                "matches_played": 6,
+                "matches_won": 2,
+                "win_rate": 33.33
+            },
+            "Royal Challengers Bangalore": {
+                "matches_played": 6,
+                "matches_won": 2,
+                "win_rate": 33.33
+            },
+            "Rajasthan Royals": {
+                "matches_played": 8,
+                "matches_won": 6,
+                "win_rate": 75.0
+            },
+            "Punjab Kings": {
+                "matches_played": 6,
+                "matches_won": 2,
+                "win_rate": 33.33
+            }
+        },
+        "season_matches": {
+            "2014": 7,
+            "2020/21": 22
+        },
+        "city": "Abu Dhabi"
+    },
+    "Sharjah Cricket Stadium": {
+        "total_matches": 28,
+        "highest_runs": 224.0,
+        "batting_first_wins": 10,
+        "bowling_first_wins": 18,
+        "batting_first_win_rate": 35.71,
+        "bowling_first_win_rate": 64.29,
+        "team_stats": {
+            "Kolkata Knight Riders": {
+                "matches_played": 8,
+                "matches_won": 5,
+                "win_rate": 62.5
+            },
+            "Delhi Capitals": {
+                "matches_played": 8,
+                "matches_won": 5,
+                "win_rate": 62.5
+            },
+            "Chennai Super Kings": {
+                "matches_played": 6,
+                "matches_won": 3,
+                "win_rate": 50.0
+            },
+            "Mumbai Indians": {
+                "matches_played": 6,
+                "matches_won": 3,
+                "win_rate": 50.0
+            },
+            "Sunrisers Hyderabad": {
+                "matches_played": 7,
+                "matches_won": 2,
+                "win_rate": 28.57
+            },
+            "Royal Challengers Bangalore": {
+                "matches_played": 8,
+                "matches_won": 3,
+                "win_rate": 37.5
+            },
+            "Rajasthan Royals": {
+                "matches_played": 6,
+                "matches_won": 2,
+                "win_rate": 33.33
+            },
+            "Punjab Kings": {
+                "matches_played": 7,
+                "matches_won": 5,
+                "win_rate": 71.43
+            }
+        },
+        "season_matches": {
+            "2014": 6,
+            "2020/21": 12,
+            "2021": 10
+        },
+        "city": "Unknown"
+    },
+    "Dubai International Cricket Stadium": {
+        "total_matches": 46,
+        "highest_runs": 207.0,
+        "batting_first_wins": 23,
+        "bowling_first_wins": 23,
+        "batting_first_win_rate": 50.0,
+        "bowling_first_win_rate": 50.0,
+        "team_stats": {
+            "Kolkata Knight Riders": {
+                "matches_played": 7,
+                "matches_won": 3,
+                "win_rate": 42.86
+            },
+            "Delhi Capitals": {
+                "matches_played": 15,
+                "matches_won": 7,
+                "win_rate": 46.67
+            },
+            "Chennai Super Kings": {
+                "matches_played": 14,
+                "matches_won": 9,
+                "win_rate": 64.29
+            },
+            "Mumbai Indians": {
+                "matches_played": 10,
+                "matches_won": 3,
+                "win_rate": 30.0
+            },
+            "Sunrisers Hyderabad": {
+                "matches_played": 13,
+                "matches_won": 7,
+                "win_rate": 53.85
+            },
+            "Royal Challengers Bangalore": {
+                "matches_played": 12,
+                "matches_won": 8,
+                "win_rate": 66.67
+            },
+            "Rajasthan Royals": {
+                "matches_played": 10,
+                "matches_won": 2,
+                "win_rate": 20.0
+            },
+            "Punjab Kings": {
+                "matches_played": 11,
+                "matches_won": 7,
+                "win_rate": 63.64
+            }
+        },
+        "season_matches": {
+            "2014": 7,
+            "2020/21": 26,
+            "2021": 13
+        },
+        "city": "Unknown"
+    },
+    "Saurashtra Cricket Association Stadium": {
+        "total_matches": 10,
+        "highest_runs": 189.0,
+        "batting_first_wins": 3,
+        "bowling_first_wins": 7,
+        "batting_first_win_rate": 30.0,
+        "bowling_first_win_rate": 70.0,
+        "team_stats": {
+            "Kolkata Knight Riders": {
+                "matches_played": 1,
+                "matches_won": 1,
+                "win_rate": 100.0
+            },
+            "Delhi Capitals": {
+                "matches_played": 1,
+                "matches_won": 1,
+                "win_rate": 100.0
+            },
+            "Gujarat Titans": {
+                "matches_played": 10,
+                "matches_won": 3,
+                "win_rate": 30.0
+            },
+            "Pune Warriors": {
+                "matches_played": 2,
+                "matches_won": 0,
+                "win_rate": 0.0
+            },
+            "Mumbai Indians": {
+                "matches_played": 1,
+                "matches_won": 1,
+                "win_rate": 100.0
+            },
+            "Sunrisers Hyderabad": {
+                "matches_played": 1,
+                "matches_won": 1,
+                "win_rate": 100.0
+            },
+            "Royal Challengers Bangalore": {
+                "matches_played": 2,
+                "matches_won": 1,
+                "win_rate": 50.0
+            },
+            "Punjab Kings": {
+                "matches_played": 2,
+                "matches_won": 2,
+                "win_rate": 100.0
+            }
+        },
+        "season_matches": {
+            "2016": 5,
+            "2017": 5
+        },
+        "city": "Rajkot"
+    },
+    "Green Park": {
+        "total_matches": 4,
+        "highest_runs": 155.0,
+        "batting_first_wins": 0,
+        "bowling_first_wins": 4,
+        "batting_first_win_rate": 0.0,
+        "bowling_first_win_rate": 100.0,
+        "team_stats": {
+            "Kolkata Knight Riders": {
+                "matches_played": 1,
+                "matches_won": 0,
+                "win_rate": 0.0
+            },
+            "Delhi Capitals": {
+                "matches_played": 1,
+                "matches_won": 1,
+                "win_rate": 100.0
+            },
+            "Gujarat Titans": {
+                "matches_played": 4,
+                "matches_won": 2,
+                "win_rate": 50.0
+            },
+            "Mumbai Indians": {
+                "matches_played": 1,
+                "matches_won": 0,
+                "win_rate": 0.0
+            },
+            "Sunrisers Hyderabad": {
+                "matches_played": 1,
+                "matches_won": 1,
+                "win_rate": 100.0
+            }
+        },
+        "season_matches": {
+            "2016": 2,
+            "2017": 2
+        },
+        "city": "Kanpur"
+    },
+    "Narendra Modi Stadium, Ahmedabad": {
+        "total_matches": 24,
+        "highest_runs": 200.0,
+        "batting_first_wins": 9,
+        "bowling_first_wins": 15,
+        "batting_first_win_rate": 37.5,
+        "bowling_first_win_rate": 62.5,
+        "team_stats": {
+            "Kolkata Knight Riders": {
+                "matches_played": 4,
+                "matches_won": 3,
+                "win_rate": 75.0
+            },
+            "Delhi Capitals": {
+                "matches_played": 5,
+                "matches_won": 4,
+                "win_rate": 80.0
+            },
+            "Gujarat Titans": {
+                "matches_played": 16,
+                "matches_won": 9,
+                "win_rate": 56.25
+            },
+            "Chennai Super Kings": {
+                "matches_played": 3,
+                "matches_won": 1,
+                "win_rate": 33.33
+            },
+            "Mumbai Indians": {
+                "matches_played": 3,
+                "matches_won": 0,
+                "win_rate": 0.0
+            },
+            "Sunrisers Hyderabad": {
+                "matches_played": 3,
+                "matches_won": 0,
+                "win_rate": 0.0
+            },
+            "Royal Challengers Bangalore": {
+                "matches_played": 5,
+                "matches_won": 2,
+                "win_rate": 40.0
+            },
+            "Lucknow Super Giants": {
+                "matches_played": 1,
+                "matches_won": 0,
+                "win_rate": 0.0
+            },
+            "Rajasthan Royals": {
+                "matches_played": 4,
+                "matches_won": 3,
+                "win_rate": 75.0
+            },
+            "Punjab Kings": {
+                "matches_played": 4,
+                "matches_won": 2,
+                "win_rate": 50.0
+            }
+        },
+        "season_matches": {
+            "2021": 5,
+            "2022": 2,
+            "2023": 9,
+            "2024": 8
+        },
+        "city": "Ahmedabad"
+    },
+    "Zayed Cricket Stadium, Abu Dhabi": {
+        "total_matches": 8,
+        "highest_runs": 136.0,
+        "batting_first_wins": 3,
+        "bowling_first_wins": 5,
+        "batting_first_win_rate": 37.5,
+        "bowling_first_win_rate": 62.5,
+        "team_stats": {
+            "Kolkata Knight Riders": {
+                "matches_played": 3,
+                "matches_won": 2,
+                "win_rate": 66.67
+            },
+            "Delhi Capitals": {
+                "matches_played": 1,
+                "matches_won": 1,
+                "win_rate": 100.0
+            },
+            "Chennai Super Kings": {
+                "matches_played": 2,
+                "matches_won": 1,
+                "win_rate": 50.0
+            },
+            "Mumbai Indians": {
+                "matches_played": 3,
+                "matches_won": 2,
+                "win_rate": 66.67
+            },
+            "Sunrisers Hyderabad": {
+                "matches_played": 2,
+                "matches_won": 1,
+                "win_rate": 50.0
+            },
+            "Royal Challengers Bangalore": {
+                "matches_played": 2,
+                "matches_won": 0,
+                "win_rate": 0.0
+            },
+            "Rajasthan Royals": {
+                "matches_played": 2,
+                "matches_won": 1,
+                "win_rate": 50.0
+            },
+            "Punjab Kings": {
+                "matches_played": 1,
+                "matches_won": 0,
+                "win_rate": 0.0
+            }
+        },
+        "season_matches": {
+            "2021": 8
+        },
+        "city": "Abu Dhabi"
+    },
+    "Bharat Ratna Shri Atal Bihari Vajpayee Ekana Cricket Stadium, Lucknow": {
+        "total_matches": 14,
+        "highest_runs": 200.0,
+        "batting_first_wins": 8,
+        "bowling_first_wins": 6,
+        "batting_first_win_rate": 57.14,
+        "bowling_first_win_rate": 42.86,
+        "team_stats": {
+            "Kolkata Knight Riders": {
+                "matches_played": 1,
+                "matches_won": 1,
+                "win_rate": 100.0
+            },
+            "Delhi Capitals": {
+                "matches_played": 2,
+                "matches_won": 1,
+                "win_rate": 50.0
+            },
+            "Gujarat Titans": {
+                "matches_played": 2,
+                "matches_won": 1,
+                "win_rate": 50.0
+            },
+            "Chennai Super Kings": {
+                "matches_played": 2,
+                "matches_won": 0,
+                "win_rate": 0.0
+            },
+            "Mumbai Indians": {
+                "matches_played": 2,
+                "matches_won": 0,
+                "win_rate": 0.0
+            },
+            "Sunrisers Hyderabad": {
+                "matches_played": 1,
+                "matches_won": 0,
+                "win_rate": 0.0
+            },
+            "Royal Challengers Bangalore": {
+                "matches_played": 1,
+                "matches_won": 1,
+                "win_rate": 100.0
+            },
+            "Lucknow Super Giants": {
+                "matches_played": 14,
+                "matches_won": 7,
+                "win_rate": 50.0
+            },
+            "Rajasthan Royals": {
+                "matches_played": 1,
+                "matches_won": 1,
+                "win_rate": 100.0
+            },
+            "Punjab Kings": {
+                "matches_played": 2,
+                "matches_won": 1,
+                "win_rate": 50.0
+            }
+        },
+        "season_matches": {
+            "2023": 7,
+            "2024": 7
+        },
+        "city": "Lucknow"
+    },
+    "Barsapara Cricket Stadium, Guwahati": {
+        "total_matches": 3,
+        "highest_runs": 200.0,
+        "batting_first_wins": 2,
+        "bowling_first_wins": 1,
+        "batting_first_win_rate": 66.67,
+        "bowling_first_win_rate": 33.33,
+        "team_stats": {
+            "Delhi Capitals": {
+                "matches_played": 1,
+                "matches_won": 0,
+                "win_rate": 0.0
+            },
+            "Punjab Kings": {
+                "matches_played": 2,
+                "matches_won": 2,
+                "win_rate": 100.0
+            },
+            "Rajasthan Royals": {
+                "matches_played": 3,
+                "matches_won": 1,
+                "win_rate": 33.33
+            }
+        },
+        "season_matches": {
+            "2023": 2,
+            "2024": 1
+        },
+        "city": "Guwahati"
+    },
+    "Maharaja Yadavindra Singh International Cricket Stadium, Mullanpur": {
+        "total_matches": 5,
+        "highest_runs": 193.0,
+        "batting_first_wins": 2,
+        "bowling_first_wins": 3,
+        "batting_first_win_rate": 40.0,
+        "bowling_first_win_rate": 60.0,
+        "team_stats": {
+            "Delhi Capitals": {
+                "matches_played": 1,
+                "matches_won": 0,
+                "win_rate": 0.0
+            },
+            "Gujarat Titans": {
+                "matches_played": 1,
+                "matches_won": 1,
+                "win_rate": 100.0
+            },
+            "Mumbai Indians": {
+                "matches_played": 1,
+                "matches_won": 1,
+                "win_rate": 100.0
+            },
+            "Sunrisers Hyderabad": {
+                "matches_played": 1,
+                "matches_won": 1,
+                "win_rate": 100.0
+            },
+            "Rajasthan Royals": {
+                "matches_played": 1,
+                "matches_won": 1,
+                "win_rate": 100.0
+            },
+            "Punjab Kings": {
+                "matches_played": 5,
+                "matches_won": 1,
+                "win_rate": 20.0
+            }
+        },
+        "season_matches": {
+            "2024": 5
+        },
+        "city": "Mohali"
+    }
+}

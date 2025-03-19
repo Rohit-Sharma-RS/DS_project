@@ -1,0 +1,2274 @@
+{
+    "Kolkata Knight Riders": {
+        "name": "Kolkata Knight Riders",
+        "logo":"../../static/logo/kkr.png",
+        "matches_played": 251,  
+        "matches_won": 131,
+        "win_percentage": 52.19,
+        "titles": 3,
+        "batting_stats": {
+            "total_runs": 39331,
+            "highest_score": 272,
+            "average_score": 154.24,
+            "run_rate": 8.0
+        },
+        "bowling_stats": {
+            "total_wickets": 1464,
+            "economy_rate": 7.91,
+            "best_bowling": "10/49"
+        },
+        "head_to_head": {
+            "Delhi Capitals": {
+                "played": 33,
+                "won": 18,
+                "lost": 15,
+                "no_result": 0
+            },
+            "Gujarat Titans": {
+                "played": 7,
+                "won": 2,
+                "lost": 5,
+                "no_result": 0
+            },
+            "Pune Warriors": {
+                "played": 9,
+                "won": 7,
+                "lost": 2,
+                "no_result": 0
+            },
+            "Sunrisers Hyderabad": {
+                "played": 37,
+                "won": 26,
+                "lost": 11,
+                "no_result": 0
+            },
+            "Kochi Tuskers": {
+                "played": 2,
+                "won": 0,
+                "lost": 2,
+                "no_result": 0
+            },
+            "Rajasthan Royals": {
+                "played": 28,
+                "won": 14,
+                "lost": 14,
+                "no_result": 0
+            },
+            "Chennai Super Kings": {
+                "played": 29,
+                "won": 10,
+                "lost": 19,
+                "no_result": 0
+            },
+            "Mumbai Indians": {
+                "played": 34,
+                "won": 11,
+                "lost": 23,
+                "no_result": 0
+            },
+            "Royal Challengers Bangalore": {
+                "played": 34,
+                "won": 20,
+                "lost": 14,
+                "no_result": 0
+            },
+            "Lucknow Super Giants": {
+                "played": 5,
+                "won": 2,
+                "lost": 3,
+                "no_result": 0
+            },
+            "Punjab Kings": {
+                "played": 33,
+                "won": 21,
+                "lost": 12,
+                "no_result": 0
+            }
+        },
+        "top_batters": [
+            {
+                "name": "G Gambhir",
+                "runs": 3035,
+                "balls_faced": 2533,
+                "strike_rate": 119.82
+            },
+            {
+                "name": "RV Uthappa",
+                "runs": 2441,
+                "balls_faced": 1841,
+                "strike_rate": 132.59
+            },
+            {
+                "name": "AD Russell",
+                "runs": 2430,
+                "balls_faced": 1473,
+                "strike_rate": 164.97
+            },
+            {
+                "name": "N Rana",
+                "runs": 2199,
+                "balls_faced": 1660,
+                "strike_rate": 132.47
+            },
+            {
+                "name": "YK Pathan",
+                "runs": 1893,
+                "balls_faced": 1421,
+                "strike_rate": 133.22
+            }
+        ],
+        "top_bowlers": [
+            {
+                "name": "SP Narine",
+                "wickets": 200,
+                "runs_conceded": 4492,
+                "balls_bowled": 4146,
+                "economy": 6.5
+            },
+            {
+                "name": "AD Russell",
+                "wickets": 124,
+                "runs_conceded": 2336,
+                "balls_bowled": 1629,
+                "economy": 8.6
+            },
+            {
+                "name": "CV Varun",
+                "wickets": 84,
+                "runs_conceded": 1926,
+                "balls_bowled": 1606,
+                "economy": 7.2
+            },
+            {
+                "name": "UT Yadav",
+                "wickets": 71,
+                "runs_conceded": 1857,
+                "balls_bowled": 1429,
+                "economy": 7.8
+            },
+            {
+                "name": "PP Chawla",
+                "wickets": 68,
+                "runs_conceded": 1815,
+                "balls_bowled": 1351,
+                "economy": 8.06
+            }
+        ],
+        "recent_form": [
+            {
+                "match_id": 1426312,
+                "date": "2024-05-26",
+                "opponent": "Sunrisers Hyderabad",
+                "result": "won",
+                "margin": 8.0,
+                "venue": "MA Chidambaram Stadium, Chepauk"
+            },
+            {
+                "match_id": 1426309,
+                "date": "2024-05-21",
+                "opponent": "Sunrisers Hyderabad",
+                "result": "won",
+                "margin": 8.0,
+                "venue": "Narendra Modi Stadium, Ahmedabad"
+            },
+            {
+                "match_id": 1426298,
+                "date": "2024-05-11",
+                "opponent": "Mumbai Indians",
+                "result": "won",
+                "margin": 18.0,
+                "venue": "Eden Gardens"
+            },
+            {
+                "match_id": 1426292,
+                "date": "2024-05-05",
+                "opponent": "Lucknow Super Giants",
+                "result": "won",
+                "margin": 98.0,
+                "venue": "Bharat Ratna Shri Atal Bihari Vajpayee Ekana Cricket Stadium, Lucknow"
+            },
+            {
+                "match_id": 1426289,
+                "date": "2024-05-03",
+                "opponent": "Mumbai Indians",
+                "result": "won",
+                "margin": 24.0,
+                "venue": "Wankhede Stadium"
+            }
+        ]
+    },
+    "Delhi Capitals": {
+        "name": "Delhi Capitals",
+        "logo":"../../static/logo/dc.png",
+        "matches_played": 252,
+        "matches_won": 115,
+        "win_percentage": 45.63,
+        "titles": 0,
+        "batting_stats": {
+            "total_runs": 14900,
+            "highest_score": 257,
+            "average_score": 158.51,
+            "run_rate": 8.17
+        },
+        "bowling_stats": {
+            "total_wickets": 586,
+            "economy_rate": 8.24,
+            "best_bowling": "10/89"
+        },
+        "head_to_head": {
+            "Kolkata Knight Riders": {
+                "played": 33,
+                "won": 15,
+                "lost": 18,
+                "no_result": 0
+            },
+            "Gujarat Titans": {
+                "played": 9,
+                "won": 6,
+                "lost": 3,
+                "no_result": 0
+            },
+            "Pune Warriors": {
+                "played": 10,
+                "won": 5,
+                "lost": 4,
+                "no_result": 1
+            },
+            "Sunrisers Hyderabad": {
+                "played": 35,
+                "won": 18,
+                "lost": 17,
+                "no_result": 0
+            },
+            "Kochi Tuskers": {
+                "played": 2,
+                "won": 1,
+                "lost": 1,
+                "no_result": 0
+            },
+            "Rajasthan Royals": {
+                "played": 29,
+                "won": 14,
+                "lost": 15,
+                "no_result": 0
+            },
+            "Chennai Super Kings": {
+                "played": 30,
+                "won": 11,
+                "lost": 19,
+                "no_result": 0
+            },
+            "Mumbai Indians": {
+                "played": 35,
+                "won": 16,
+                "lost": 19,
+                "no_result": 0
+            },
+            "Royal Challengers Bangalore": {
+                "played": 31,
+                "won": 11,
+                "lost": 19,
+                "no_result": 1
+            },
+            "Lucknow Super Giants": {
+                "played": 5,
+                "won": 2,
+                "lost": 3,
+                "no_result": 0
+            },
+            "Punjab Kings": {
+                "played": 33,
+                "won": 16,
+                "lost": 17,
+                "no_result": 0
+            }
+        },
+        "top_batters": [
+            {
+                "name": "RR Pant",
+                "runs": 2049,
+                "balls_faced": 1503,
+                "strike_rate": 136.33
+            },
+            {
+                "name": "S Dhawan",
+                "runs": 1726,
+                "balls_faced": 1304,
+                "strike_rate": 132.36
+            },
+            {
+                "name": "PP Shaw",
+                "runs": 1647,
+                "balls_faced": 1156,
+                "strike_rate": 142.47
+            },
+            {
+                "name": "SS Iyer",
+                "runs": 1161,
+                "balls_faced": 1013,
+                "strike_rate": 114.61
+            },
+            {
+                "name": "DA Warner",
+                "runs": 1116,
+                "balls_faced": 837,
+                "strike_rate": 133.33
+            }
+        ],
+        "top_bowlers": [
+            {
+                "name": "K Rabada",
+                "wickets": 77,
+                "runs_conceded": 1341,
+                "balls_bowled": 1058,
+                "economy": 7.6
+            },
+            {
+                "name": "AR Patel",
+                "wickets": 67,
+                "runs_conceded": 1978,
+                "balls_bowled": 1714,
+                "economy": 6.92
+            },
+            {
+                "name": "A Nortje",
+                "wickets": 62,
+                "runs_conceded": 1523,
+                "balls_bowled": 1097,
+                "economy": 8.33
+            },
+            {
+                "name": "Kuldeep Yadav",
+                "wickets": 47,
+                "runs_conceded": 1129,
+                "balls_bowled": 873,
+                "economy": 7.76
+            },
+            {
+                "name": "KK Ahmed",
+                "wickets": 43,
+                "runs_conceded": 1046,
+                "balls_bowled": 778,
+                "economy": 8.07
+            }
+        ],
+        "recent_form": [
+            {
+                "match_id": 1426302,
+                "date": "2024-05-14",
+                "opponent": "Lucknow Super Giants",
+                "result": "won",
+                "margin": 19.0,
+                "venue": "Arun Jaitley Stadium"
+            },
+            {
+                "match_id": 1426300,
+                "date": "2024-05-12",
+                "opponent": "Royal Challengers Bangalore",
+                "result": "lost",
+                "margin": 47.0,
+                "venue": "M Chinnaswamy Stadium"
+            },
+            {
+                "match_id": 1426294,
+                "date": "2024-05-07",
+                "opponent": "Rajasthan Royals",
+                "result": "won",
+                "margin": 20.0,
+                "venue": "Arun Jaitley Stadium"
+            },
+            {
+                "match_id": 1426285,
+                "date": "2024-04-29",
+                "opponent": "Kolkata Knight Riders",
+                "result": "lost",
+                "margin": 7.0,
+                "venue": "Eden Gardens"
+            },
+            {
+                "match_id": 1426281,
+                "date": "2024-04-27",
+                "opponent": "Mumbai Indians",
+                "result": "won",
+                "margin": 10.0,
+                "venue": "Arun Jaitley Stadium"
+            }
+        ]
+    },
+    "Gujarat Titans": {
+        "name": "Gujarat Titans",
+        "logo":"../../static/logo/gt.png",
+        "matches_played": 75,
+        "matches_won": 41,
+        "win_percentage": 54.67,
+        "titles": 1,
+        "batting_stats": {
+            "total_runs": 7757,
+            "highest_score": 233,
+            "average_score": 172.38,
+            "run_rate": 8.47
+        },
+        "bowling_stats": {
+            "total_wickets": 298,
+            "economy_rate": 8.46,
+            "best_bowling": "10/82"
+        },
+        "head_to_head": {
+            "Kolkata Knight Riders": {
+                "played": 7,
+                "won": 5,
+                "lost": 2,
+                "no_result": 0
+            },
+            "Delhi Capitals": {
+                "played": 9,
+                "won": 3,
+                "lost": 6,
+                "no_result": 0
+            },
+            "Pune Warriors": {
+                "played": 4,
+                "won": 3,
+                "lost": 1,
+                "no_result": 0
+            },
+            "Sunrisers Hyderabad": {
+                "played": 9,
+                "won": 3,
+                "lost": 6,
+                "no_result": 0
+            },
+            "Rajasthan Royals": {
+                "played": 6,
+                "won": 5,
+                "lost": 1,
+                "no_result": 0
+            },
+            "Chennai Super Kings": {
+                "played": 7,
+                "won": 4,
+                "lost": 3,
+                "no_result": 0
+            },
+            "Mumbai Indians": {
+                "played": 9,
+                "won": 5,
+                "lost": 4,
+                "no_result": 0
+            },
+            "Royal Challengers Bangalore": {
+                "played": 10,
+                "won": 4,
+                "lost": 6,
+                "no_result": 0
+            },
+            "Lucknow Super Giants": {
+                "played": 5,
+                "won": 4,
+                "lost": 1,
+                "no_result": 0
+            },
+            "Punjab Kings": {
+                "played": 9,
+                "won": 5,
+                "lost": 4,
+                "no_result": 0
+            }
+        },
+        "top_batters": [
+            {
+                "name": "Shubman Gill",
+                "runs": 1799,
+                "balls_faced": 1251,
+                "strike_rate": 143.8
+            },
+            {
+                "name": "B Sai Sudharsan",
+                "runs": 1034,
+                "balls_faced": 770,
+                "strike_rate": 134.29
+            },
+            {
+                "name": "DA Miller",
+                "runs": 950,
+                "balls_faced": 681,
+                "strike_rate": 139.5
+            },
+            {
+                "name": "HH Pandya",
+                "runs": 833,
+                "balls_faced": 641,
+                "strike_rate": 129.95
+            },
+            {
+                "name": "WP Saha",
+                "runs": 824,
+                "balls_faced": 683,
+                "strike_rate": 120.64
+            }
+        ],
+        "top_bowlers": [
+            {
+                "name": "Rashid Khan",
+                "wickets": 58,
+                "runs_conceded": 1328,
+                "balls_bowled": 1055,
+                "economy": 7.55
+            },
+            {
+                "name": "Mohammed Shami",
+                "wickets": 49,
+                "runs_conceded": 963,
+                "balls_bowled": 781,
+                "economy": 7.4
+            },
+            {
+                "name": "MM Sharma",
+                "wickets": 47,
+                "runs_conceded": 772,
+                "balls_bowled": 513,
+                "economy": 9.03
+            },
+            {
+                "name": "Noor Ahmad",
+                "wickets": 24,
+                "runs_conceded": 637,
+                "balls_bowled": 513,
+                "economy": 7.45
+            },
+            {
+                "name": "LH Ferguson",
+                "wickets": 16,
+                "runs_conceded": 411,
+                "balls_bowled": 298,
+                "economy": 8.28
+            }
+        ],
+        "recent_form": [
+            {
+                "match_id": 1426297,
+                "date": "2024-05-10",
+                "opponent": "Chennai Super Kings",
+                "result": "won",
+                "margin": 35.0,
+                "venue": "Narendra Modi Stadium, Ahmedabad"
+            },
+            {
+                "match_id": 1426290,
+                "date": "2024-05-04",
+                "opponent": "Royal Challengers Bangalore",
+                "result": "lost",
+                "margin": 4.0,
+                "venue": "M Chinnaswamy Stadium"
+            },
+            {
+                "match_id": 1426283,
+                "date": "2024-04-28",
+                "opponent": "Royal Challengers Bangalore",
+                "result": "lost",
+                "margin": 9.0,
+                "venue": "Narendra Modi Stadium, Ahmedabad"
+            },
+            {
+                "match_id": 1426278,
+                "date": "2024-04-24",
+                "opponent": "Delhi Capitals",
+                "result": "lost",
+                "margin": 4.0,
+                "venue": "Arun Jaitley Stadium"
+            },
+            {
+                "match_id": 1426275,
+                "date": "2024-04-21",
+                "opponent": "Punjab Kings",
+                "result": "won",
+                "margin": 3.0,
+                "venue": "Maharaja Yadavindra Singh International Cricket Stadium, Mullanpur"
+            }
+        ]
+    },
+    "Pune Warriors": {
+        "name": "Pune Warriors",
+        "logo":"../../static/logo/pw.png",
+        "matches_played": 76,
+        "matches_won": 27,
+        "win_percentage": 35.53,
+        "titles": 0,
+        "batting_stats": {
+            "total_runs": 6358,
+            "highest_score": 192,
+            "average_score": 141.29,
+            "run_rate": 7.01
+        },
+        "bowling_stats": {
+            "total_wickets": 238,
+            "economy_rate": 7.54,
+            "best_bowling": "9/101"
+        },
+        "head_to_head": {
+            "Kolkata Knight Riders": {
+                "played": 9,
+                "won": 2,
+                "lost": 7,
+                "no_result": 0
+            },
+            "Delhi Capitals": {
+                "played": 10,
+                "won": 4,
+                "lost": 5,
+                "no_result": 1
+            },
+            "Gujarat Titans": {
+                "played": 4,
+                "won": 1,
+                "lost": 3,
+                "no_result": 0
+            },
+            "Sunrisers Hyderabad": {
+                "played": 10,
+                "won": 4,
+                "lost": 6,
+                "no_result": 0
+            },
+            "Kochi Tuskers": {
+                "played": 1,
+                "won": 1,
+                "lost": 0,
+                "no_result": 0
+            },
+            "Rajasthan Royals": {
+                "played": 5,
+                "won": 1,
+                "lost": 4,
+                "no_result": 0
+            },
+            "Chennai Super Kings": {
+                "played": 6,
+                "won": 2,
+                "lost": 4,
+                "no_result": 0
+            },
+            "Mumbai Indians": {
+                "played": 12,
+                "won": 5,
+                "lost": 7,
+                "no_result": 0
+            },
+            "Royal Challengers Bangalore": {
+                "played": 9,
+                "won": 2,
+                "lost": 7,
+                "no_result": 0
+            },
+            "Punjab Kings": {
+                "played": 10,
+                "won": 5,
+                "lost": 5,
+                "no_result": 0
+            }
+        },
+        "top_batters": [
+            {
+                "name": "RV Uthappa",
+                "runs": 1103,
+                "balls_faced": 957,
+                "strike_rate": 115.26
+            },
+            {
+                "name": "Yuvraj Singh",
+                "runs": 581,
+                "balls_faced": 462,
+                "strike_rate": 125.76
+            },
+            {
+                "name": "JD Ryder",
+                "runs": 548,
+                "balls_faced": 417,
+                "strike_rate": 131.41
+            },
+            {
+                "name": "MK Pandey",
+                "runs": 525,
+                "balls_faced": 487,
+                "strike_rate": 107.8
+            },
+            {
+                "name": "SPD Smith",
+                "runs": 521,
+                "balls_faced": 406,
+                "strike_rate": 128.33
+            }
+        ],
+        "top_bowlers": [
+            {
+                "name": "R Sharma",
+                "wickets": 35,
+                "runs_conceded": 849,
+                "balls_bowled": 773,
+                "economy": 6.59
+            },
+            {
+                "name": "AB Dinda",
+                "wickets": 28,
+                "runs_conceded": 613,
+                "balls_bowled": 458,
+                "economy": 8.03
+            },
+            {
+                "name": "B Kumar",
+                "wickets": 25,
+                "runs_conceded": 681,
+                "balls_bowled": 666,
+                "economy": 6.14
+            },
+            {
+                "name": "WD Parnell",
+                "wickets": 24,
+                "runs_conceded": 437,
+                "balls_bowled": 411,
+                "economy": 6.38
+            },
+            {
+                "name": "AC Thomas",
+                "wickets": 16,
+                "runs_conceded": 394,
+                "balls_bowled": 327,
+                "economy": 7.23
+            }
+        ],
+        "recent_form": [
+            {
+                "match_id": 1082650,
+                "date": "2017-05-21",
+                "opponent": "Mumbai Indians",
+                "result": "lost",
+                "margin": 1.0,
+                "venue": "Rajiv Gandhi International Stadium"
+            },
+            {
+                "match_id": 1082647,
+                "date": "2017-05-16",
+                "opponent": "Mumbai Indians",
+                "result": "won",
+                "margin": 20.0,
+                "venue": "Wankhede Stadium"
+            },
+            {
+                "match_id": 1082645,
+                "date": "2017-05-14",
+                "opponent": "Punjab Kings",
+                "result": "won",
+                "margin": 9.0,
+                "venue": "Maharashtra Cricket Association Stadium"
+            },
+            {
+                "match_id": 1082642,
+                "date": "2017-05-12",
+                "opponent": "Delhi Capitals",
+                "result": "lost",
+                "margin": 7.0,
+                "venue": "Arun Jaitley Stadium"
+            },
+            {
+                "match_id": 1082634,
+                "date": "2017-05-06",
+                "opponent": "Sunrisers Hyderabad",
+                "result": "won",
+                "margin": 12.0,
+                "venue": "Rajiv Gandhi International Stadium"
+            }
+        ]
+    },
+    "Sunrisers Hyderabad": {
+        "name": "Sunrisers Hyderabad",
+        "logo":"../../static/logo/srh.png",
+        "matches_played": 257,
+        "matches_won": 117,
+        "win_percentage": 45.53,
+        "titles": 2,
+        "batting_stats": {
+            "total_runs": 29071,
+            "highest_score": 287,
+            "average_score": 156.3,
+            "run_rate": 7.99
+        },
+        "bowling_stats": {
+            "total_wickets": 1074,
+            "economy_rate": 8.04,
+            "best_bowling": "10/68"
+        },
+        "head_to_head": {
+            "Kolkata Knight Riders": {
+                "played": 37,
+                "won": 11,
+                "lost": 26,
+                "no_result": 0
+            },
+            "Delhi Capitals": {
+                "played": 35,
+                "won": 17,
+                "lost": 18,
+                "no_result": 0
+            },
+            "Gujarat Titans": {
+                "played": 9,
+                "won": 6,
+                "lost": 3,
+                "no_result": 0
+            },
+            "Pune Warriors": {
+                "played": 10,
+                "won": 6,
+                "lost": 4,
+                "no_result": 0
+            },
+            "Kochi Tuskers": {
+                "played": 1,
+                "won": 1,
+                "lost": 0,
+                "no_result": 0
+            },
+            "Rajasthan Royals": {
+                "played": 29,
+                "won": 13,
+                "lost": 16,
+                "no_result": 0
+            },
+            "Chennai Super Kings": {
+                "played": 31,
+                "won": 10,
+                "lost": 21,
+                "no_result": 0
+            },
+            "Mumbai Indians": {
+                "played": 33,
+                "won": 14,
+                "lost": 19,
+                "no_result": 0
+            },
+            "Royal Challengers Bangalore": {
+                "played": 35,
+                "won": 19,
+                "lost": 16,
+                "no_result": 0
+            },
+            "Lucknow Super Giants": {
+                "played": 4,
+                "won": 1,
+                "lost": 3,
+                "no_result": 0
+            },
+            "Punjab Kings": {
+                "played": 33,
+                "won": 19,
+                "lost": 14,
+                "no_result": 0
+            }
+        },
+        "top_batters": [
+            {
+                "name": "DA Warner",
+                "runs": 4016,
+                "balls_faced": 2905,
+                "strike_rate": 138.24
+            },
+            {
+                "name": "S Dhawan",
+                "runs": 2518,
+                "balls_faced": 2087,
+                "strike_rate": 120.65
+            },
+            {
+                "name": "KS Williamson",
+                "runs": 2105,
+                "balls_faced": 1707,
+                "strike_rate": 123.32
+            },
+            {
+                "name": "MK Pandey",
+                "runs": 1346,
+                "balls_faced": 1121,
+                "strike_rate": 120.07
+            },
+            {
+                "name": "Abhishek Sharma",
+                "runs": 1314,
+                "balls_faced": 890,
+                "strike_rate": 147.64
+            }
+        ],
+        "top_bowlers": [
+            {
+                "name": "B Kumar",
+                "wickets": 170,
+                "runs_conceded": 4063,
+                "balls_bowled": 3394,
+                "economy": 7.18
+            },
+            {
+                "name": "Rashid Khan",
+                "wickets": 99,
+                "runs_conceded": 1894,
+                "balls_bowled": 1846,
+                "economy": 6.16
+            },
+            {
+                "name": "T Natarajan",
+                "wickets": 74,
+                "runs_conceded": 1791,
+                "balls_bowled": 1319,
+                "economy": 8.15
+            },
+            {
+                "name": "S Kaul",
+                "wickets": 56,
+                "runs_conceded": 1377,
+                "balls_bowled": 999,
+                "economy": 8.27
+            },
+            {
+                "name": "Sandeep Sharma",
+                "wickets": 44,
+                "runs_conceded": 1235,
+                "balls_bowled": 1000,
+                "economy": 7.41
+            }
+        ],
+        "recent_form": [
+            {
+                "match_id": 1426312,
+                "date": "2024-05-26",
+                "opponent": "Kolkata Knight Riders",
+                "result": "lost",
+                "margin": 8.0,
+                "venue": "MA Chidambaram Stadium, Chepauk"
+            },
+            {
+                "match_id": 1426311,
+                "date": "2024-05-24",
+                "opponent": "Rajasthan Royals",
+                "result": "won",
+                "margin": 36.0,
+                "venue": "MA Chidambaram Stadium, Chepauk"
+            },
+            {
+                "match_id": 1426309,
+                "date": "2024-05-21",
+                "opponent": "Kolkata Knight Riders",
+                "result": "lost",
+                "margin": 8.0,
+                "venue": "Narendra Modi Stadium, Ahmedabad"
+            },
+            {
+                "match_id": 1426307,
+                "date": "2024-05-19",
+                "opponent": "Punjab Kings",
+                "result": "won",
+                "margin": 4.0,
+                "venue": "Rajiv Gandhi International Stadium"
+            },
+            {
+                "match_id": 1426295,
+                "date": "2024-05-08",
+                "opponent": "Lucknow Super Giants",
+                "result": "won",
+                "margin": 10.0,
+                "venue": "Rajiv Gandhi International Stadium"
+            }
+        ]
+    },
+    "Kochi Tuskers": {
+        "name": "Kochi Tuskers",
+        "matches_played": 14,
+        "matches_won": 6,
+        "win_percentage": 42.86,
+        "titles": 0,
+        "batting_stats": {
+            "total_runs": 0,
+            "highest_score": 0,
+            "average_score": 0,
+            "run_rate": 0
+        },
+        "bowling_stats": {
+            "total_wickets": 0,
+            "economy_rate": 0,
+            "best_bowling": "0/0"
+        },
+        "head_to_head": {
+            "Kolkata Knight Riders": {
+                "played": 2,
+                "won": 2,
+                "lost": 0,
+                "no_result": 0
+            },
+            "Delhi Capitals": {
+                "played": 2,
+                "won": 1,
+                "lost": 1,
+                "no_result": 0
+            },
+            "Pune Warriors": {
+                "played": 1,
+                "won": 0,
+                "lost": 1,
+                "no_result": 0
+            },
+            "Sunrisers Hyderabad": {
+                "played": 1,
+                "won": 0,
+                "lost": 1,
+                "no_result": 0
+            },
+            "Rajasthan Royals": {
+                "played": 2,
+                "won": 1,
+                "lost": 1,
+                "no_result": 0
+            },
+            "Chennai Super Kings": {
+                "played": 2,
+                "won": 1,
+                "lost": 1,
+                "no_result": 0
+            },
+            "Mumbai Indians": {
+                "played": 1,
+                "won": 1,
+                "lost": 0,
+                "no_result": 0
+            },
+            "Royal Challengers Bangalore": {
+                "played": 2,
+                "won": 0,
+                "lost": 2,
+                "no_result": 0
+            },
+            "Punjab Kings": {
+                "played": 1,
+                "won": 0,
+                "lost": 1,
+                "no_result": 0
+            }
+        },
+        "top_batters": [],
+        "top_bowlers": [],
+        "recent_form": [
+            {
+                "match_id": 501261,
+                "date": "2011-05-18",
+                "opponent": "Chennai Super Kings",
+                "result": "lost",
+                "margin": 11.0,
+                "venue": "MA Chidambaram Stadium, Chepauk"
+            },
+            {
+                "match_id": 501258,
+                "date": "2011-05-15",
+                "opponent": "Rajasthan Royals",
+                "result": "won",
+                "margin": 8.0,
+                "venue": "Holkar Cricket Stadium"
+            },
+            {
+                "match_id": 501254,
+                "date": "2011-05-13",
+                "opponent": "Punjab Kings",
+                "result": "lost",
+                "margin": 6.0,
+                "venue": "Holkar Cricket Stadium"
+            },
+            {
+                "match_id": 501247,
+                "date": "2011-05-08",
+                "opponent": "Royal Challengers Bangalore",
+                "result": "lost",
+                "margin": 9.0,
+                "venue": "M Chinnaswamy Stadium"
+            },
+            {
+                "match_id": 501242,
+                "date": "2011-05-05",
+                "opponent": "Kolkata Knight Riders",
+                "result": "won",
+                "margin": 17.0,
+                "venue": "Nehru Stadium"
+            }
+        ]
+    },
+    "Rajasthan Royals": {
+        "name": "Rajasthan Royals",
+        "logo":"../../static/logo/rr.png",
+        "matches_played": 221,
+        "matches_won": 112,
+        "win_percentage": 50.68,
+        "titles": 1,
+        "batting_stats": {
+            "total_runs": 34747,
+            "highest_score": 226,
+            "average_score": 155.82,
+            "run_rate": 7.94
+        },
+        "bowling_stats": {
+            "total_wickets": 1277,
+            "economy_rate": 7.98,
+            "best_bowling": "10/70"
+        },
+        "head_to_head": {
+            "Kolkata Knight Riders": {
+                "played": 28,
+                "won": 14,
+                "lost": 14,
+                "no_result": 0
+            },
+            "Delhi Capitals": {
+                "played": 29,
+                "won": 15,
+                "lost": 14,
+                "no_result": 0
+            },
+            "Gujarat Titans": {
+                "played": 6,
+                "won": 1,
+                "lost": 5,
+                "no_result": 0
+            },
+            "Pune Warriors": {
+                "played": 5,
+                "won": 4,
+                "lost": 1,
+                "no_result": 0
+            },
+            "Sunrisers Hyderabad": {
+                "played": 29,
+                "won": 16,
+                "lost": 13,
+                "no_result": 0
+            },
+            "Kochi Tuskers": {
+                "played": 2,
+                "won": 1,
+                "lost": 1,
+                "no_result": 0
+            },
+            "Chennai Super Kings": {
+                "played": 29,
+                "won": 13,
+                "lost": 16,
+                "no_result": 0
+            },
+            "Mumbai Indians": {
+                "played": 29,
+                "won": 14,
+                "lost": 15,
+                "no_result": 0
+            },
+            "Royal Challengers Bangalore": {
+                "played": 31,
+                "won": 14,
+                "lost": 15,
+                "no_result": 2
+            },
+            "Lucknow Super Giants": {
+                "played": 5,
+                "won": 4,
+                "lost": 1,
+                "no_result": 0
+            },
+            "Punjab Kings": {
+                "played": 28,
+                "won": 16,
+                "lost": 12,
+                "no_result": 0
+            }
+        },
+        "top_batters": [
+            {
+                "name": "SV Samson",
+                "runs": 3742,
+                "balls_faced": 2730,
+                "strike_rate": 137.07
+            },
+            {
+                "name": "JC Buttler",
+                "runs": 3055,
+                "balls_faced": 2144,
+                "strike_rate": 142.49
+            },
+            {
+                "name": "AM Rahane",
+                "runs": 2810,
+                "balls_faced": 2350,
+                "strike_rate": 119.57
+            },
+            {
+                "name": "SR Watson",
+                "runs": 2378,
+                "balls_faced": 1734,
+                "strike_rate": 137.14
+            },
+            {
+                "name": "YBK Jaiswal",
+                "runs": 1607,
+                "balls_faced": 1095,
+                "strike_rate": 146.76
+            }
+        ],
+        "top_bowlers": [
+            {
+                "name": "SK Trivedi",
+                "wickets": 73,
+                "runs_conceded": 1840,
+                "balls_bowled": 1557,
+                "economy": 7.09
+            },
+            {
+                "name": "SR Watson",
+                "wickets": 72,
+                "runs_conceded": 1624,
+                "balls_bowled": 1436,
+                "economy": 6.79
+            },
+            {
+                "name": "YS Chahal",
+                "wickets": 70,
+                "runs_conceded": 1460,
+                "balls_bowled": 1117,
+                "economy": 7.84
+            },
+            {
+                "name": "SK Warne",
+                "wickets": 60,
+                "runs_conceded": 1408,
+                "balls_bowled": 1223,
+                "economy": 6.91
+            },
+            {
+                "name": "JP Faulkner",
+                "wickets": 59,
+                "runs_conceded": 1236,
+                "balls_bowled": 954,
+                "economy": 7.77
+            }
+        ],
+        "recent_form": [
+            {
+                "match_id": 1426311,
+                "date": "2024-05-24",
+                "opponent": "Sunrisers Hyderabad",
+                "result": "lost",
+                "margin": 36.0,
+                "venue": "MA Chidambaram Stadium, Chepauk"
+            },
+            {
+                "match_id": 1426310,
+                "date": "2024-05-22",
+                "opponent": "Royal Challengers Bangalore",
+                "result": "won",
+                "margin": 4.0,
+                "venue": "Narendra Modi Stadium, Ahmedabad"
+            },
+            {
+                "match_id": 1426303,
+                "date": "2024-05-15",
+                "opponent": "Punjab Kings",
+                "result": "lost",
+                "margin": 5.0,
+                "venue": "Barsapara Cricket Stadium, Guwahati"
+            },
+            {
+                "match_id": 1426299,
+                "date": "2024-05-12",
+                "opponent": "Chennai Super Kings",
+                "result": "lost",
+                "margin": 5.0,
+                "venue": "MA Chidambaram Stadium, Chepauk"
+            },
+            {
+                "match_id": 1426294,
+                "date": "2024-05-07",
+                "opponent": "Delhi Capitals",
+                "result": "lost",
+                "margin": 20.0,
+                "venue": "Arun Jaitley Stadium"
+            }
+        ]
+    },
+    "Chennai Super Kings": {
+        "name": "Chennai Super Kings",
+        "logo":"../../static/logo/csk.png",
+        "matches_played": 238,
+        "matches_won": 138,
+        "win_percentage": 57.98,
+        "titles": 5,
+        "batting_stats": {
+            "total_runs": 38629,
+            "highest_score": 246,
+            "average_score": 162.31,
+            "run_rate": 8.09
+        },
+        "bowling_stats": {
+            "total_wickets": 1481,
+            "economy_rate": 7.81,
+            "best_bowling": "10/70"
+        },
+        "head_to_head": {
+            "Kolkata Knight Riders": {
+                "played": 29,
+                "won": 19,
+                "lost": 10,
+                "no_result": 0
+            },
+            "Delhi Capitals": {
+                "played": 30,
+                "won": 19,
+                "lost": 11,
+                "no_result": 0
+            },
+            "Gujarat Titans": {
+                "played": 7,
+                "won": 3,
+                "lost": 4,
+                "no_result": 0
+            },
+            "Pune Warriors": {
+                "played": 6,
+                "won": 4,
+                "lost": 2,
+                "no_result": 0
+            },
+            "Sunrisers Hyderabad": {
+                "played": 31,
+                "won": 21,
+                "lost": 10,
+                "no_result": 0
+            },
+            "Kochi Tuskers": {
+                "played": 2,
+                "won": 1,
+                "lost": 1,
+                "no_result": 0
+            },
+            "Rajasthan Royals": {
+                "played": 29,
+                "won": 16,
+                "lost": 13,
+                "no_result": 0
+            },
+            "Mumbai Indians": {
+                "played": 37,
+                "won": 17,
+                "lost": 20,
+                "no_result": 0
+            },
+            "Royal Challengers Bangalore": {
+                "played": 32,
+                "won": 21,
+                "lost": 11,
+                "no_result": 0
+            },
+            "Lucknow Super Giants": {
+                "played": 5,
+                "won": 1,
+                "lost": 3,
+                "no_result": 1
+            },
+            "Punjab Kings": {
+                "played": 30,
+                "won": 16,
+                "lost": 14,
+                "no_result": 0
+            }
+        },
+        "top_batters": [
+            {
+                "name": "SK Raina",
+                "runs": 4695,
+                "balls_faced": 3546,
+                "strike_rate": 132.4
+            },
+            {
+                "name": "MS Dhoni",
+                "runs": 4669,
+                "balls_faced": 3466,
+                "strike_rate": 134.71
+            },
+            {
+                "name": "F du Plessis",
+                "runs": 2721,
+                "balls_faced": 2123,
+                "strike_rate": 128.17
+            },
+            {
+                "name": "RD Gaikwad",
+                "runs": 2380,
+                "balls_faced": 1781,
+                "strike_rate": 133.63
+            },
+            {
+                "name": "AT Rayudu",
+                "runs": 1932,
+                "balls_faced": 1526,
+                "strike_rate": 126.61
+            }
+        ],
+        "top_bowlers": [
+            {
+                "name": "DJ Bravo",
+                "wickets": 158,
+                "runs_conceded": 3006,
+                "balls_bowled": 2394,
+                "economy": 7.53
+            },
+            {
+                "name": "RA Jadeja",
+                "wickets": 139,
+                "runs_conceded": 3663,
+                "balls_bowled": 3001,
+                "economy": 7.32
+            },
+            {
+                "name": "R Ashwin",
+                "wickets": 99,
+                "runs_conceded": 2110,
+                "balls_bowled": 2081,
+                "economy": 6.08
+            },
+            {
+                "name": "JA Morkel",
+                "wickets": 86,
+                "runs_conceded": 1971,
+                "balls_bowled": 1598,
+                "economy": 7.4
+            },
+            {
+                "name": "DL Chahar",
+                "wickets": 78,
+                "runs_conceded": 2034,
+                "balls_bowled": 1669,
+                "economy": 7.31
+            }
+        ],
+        "recent_form": [
+            {
+                "match_id": 1426306,
+                "date": "2024-05-18",
+                "opponent": "Royal Challengers Bangalore",
+                "result": "lost",
+                "margin": 27.0,
+                "venue": "M Chinnaswamy Stadium"
+            },
+            {
+                "match_id": 1426299,
+                "date": "2024-05-12",
+                "opponent": "Rajasthan Royals",
+                "result": "won",
+                "margin": 5.0,
+                "venue": "MA Chidambaram Stadium, Chepauk"
+            },
+            {
+                "match_id": 1426297,
+                "date": "2024-05-10",
+                "opponent": "Gujarat Titans",
+                "result": "lost",
+                "margin": 35.0,
+                "venue": "Narendra Modi Stadium, Ahmedabad"
+            },
+            {
+                "match_id": 1426291,
+                "date": "2024-05-05",
+                "opponent": "Punjab Kings",
+                "result": "won",
+                "margin": 28.0,
+                "venue": "Himachal Pradesh Cricket Association Stadium"
+            },
+            {
+                "match_id": 1426287,
+                "date": "2024-05-01",
+                "opponent": "Punjab Kings",
+                "result": "lost",
+                "margin": 7.0,
+                "venue": "MA Chidambaram Stadium, Chepauk"
+            }
+        ]
+    },
+    "Mumbai Indians": {
+        "name": "Mumbai Indians",
+        "logo":"../../static/logo/mi.png",
+        "matches_played": 261,
+        "matches_won": 144,
+        "win_percentage": 55.17,
+        "titles": 5,
+        "batting_stats": {
+            "total_runs": 42176,
+            "highest_score": 247,
+            "average_score": 158.56,
+            "run_rate": 8.05
+        },
+        "bowling_stats": {
+            "total_wickets": 1591,
+            "economy_rate": 7.86,
+            "best_bowling": "10/66"
+        },
+        "head_to_head": {
+            "Kolkata Knight Riders": {
+                "played": 34,
+                "won": 23,
+                "lost": 11,
+                "no_result": 0
+            },
+            "Delhi Capitals": {
+                "played": 35,
+                "won": 19,
+                "lost": 16,
+                "no_result": 0
+            },
+            "Gujarat Titans": {
+                "played": 9,
+                "won": 4,
+                "lost": 5,
+                "no_result": 0
+            },
+            "Pune Warriors": {
+                "played": 12,
+                "won": 7,
+                "lost": 5,
+                "no_result": 0
+            },
+            "Sunrisers Hyderabad": {
+                "played": 33,
+                "won": 19,
+                "lost": 14,
+                "no_result": 0
+            },
+            "Kochi Tuskers": {
+                "played": 1,
+                "won": 0,
+                "lost": 1,
+                "no_result": 0
+            },
+            "Rajasthan Royals": {
+                "played": 29,
+                "won": 15,
+                "lost": 14,
+                "no_result": 0
+            },
+            "Chennai Super Kings": {
+                "played": 37,
+                "won": 20,
+                "lost": 17,
+                "no_result": 0
+            },
+            "Royal Challengers Bangalore": {
+                "played": 33,
+                "won": 19,
+                "lost": 14,
+                "no_result": 0
+            },
+            "Lucknow Super Giants": {
+                "played": 6,
+                "won": 1,
+                "lost": 5,
+                "no_result": 0
+            },
+            "Punjab Kings": {
+                "played": 32,
+                "won": 17,
+                "lost": 15,
+                "no_result": 0
+            }
+        },
+        "top_batters": [
+            {
+                "name": "RG Sharma",
+                "runs": 5460,
+                "balls_faced": 4274,
+                "strike_rate": 127.75
+            },
+            {
+                "name": "KA Pollard",
+                "runs": 3437,
+                "balls_faced": 2447,
+                "strike_rate": 140.46
+            },
+            {
+                "name": "SA Yadav",
+                "runs": 2986,
+                "balls_faced": 2047,
+                "strike_rate": 145.87
+            },
+            {
+                "name": "AT Rayudu",
+                "runs": 2416,
+                "balls_faced": 1964,
+                "strike_rate": 123.01
+            },
+            {
+                "name": "SR Tendulkar",
+                "runs": 2334,
+                "balls_faced": 2044,
+                "strike_rate": 114.19
+            }
+        ],
+        "top_bowlers": [
+            {
+                "name": "SL Malinga",
+                "wickets": 188,
+                "runs_conceded": 3194,
+                "balls_bowled": 2974,
+                "economy": 6.44
+            },
+            {
+                "name": "JJ Bumrah",
+                "wickets": 182,
+                "runs_conceded": 3613,
+                "balls_bowled": 3185,
+                "economy": 6.81
+            },
+            {
+                "name": "Harbhajan Singh",
+                "wickets": 136,
+                "runs_conceded": 3295,
+                "balls_bowled": 2989,
+                "economy": 6.61
+            },
+            {
+                "name": "KA Pollard",
+                "wickets": 81,
+                "runs_conceded": 2077,
+                "balls_bowled": 1586,
+                "economy": 7.86
+            },
+            {
+                "name": "MJ McClenaghan",
+                "wickets": 75,
+                "runs_conceded": 1726,
+                "balls_bowled": 1346,
+                "economy": 7.69
+            }
+        ],
+        "recent_form": [
+            {
+                "match_id": 1426305,
+                "date": "2024-05-17",
+                "opponent": "Lucknow Super Giants",
+                "result": "lost",
+                "margin": 18.0,
+                "venue": "Wankhede Stadium"
+            },
+            {
+                "match_id": 1426298,
+                "date": "2024-05-11",
+                "opponent": "Kolkata Knight Riders",
+                "result": "lost",
+                "margin": 18.0,
+                "venue": "Eden Gardens"
+            },
+            {
+                "match_id": 1426293,
+                "date": "2024-05-06",
+                "opponent": "Sunrisers Hyderabad",
+                "result": "won",
+                "margin": 7.0,
+                "venue": "Wankhede Stadium"
+            },
+            {
+                "match_id": 1426289,
+                "date": "2024-05-03",
+                "opponent": "Kolkata Knight Riders",
+                "result": "lost",
+                "margin": 24.0,
+                "venue": "Wankhede Stadium"
+            },
+            {
+                "match_id": 1426286,
+                "date": "2024-04-30",
+                "opponent": "Lucknow Super Giants",
+                "result": "lost",
+                "margin": 4.0,
+                "venue": "Bharat Ratna Shri Atal Bihari Vajpayee Ekana Cricket Stadium, Lucknow"
+            }
+        ]
+    },
+    "Royal Challengers Bangalore": {
+        "name": "Royal Challengers Bangalore",
+        "logo":"../../static/logo/rcb.png",
+        "matches_played": 255,
+        "matches_won": 123,
+        "win_percentage": 48.24,
+        "titles": 0,
+        "batting_stats": {
+            "total_runs": 37692,
+            "highest_score": 263,
+            "average_score": 155.11,
+            "run_rate": 8.02
+        },
+        "bowling_stats": {
+            "total_wickets": 1406,
+            "economy_rate": 8.04,
+            "best_bowling": "10/58"
+        },
+        "head_to_head": {
+            "Kolkata Knight Riders": {
+                "played": 34,
+                "won": 14,
+                "lost": 20,
+                "no_result": 0
+            },
+            "Delhi Capitals": {
+                "played": 31,
+                "won": 19,
+                "lost": 11,
+                "no_result": 1
+            },
+            "Gujarat Titans": {
+                "played": 10,
+                "won": 6,
+                "lost": 4,
+                "no_result": 0
+            },
+            "Pune Warriors": {
+                "played": 9,
+                "won": 7,
+                "lost": 2,
+                "no_result": 0
+            },
+            "Sunrisers Hyderabad": {
+                "played": 35,
+                "won": 16,
+                "lost": 19,
+                "no_result": 0
+            },
+            "Kochi Tuskers": {
+                "played": 2,
+                "won": 2,
+                "lost": 0,
+                "no_result": 0
+            },
+            "Rajasthan Royals": {
+                "played": 31,
+                "won": 15,
+                "lost": 14,
+                "no_result": 2
+            },
+            "Chennai Super Kings": {
+                "played": 32,
+                "won": 11,
+                "lost": 21,
+                "no_result": 0
+            },
+            "Mumbai Indians": {
+                "played": 33,
+                "won": 14,
+                "lost": 19,
+                "no_result": 0
+            },
+            "Lucknow Super Giants": {
+                "played": 5,
+                "won": 3,
+                "lost": 2,
+                "no_result": 0
+            },
+            "Punjab Kings": {
+                "played": 33,
+                "won": 16,
+                "lost": 17,
+                "no_result": 0
+            }
+        },
+        "top_batters": [
+            {
+                "name": "V Kohli",
+                "runs": 7273,
+                "balls_faced": 5739,
+                "strike_rate": 126.73
+            },
+            {
+                "name": "AB de Villiers",
+                "runs": 4510,
+                "balls_faced": 2905,
+                "strike_rate": 155.25
+            },
+            {
+                "name": "CH Gayle",
+                "runs": 3175,
+                "balls_faced": 2176,
+                "strike_rate": 145.91
+            },
+            {
+                "name": "GJ Maxwell",
+                "runs": 1214,
+                "balls_faced": 782,
+                "strike_rate": 155.24
+            },
+            {
+                "name": "F du Plessis",
+                "runs": 1198,
+                "balls_faced": 860,
+                "strike_rate": 139.3
+            }
+        ],
+        "top_bowlers": [
+            {
+                "name": "YS Chahal",
+                "wickets": 143,
+                "runs_conceded": 2984,
+                "balls_bowled": 2487,
+                "economy": 7.2
+            },
+            {
+                "name": "HV Patel",
+                "wickets": 108,
+                "runs_conceded": 2199,
+                "balls_bowled": 1708,
+                "economy": 7.72
+            },
+            {
+                "name": "R Vinay Kumar",
+                "wickets": 83,
+                "runs_conceded": 1806,
+                "balls_bowled": 1347,
+                "economy": 8.04
+            },
+            {
+                "name": "Mohammed Siraj",
+                "wickets": 71,
+                "runs_conceded": 1998,
+                "balls_bowled": 1590,
+                "economy": 7.54
+            },
+            {
+                "name": "Z Khan",
+                "wickets": 56,
+                "runs_conceded": 1266,
+                "balls_bowled": 1039,
+                "economy": 7.31
+            }
+        ],
+        "recent_form": [
+            {
+                "match_id": 1426310,
+                "date": "2024-05-22",
+                "opponent": "Rajasthan Royals",
+                "result": "lost",
+                "margin": 4.0,
+                "venue": "Narendra Modi Stadium, Ahmedabad"
+            },
+            {
+                "match_id": 1426306,
+                "date": "2024-05-18",
+                "opponent": "Chennai Super Kings",
+                "result": "won",
+                "margin": 27.0,
+                "venue": "M Chinnaswamy Stadium"
+            },
+            {
+                "match_id": 1426300,
+                "date": "2024-05-12",
+                "opponent": "Delhi Capitals",
+                "result": "won",
+                "margin": 47.0,
+                "venue": "M Chinnaswamy Stadium"
+            },
+            {
+                "match_id": 1426296,
+                "date": "2024-05-09",
+                "opponent": "Punjab Kings",
+                "result": "won",
+                "margin": 60.0,
+                "venue": "Himachal Pradesh Cricket Association Stadium"
+            },
+            {
+                "match_id": 1426290,
+                "date": "2024-05-04",
+                "opponent": "Gujarat Titans",
+                "result": "won",
+                "margin": 4.0,
+                "venue": "M Chinnaswamy Stadium"
+            }
+        ]
+    },
+    "Lucknow Super Giants": {
+        "name": "Lucknow Super Giants",
+        "logo":"../../static/logo/lsg.png",
+        "matches_played": 44,
+        "matches_won": 24,
+        "win_percentage": 54.55,
+        "titles": 0,
+        "batting_stats": {
+            "total_runs": 7510,
+            "highest_score": 257,
+            "average_score": 170.68,
+            "run_rate": 8.34
+        },
+        "bowling_stats": {
+            "total_wickets": 264,
+            "economy_rate": 8.51,
+            "best_bowling": "10/101"
+        },
+        "head_to_head": {
+            "Kolkata Knight Riders": {
+                "played": 5,
+                "won": 3,
+                "lost": 2,
+                "no_result": 0
+            },
+            "Delhi Capitals": {
+                "played": 5,
+                "won": 3,
+                "lost": 2,
+                "no_result": 0
+            },
+            "Gujarat Titans": {
+                "played": 5,
+                "won": 1,
+                "lost": 4,
+                "no_result": 0
+            },
+            "Sunrisers Hyderabad": {
+                "played": 4,
+                "won": 3,
+                "lost": 1,
+                "no_result": 0
+            },
+            "Rajasthan Royals": {
+                "played": 5,
+                "won": 1,
+                "lost": 4,
+                "no_result": 0
+            },
+            "Chennai Super Kings": {
+                "played": 5,
+                "won": 3,
+                "lost": 1,
+                "no_result": 1
+            },
+            "Mumbai Indians": {
+                "played": 6,
+                "won": 5,
+                "lost": 1,
+                "no_result": 0
+            },
+            "Royal Challengers Bangalore": {
+                "played": 5,
+                "won": 2,
+                "lost": 3,
+                "no_result": 0
+            },
+            "Punjab Kings": {
+                "played": 4,
+                "won": 3,
+                "lost": 1,
+                "no_result": 0
+            }
+        },
+        "top_batters": [
+            {
+                "name": "KL Rahul",
+                "runs": 1410,
+                "balls_faced": 1117,
+                "strike_rate": 126.23
+            },
+            {
+                "name": "MP Stoinis",
+                "runs": 952,
+                "balls_faced": 669,
+                "strike_rate": 142.3
+            },
+            {
+                "name": "Q de Kock",
+                "runs": 901,
+                "balls_faced": 647,
+                "strike_rate": 139.26
+            },
+            {
+                "name": "N Pooran",
+                "runs": 857,
+                "balls_faced": 513,
+                "strike_rate": 167.06
+            },
+            {
+                "name": "DJ Hooda",
+                "runs": 680,
+                "balls_faced": 540,
+                "strike_rate": 125.93
+            }
+        ],
+        "top_bowlers": [
+            {
+                "name": "Ravi Bishnoi",
+                "wickets": 41,
+                "runs_conceded": 1197,
+                "balls_bowled": 922,
+                "economy": 7.79
+            },
+            {
+                "name": "Avesh Khan",
+                "wickets": 27,
+                "runs_conceded": 675,
+                "balls_bowled": 476,
+                "economy": 8.51
+            },
+            {
+                "name": "Mohsin Khan",
+                "wickets": 27,
+                "runs_conceded": 663,
+                "balls_bowled": 507,
+                "economy": 7.85
+            },
+            {
+                "name": "Yash Thakur",
+                "wickets": 27,
+                "runs_conceded": 663,
+                "balls_bowled": 432,
+                "economy": 9.21
+            },
+            {
+                "name": "KH Pandya",
+                "wickets": 26,
+                "runs_conceded": 813,
+                "balls_bowled": 690,
+                "economy": 7.07
+            }
+        ],
+        "recent_form": [
+            {
+                "match_id": 1426305,
+                "date": "2024-05-17",
+                "opponent": "Mumbai Indians",
+                "result": "won",
+                "margin": 18.0,
+                "venue": "Wankhede Stadium"
+            },
+            {
+                "match_id": 1426302,
+                "date": "2024-05-14",
+                "opponent": "Delhi Capitals",
+                "result": "lost",
+                "margin": 19.0,
+                "venue": "Arun Jaitley Stadium"
+            },
+            {
+                "match_id": 1426295,
+                "date": "2024-05-08",
+                "opponent": "Sunrisers Hyderabad",
+                "result": "lost",
+                "margin": 10.0,
+                "venue": "Rajiv Gandhi International Stadium"
+            },
+            {
+                "match_id": 1426292,
+                "date": "2024-05-05",
+                "opponent": "Kolkata Knight Riders",
+                "result": "lost",
+                "margin": 98.0,
+                "venue": "Bharat Ratna Shri Atal Bihari Vajpayee Ekana Cricket Stadium, Lucknow"
+            },
+            {
+                "match_id": 1426286,
+                "date": "2024-04-30",
+                "opponent": "Mumbai Indians",
+                "result": "won",
+                "margin": 4.0,
+                "venue": "Bharat Ratna Shri Atal Bihari Vajpayee Ekana Cricket Stadium, Lucknow"
+            }
+        ]
+    },
+    "Punjab Kings": {
+        "name": "Punjab Kings",
+        "logo":"../../static/logo/pk.png",
+        "matches_played": 246,
+        "matches_won": 112,
+        "win_percentage": 45.53,
+        "titles": 0,
+        "batting_stats": {
+            "total_runs": 9536,
+            "highest_score": 262,
+            "average_score": 170.29,
+            "run_rate": 8.37
+        },
+        "bowling_stats": {
+            "total_wickets": 335,
+            "economy_rate": 8.52,
+            "best_bowling": "10/126"
+        },
+        "head_to_head": {
+            "Kolkata Knight Riders": {
+                "played": 33,
+                "won": 12,
+                "lost": 21,
+                "no_result": 0
+            },
+            "Delhi Capitals": {
+                "played": 33,
+                "won": 17,
+                "lost": 16,
+                "no_result": 0
+            },
+            "Gujarat Titans": {
+                "played": 9,
+                "won": 4,
+                "lost": 5,
+                "no_result": 0
+            },
+            "Pune Warriors": {
+                "played": 10,
+                "won": 5,
+                "lost": 5,
+                "no_result": 0
+            },
+            "Sunrisers Hyderabad": {
+                "played": 33,
+                "won": 14,
+                "lost": 19,
+                "no_result": 0
+            },
+            "Kochi Tuskers": {
+                "played": 1,
+                "won": 1,
+                "lost": 0,
+                "no_result": 0
+            },
+            "Rajasthan Royals": {
+                "played": 28,
+                "won": 12,
+                "lost": 16,
+                "no_result": 0
+            },
+            "Chennai Super Kings": {
+                "played": 30,
+                "won": 14,
+                "lost": 16,
+                "no_result": 0
+            },
+            "Mumbai Indians": {
+                "played": 32,
+                "won": 15,
+                "lost": 17,
+                "no_result": 0
+            },
+            "Royal Challengers Bangalore": {
+                "played": 33,
+                "won": 17,
+                "lost": 16,
+                "no_result": 0
+            },
+            "Lucknow Super Giants": {
+                "played": 4,
+                "won": 1,
+                "lost": 3,
+                "no_result": 0
+            }
+        },
+        "top_batters": [
+            {
+                "name": "S Dhawan",
+                "runs": 985,
+                "balls_faced": 795,
+                "strike_rate": 123.9
+            },
+            {
+                "name": "LS Livingstone",
+                "runs": 827,
+                "balls_faced": 518,
+                "strike_rate": 159.65
+            },
+            {
+                "name": "JM Sharma",
+                "runs": 730,
+                "balls_faced": 501,
+                "strike_rate": 145.71
+            },
+            {
+                "name": "P Simran Singh",
+                "runs": 725,
+                "balls_faced": 495,
+                "strike_rate": 146.46
+            },
+            {
+                "name": "MA Agarwal",
+                "runs": 637,
+                "balls_faced": 491,
+                "strike_rate": 129.74
+            }
+        ],
+        "top_bowlers": [
+            {
+                "name": "Arshdeep Singh",
+                "wickets": 70,
+                "runs_conceded": 1646,
+                "balls_bowled": 1230,
+                "economy": 8.03
+            },
+            {
+                "name": "K Rabada",
+                "wickets": 41,
+                "runs_conceded": 971,
+                "balls_bowled": 712,
+                "economy": 8.18
+            },
+            {
+                "name": "RD Chahar",
+                "wickets": 32,
+                "runs_conceded": 1002,
+                "balls_bowled": 780,
+                "economy": 7.71
+            },
+            {
+                "name": "HV Patel",
+                "wickets": 30,
+                "runs_conceded": 450,
+                "balls_bowled": 317,
+                "economy": 8.52
+            },
+            {
+                "name": "SM Curran",
+                "wickets": 27,
+                "runs_conceded": 885,
+                "balls_bowled": 553,
+                "economy": 9.6
+            }
+        ],
+        "recent_form": [
+            {
+                "match_id": 1426307,
+                "date": "2024-05-19",
+                "opponent": "Sunrisers Hyderabad",
+                "result": "lost",
+                "margin": 4.0,
+                "venue": "Rajiv Gandhi International Stadium"
+            },
+            {
+                "match_id": 1426303,
+                "date": "2024-05-15",
+                "opponent": "Rajasthan Royals",
+                "result": "won",
+                "margin": 5.0,
+                "venue": "Barsapara Cricket Stadium, Guwahati"
+            },
+            {
+                "match_id": 1426296,
+                "date": "2024-05-09",
+                "opponent": "Royal Challengers Bangalore",
+                "result": "lost",
+                "margin": 60.0,
+                "venue": "Himachal Pradesh Cricket Association Stadium"
+            },
+            {
+                "match_id": 1426291,
+                "date": "2024-05-05",
+                "opponent": "Chennai Super Kings",
+                "result": "lost",
+                "margin": 28.0,
+                "venue": "Himachal Pradesh Cricket Association Stadium"
+            },
+            {
+                "match_id": 1426287,
+                "date": "2024-05-01",
+                "opponent": "Chennai Super Kings",
+                "result": "won",
+                "margin": 7.0,
+                "venue": "MA Chidambaram Stadium, Chepauk"
+            }
+        ]
+    }
+}

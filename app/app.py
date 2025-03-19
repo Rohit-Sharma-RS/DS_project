@@ -10,21 +10,25 @@ import numpy as np
 import joblib
 from typing import List
 import uvicorn
+from pathlib import Path
+import os
 
 app = FastAPI(title="IPL Match Predictor")
 
-templates = Jinja2Templates(directory=r".\app\templates")
+ROOT_DIR = Path(__file__).resolve().parent.parent
 
-app.mount("/static", StaticFiles(directory=r".\app\static"), name="static")
+templates = Jinja2Templates(directory=os.path.join(ROOT_DIR, "app", "templates"))
 
-with open(r"notebook\data\processed_player_final.json", "r") as f:
+app.mount("/static", StaticFiles(directory=os.path.join(ROOT_DIR, "app", "static")), name="static")
+
+with open(os.path.join(ROOT_DIR, "notebook", "data", "processed_player_final.json"),  "r") as f:
     teams_data = json.load(f)
 
-head_to_head_df = pd.read_csv(r"notebook\data\head_to_head_dataset.csv")
+head_to_head_df = pd.read_csv(os.path.join(ROOT_DIR, "notebook", "data", "head_to_head_dataset.csv"))
 
 # Load ML models and scaler
-model = joblib.load(r".\app\model.joblib")
-scaler = joblib.load(r".\app\scaler.joblib")
+model = joblib.load(os.path.join(ROOT_DIR, "app", "model.joblib"))
+scaler = joblib.load(os.path.join(ROOT_DIR, "app", "scaler.joblib"))
 
 # Get all team names for one-hot encoding
 all_teams = list(teams_data["teams"].keys())
@@ -64,7 +68,7 @@ team_stats = {}
 def load_player_stats():
     global player_stats
     try:
-        with open(r".\notebook\data\player_analysis.json", "r") as f:
+        with open(os.path.join(ROOT_DIR, "notebook","data", "player_analysis.json"), "r") as f:
             player_stats = json.load(f)
         print("Player stats loaded successfully")
     except Exception as e:
@@ -73,7 +77,7 @@ def load_player_stats():
 def load_team_stats():
     global team_stats
     try:
-        with open(r".\notebook\data\team_analysis.json", "r") as f:
+        with open(os.path.join(ROOT_DIR, "notebook","data", "team_analysis.json"), "r") as f:
             team_stats = json.load(f)
         print("Team stats loaded successfully")
     except Exception as e:
@@ -84,7 +88,7 @@ def load_venue_stats():
     try:
         # Load from wherever you have your venue data stored
         # For example, from a JSON file:
-        with open(r".\notebook\data\venue_stats.json", "r") as f:
+        with open(os.path.join(ROOT_DIR, "notebook","data", "venue_stats.json"), "r") as f:
             venue_stats = json.load(f)
         print("Venue stats loaded successfully")
     except Exception as e:
