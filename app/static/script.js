@@ -55,7 +55,76 @@ document.addEventListener('DOMContentLoaded', function() {
     animateElements();
 });
 
-// Fetch players for a team
+function autoSelectPlayers(containerId, count = 11) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    
+    // Get all checkboxes in the container
+    const checkboxes = container.querySelectorAll('input[type="checkbox"]');
+    if (checkboxes.length === 0) return;
+    
+    // Clear any existing selections
+    checkboxes.forEach(checkbox => {
+        checkbox.checked = false;
+    });
+    
+    // Select players by role preference: first batsmen, then all-rounders, then bowlers
+    // This ensures a balanced team selection
+    const rolePreference = ['batsman', 'all-rounder', 'bowler', 'wicket-keeper'];
+    let selectedCount = 0;
+    
+    // First, ensure we have at least one wicket-keeper
+    const wicketKeepers = Array.from(checkboxes).filter(checkbox => {
+        const parentDiv = checkbox.closest('.role-players');
+        const roleTitle = parentDiv?.previousElementSibling?.textContent?.toLowerCase() || '';
+        return roleTitle.includes('wicket-keeper');
+    });
+    
+    if (wicketKeepers.length > 0) {
+        wicketKeepers[0].checked = true;
+        selectedCount++;
+    }
+    
+    // Then select remaining players by role preference
+    for (const role of rolePreference) {
+        if (selectedCount >= count) break;
+        
+        const roleCheckboxes = Array.from(checkboxes).filter(checkbox => {
+            const parentDiv = checkbox.closest('.role-players');
+            const roleTitle = parentDiv?.previousElementSibling?.textContent?.toLowerCase() || '';
+            return roleTitle.includes(role) && !checkbox.checked;
+        });
+        
+        for (const checkbox of roleCheckboxes) {
+            if (selectedCount >= count) break;
+            checkbox.checked = true;
+            selectedCount++;
+        }
+    }
+    
+    // If we still haven't selected enough players, select any remaining ones
+    if (selectedCount < count) {
+        for (const checkbox of checkboxes) {
+            if (!checkbox.checked) {
+                checkbox.checked = true;
+                selectedCount++;
+                if (selectedCount >= count) break;
+            }
+        }
+    }
+    
+    // Trigger change event on checkboxes to ensure any listeners are notified
+    checkboxes.forEach(checkbox => {
+        if (checkbox.checked) {
+            const event = new Event('change', { bubbles: true });
+            checkbox.dispatchEvent(event);
+        }
+    });
+    
+    console.log(`Auto-selected ${selectedCount} players in ${containerId}`);
+}
+
+// Fetch players for a team 
 async function fetchPlayers(teamName, containerId, fieldName) {
     if (!teamName) return;
     
@@ -120,6 +189,10 @@ async function fetchPlayers(teamName, containerId, fieldName) {
             roleDiv.appendChild(rolePlayersDiv);
             container.appendChild(roleDiv);
         }
+        
+        // Auto-select 11 players after loading
+        setTimeout(() => autoSelectPlayers(containerId, 11), 100);
+        
     } catch (error) {
         console.error("Error fetching players:", error);
         container.innerHTML = '<p class="text-danger">Error loading players. Please try again.</p>';
@@ -381,6 +454,7 @@ async function updateHeadToHead() {
         container.innerHTML = '<div class="alert alert-danger">Error loading head-to-head stats</div>';
     }
 }
+
 
 // Display prediction results
 function displayResults(data) {

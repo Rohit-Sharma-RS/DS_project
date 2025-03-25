@@ -62,7 +62,7 @@ venues = [
 
 venue_stats = {}
 
-player_stats = {}
+player_stats = {}   
 team_stats = {}
 
 def load_player_stats():
@@ -145,7 +145,7 @@ def align_feature_names(df_encoded):
 
 @app.get("/")
 async def get_landing_page(request: Request):
-    return templates.TemplateResponse("landing.html", {"request": request})
+    return templates.TemplateResponse(request, "landing.html")
 
 @app.get("/home", response_class=HTMLResponse)
 async def index(request: Request):
@@ -153,8 +153,9 @@ async def index(request: Request):
     team_names = list(teams_data["teams"].keys())
     
     return templates.TemplateResponse(
+        request,
         "index.html", 
-        {"request": request, "team_names": team_names, "venues": venues}
+        {"team_names": team_names, "venues": venues}
     )
 @app.get("/playeranalyzer/", response_class=HTMLResponse)
 async def playeranalyzer(request: Request):
@@ -165,8 +166,9 @@ async def playeranalyzer(request: Request):
     load_player_stats()
     
     return templates.TemplateResponse(
+        request,
         "playeranalyzer.html",
-        {"request": request, "players": list(player_stats.keys())}
+        {"players": list(player_stats.keys())}
     )
 
 @app.get("/api/placeholder/{width}/{height}")
@@ -188,8 +190,9 @@ async def teamanalyzer(request: Request):
     load_team_stats()
     
     return templates.TemplateResponse(
+        request,
         "teamanalyzer.html",
-        {"request": request, "teams": list(team_stats.keys())}
+        {"teams": list(team_stats.keys())}
     )
 
 
@@ -201,8 +204,9 @@ async def venueanalyzer(request: Request):
     venues = list(venue_stats.keys())   
     
     return templates.TemplateResponse(
+        request,
         "venueanalyzer.html",
-        {"request": request, "venues": venues}
+        {"venues": venues}
     )
 
 
