@@ -4,7 +4,7 @@ from jose import JWTError, jwt
 from datetime import datetime, timedelta
 from sqlalchemy.orm import Session
 from typing import Optional
-from database import User, get_db
+from .database import User, get_db
 from dotenv import dotenv_values
 
 secret = dotenv_values("secrets.env")
