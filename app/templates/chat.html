@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL Chat Room</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
+    <link rel="icon" href="{{ url_for('static', path='favicon.avif') }}">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .chat-container {
+            max-width: 1000px;
+            margin: 30px auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .chat-header {
+            background-color: #004080;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        .chat-messages {
+            height: 400px;
+            overflow-y: auto;
+            padding: 15px;
+            background-color: #f8f9fa;
+        }
+        .message {
+            margin-bottom: 15px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            max-width: 70%;
+            position: relative;
+        }
+        .message-others {
+            background-color: #e9ecef;
+            float: left;
+            clear: both;
+        }
+        .message-self {
+            background-color: #d1ecf1;
+            float: right;
+            clear: both;
+        }
+        .message-username {
+            font-weight: bold;
+            font-size: 0.8rem;
+            margin-bottom: 2px;
+        }
+        .message-time {
+            font-size: 0.7rem;
+            color: #6c757d;
+            text-align: right;
+            margin-top: 2px;
+        }
+        .chat-input {
+            padding: 15px;
+            background-color: white;
+            border-top: 1px solid #dee2e6;
+        }
+        .users-online {
+            background-color: white;
+            padding: 15px;
+            border-left: 1px solid #dee2e6;
+            height: 430px;
+            overflow-y: auto;
+        }
+        .user-item {
+            padding: 5px 10px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+        }
+        .user-item.self {
+            background-color: #d1ecf1;
+        }
+        .typing-indicator {
+            height: 20px;
+            font-size: 0.8rem;
+            color: #6c757d;
+            font-style: italic;
+            padding-left: 15px;
+        }
+        .btn-primary {
+            background-color: #004080;
+            border-color: #004080;
+        }
+        .btn-primary:hover {
+            background-color: #00305f;
+            border-color: #00305f;
+        }
+        .ipl-header {
+            min-height: 180px;
+        }
+        .nav-link {
+            color: #004080;
+        }
+        .nav-link.active {
+            font-weight: bold;
+            color: #004080;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid p-0">
+        <!-- Header with IPL-themed design -->
+        <div class="ipl-header">
+            <div class="overlay"></div>
+            <div class="header-content">
+                <h1>IPL Chat Room</h1>
+                <p>Discuss matches and predictions with other fans</p>
+            </div>
+        </div>
+        
+        <!-- Navigation Pills -->
+<div class="analysis-nav">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <button id="venue-analyzer-btn" class="analyzer-btn">
+                    <i class="fas fa-map-marker-alt"></i> Venue Analyzer
+                </button>
+            </div>
+            <div class="col-md-3">
+                <button id="player-analyzer-btn" class="analyzer-btn">
+                    <i class="fas fa-user"></i> Player Analyzer
+                </button>
+            </div>
+            <div class="col-md-3">
+                <button id="team-analyzer-btn" class="analyzer-btn" >
+                    <i class="fas fa-users"></i> Team Analyzer
+                </button>
+            </div>
+            <div class="col-md-3">
+                <a href="/chat/" class="analyzer-btn" style="text-decoration: none;">
+                    <i class="fas fa-comments"></i> Chat Room
+                </a>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-12 text-end">
+                <a href="/logout" class="btn btn-danger btn-sm">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+ 
+        <div class="container">
+            <div class="chat-container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="chat-header">
+                            <i class="fas fa-comments"></i> IPL Fan Chat
+                        </div>
+                        <div class="chat-messages" id="chatMessages">
+                            <!-- Chat history will be loaded here -->
+                            {% for message in chat_history %}
+                            <div class="message {% if message.user_id == user_id %}message-self{% else %}message-others{% endif %}">
+                                <div class="message-username">{{ message.username }}</div>
+                                <div class="message-content">{{ message.content }}</div>
+                                <div class="message-time">{{ message.created_at }}</div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class="typing-indicator" id="typingIndicator"></div>
+                        <div class="chat-input">
+                            <form id="messageForm" class="row g-3">
+                                <div class="col-10">
+                                    <input type="text" class="form-control" id="messageInput" placeholder="Type your message...">
+                                </div>
+                                <div class="col-2">
+                                    <button type="submit" class="btn btn-primary w-100">Send</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="chat-header">
+                            <i class="fas fa-users"></i> Users Online
+                        </div>
+                        <div class="users-online" id="usersOnline">
+                            <!-- Users will be displayed here -->
+                            <div class="user-item self">
+                                <i class="fas fa-user"></i> {{ username }} (You)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const userId = {{ user_id }};
+            const username = "{{ username }}";
+            const messageForm = document.getElementById('messageForm');
+            const messageInput = document.getElementById('messageInput');
+            const chatMessages = document.getElementById('chatMessages');
+            const usersOnline = document.getElementById('usersOnline');
+            const typingIndicator = document.getElementById('typingIndicator');
+            
+            // Connect to WebSocket
+            const ws = new WebSocket(`${window.location.protocol === 'https:' ? 'wss:' : 'ws:'}//${window.location.host}/ws/${userId}`);
+            
+            // Current list of online users
+            const onlineUsers = new Map();
+            
+            // Handle WebSocket connection open
+            ws.onopen = function(event) {
+                console.log('Connected to chat server');
+            };
+            
+            // Handle WebSocket messages
+            ws.onmessage = function(event) {
+                const data = JSON.parse(event.data);
+                
+                switch(data.type) {
+                    case 'chat_message':
+                        addMessage(data.message);
+                        break;
+                    case 'user_joined':
+                        addUser(data.user);
+                        break;
+                    case 'user_left':
+                        removeUser(data.user);
+                        break;
+                    case 'users_list':
+                        updateUsersList(data.users);
+                        break;
+                    case 'typing':
+                        updateTypingIndicator(data.user);
+                        break;
+                }
+            };
+            
+            // Handle WebSocket errors
+            ws.onerror = function(error) {
+                console.error('WebSocket error:', error);
+            };
+            
+            // Handle WebSocket connection close
+            ws.onclose = function(event) {
+                console.log('Disconnected from chat server');
+                // Optionally add reconnection logic here
+                setTimeout(() => {
+                    console.log('Attempting to reconnect...');
+                    window.location.reload();
+                }, 3000);
+            };
+            
+            // Send message when form is submitted
+            messageForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const message = messageInput.value.trim();
+                if (message) {
+                    sendMessage(message);
+                    messageInput.value = '';
+                }
+            });
+            
+            // Send typing status when input changes
+            let typingTimeout;
+            messageInput.addEventListener('input', function() {
+                sendTyping();
+                
+                clearTimeout(typingTimeout);
+                typingTimeout = setTimeout(() => {
+                    // Clear typing status after user stops typing
+                    sendTyping(false);
+                }, 2000);
+            });
+            
+            // Function to send a message
+            function sendMessage(content) {
+                ws.send(JSON.stringify({
+                    type: 'chat_message',
+                    content: content
+                }));
+            }
+            
+            // Function to send typing status
+            function sendTyping(isTyping = true) {
+                ws.send(JSON.stringify({
+                    type: 'typing',
+                    is_typing: isTyping
+                }));
+            }
+            
+            // Function to add a message to the chat
+            function addMessage(message) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message ${message.user_id === userId ? 'message-self' : 'message-others'}`;
+                
+                const usernameDiv = document.createElement('div');
+                usernameDiv.className = 'message-username';
+                usernameDiv.textContent = message.username;
+                
+                const contentDiv = document.createElement('div');
+                contentDiv.className = 'message-content';
+                contentDiv.textContent = message.content;
+                
+                const timeDiv = document.createElement('div');
+                timeDiv.className = 'message-time';
+                timeDiv.textContent = message.created_at;
+                
+                messageDiv.appendChild(usernameDiv);
+                messageDiv.appendChild(contentDiv);
+                messageDiv.appendChild(timeDiv);
+                
+                chatMessages.appendChild(messageDiv);
+                scrollToBottom();
+            }
+            
+            // Function to add a user to the online users list
+            function addUser(user) {
+                if (!onlineUsers.has(user.id)) {
+                    onlineUsers.set(user.id, user);
+                    updateUsersDisplay();
+                    
+                    // Notify in chat that user joined
+                    const systemMessage = {
+                        user_id: -1,
+                        username: 'System',
+                        content: `${user.username} has joined the chat`,
+                        created_at: new Date().toLocaleTimeString()
+                    };
+                    addMessage(systemMessage);
+                }
+            }
+            
+            // Function to remove a user from the online users list
+            function removeUser(user) {
+                if (onlineUsers.has(user.id)) {
+                    onlineUsers.delete(user.id);
+                    updateUsersDisplay();
+                    
+                    // Notify in chat that user left
+                    const systemMessage = {
+                        user_id: -1,
+                        username: 'System',
+                        content: `${user.username} has left the chat`,
+                        created_at: new Date().toLocaleTimeString()
+                    };
+                    addMessage(systemMessage);
+                }
+            }
+            
+            // Function to update the list of online users
+            function updateUsersList(users) {
+                onlineUsers.clear();
+                users.forEach(user => {
+                    onlineUsers.set(user.id, user);
+                });
+                updateUsersDisplay();
+            }
+            
+            // Function to update the users display
+            function updateUsersDisplay() {
+                usersOnline.innerHTML = '';
+                
+                // Add self first
+                const selfDiv = document.createElement('div');
+                selfDiv.className = 'user-item self';
+                selfDiv.innerHTML = `<i class="fas fa-user"></i> ${username} (You)`;
+                usersOnline.appendChild(selfDiv);
+                
+                // Add other users
+                onlineUsers.forEach(user => {
+                    if (user.id !== userId) {
+                        const userDiv = document.createElement('div');
+                        userDiv.className = 'user-item';
+                        userDiv.innerHTML = `<i class="fas fa-user"></i> ${user.username}`;
+                        usersOnline.appendChild(userDiv);
+                    }
+                });
+            }
+            
+            // Function to update typing indicator
+            function updateTypingIndicator(user) {
+                if (user.id !== userId && user.is_typing) {
+                    typingIndicator.textContent = `${user.username} is typing...`;
+                } else {
+                    typingIndicator.textContent = '';
+                }
+            }
+            
+            // Function to scroll chat to bottom
+            function scrollToBottom() {
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+            
+            // Scroll to bottom initially
+            scrollToBottom();
+        });
+    </script>
+</body>
+</html>

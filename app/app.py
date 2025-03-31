@@ -1,24 +1,250 @@
-from fastapi import FastAPI, Request, Form,APIRouter, HTTPException, Response
-from fastapi.responses import HTMLResponse, JSONResponse, FileResponse
+from fastapi import FastAPI, Request, Form,APIRouter, HTTPException, Response, WebSocket, WebSocketDisconnect, status, Form, Request, Response, Depends
+from fastapi.responses import HTMLResponse, JSONResponse, RedirectResponse
 from fastapi.templating import Jinja2Templates
+from fastapi.security import OAuth2PasswordRequestForm
+from sqlalchemy.orm import Session
+from datetime import timedelta
+from typing import List, Dict
+from database import User, ChatMessage, create_tables, get_db
+from auth import authenticate_user, create_access_token, get_current_active_user, ACCESS_TOKEN_EXPIRE_MINUTES
 from PIL import Image
 import io
 from fastapi.staticfiles import StaticFiles
 import json
 import pandas as pd
-import numpy as np
 import joblib
 from typing import List
 import uvicorn
 from pathlib import Path
 import os
 
+create_tables()
+
 app = FastAPI(title="IPL Match Predictor")
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
 
 templates = Jinja2Templates(directory=os.path.join(ROOT_DIR, "app", "templates"))
+router = APIRouter()
 
+class ConnectionManager:
+    def __init__(self):
+        self.active_connections: Dict[int, WebSocket] = {}
+        self.user_info: Dict[int, Dict] = {}
+
+    async def connect(self, websocket: WebSocket, user_id: int, username: str):
+        await websocket.accept()
+        self.active_connections[user_id] = websocket
+        self.user_info[user_id] = {"username": username}
+        
+        # Send currently active users to the new user
+        users_list = [{"id": uid, "username": info["username"]} 
+                     for uid, info in self.user_info.items()]
+        await websocket.send_json({
+            "type": "users_list",
+            "users": users_list
+        })
+        
+        # Notify everyone about the new user
+        await self.broadcast_user_joined(user_id, username)
+
+    def disconnect(self, user_id: int):
+        if user_id in self.active_connections:
+            del self.active_connections[user_id]
+        if user_id in self.user_info:
+            username = self.user_info[user_id]["username"]
+            del self.user_info[user_id]
+            return username
+        return None
+
+    async def broadcast_user_joined(self, user_id: int, username: str):
+        for connection in self.active_connections.values():
+            await connection.send_json({
+                "type": "user_joined",
+                "user": {"id": user_id, "username": username}
+            })
+
+    async def broadcast_user_left(self, user_id: int, username: str):
+        for connection in self.active_connections.values():
+            await connection.send_json({
+                "type": "user_left",
+                "user": {"id": user_id, "username": username}
+            })
+
+    async def broadcast_message(self, message: dict):
+        for connection in self.active_connections.values():
+            await connection.send_json({
+                "type": "chat_message", 
+                "message": message
+            })
+
+manager = ConnectionManager()
+
+# Authentication routes
+@router.post("/register")
+async def register_user(
+    request: Request, 
+    username: str = Form(...), 
+    email: str = Form(...), 
+    password: str = Form(...), 
+    db: Session = Depends(get_db)
+):
+    try:
+        # Check if username already exists
+        existing_user = db.query(User).filter(User.username == username).first()
+        if existing_user:
+            return templates.TemplateResponse(
+                "register.html", 
+                {"request": request, "error": "Username already exists"}
+            )
+        
+        # Check if email already exists
+        existing_email = db.query(User).filter(User.email == email).first()
+        if existing_email:
+            return templates.TemplateResponse(
+                "register.html", 
+                {"request": request, "error": "Email already exists"}
+            )
+        
+        # Create new user - modify this part based on your User model
+        # Option 1: If User.create is a static method
+        try:
+            user = User.create(username=username, email=email, password=password)
+        except AttributeError:
+            # Option 2: If User.create doesn't exist, create user directly
+            from passlib.context import CryptContext
+            pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+            hashed_password = pwd_context.hash(password)
+            user = User(username=username, email=email, hashed_password=hashed_password)
+        
+        db.add(user)
+        db.commit()
+        db.refresh(user)
+        
+        # Create access token
+        access_token_expires = timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
+        access_token = create_access_token(
+            data={"sub": user.username}, expires_delta=access_token_expires
+        )
+        
+        # Set cookie and redirect to home
+        response = RedirectResponse(url="/home", status_code=status.HTTP_303_SEE_OTHER)
+        response.set_cookie(key="access_token", value=f"Bearer {access_token}", httponly=True)
+        return response
+    
+    except Exception as e:
+        print(f"Registration error: {str(e)}")
+        return templates.TemplateResponse(
+            "register.html", 
+            {"request": request, "error": "Registration failed. Please try again."}
+        )
+    
+@router.post("/token")
+async def login_for_access_token(
+    request: Request,
+    response: Response,
+    form_data: OAuth2PasswordRequestForm = Depends(),
+    db: Session = Depends(get_db)
+):
+    user = authenticate_user(db, form_data.username, form_data.password)
+    if not user:
+        return templates.TemplateResponse(
+            "login.html", 
+            {"request": request, "error": "Incorrect username or password"}
+        )
+    
+    access_token_expires = timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
+    access_token = create_access_token(
+        data={"sub": user.username}, expires_delta=access_token_expires
+    )
+    
+    # Set HTTP-only cookie with SameSite attribute
+    response = RedirectResponse("/home", status_code=status.HTTP_303_SEE_OTHER)
+    response.set_cookie(
+        key="access_token", 
+        value=f"Bearer {access_token}", 
+        httponly=True,
+        samesite="strict",  # Add this for better security
+        max_age=ACCESS_TOKEN_EXPIRE_MINUTES * 60  # Convert minutes to seconds
+    )
+    
+    return response
+
+@router.get("/login")
+async def login_page(request: Request):
+    return templates.TemplateResponse("login.html", {"request": request})
+
+@router.get("/register")
+async def register_page(request: Request):
+    return templates.TemplateResponse("register.html", {"request": request})
+
+@router.get("/logout")
+async def logout(response: Response):
+    response = RedirectResponse(url="/", status_code=status.HTTP_303_SEE_OTHER)
+    response.delete_cookie(key="access_token")
+    return response
+
+# Chat room routes
+@router.get("/chat")
+async def get_chat_page(request: Request, current_user: User = Depends(get_current_active_user)):
+    # Get recent chat history (last 50 messages)
+    db = next(get_db())
+    messages = db.query(ChatMessage).order_by(ChatMessage.created_at.desc()).limit(50).all()
+    messages = reversed([{
+        "id": msg.id,
+        "content": msg.content,
+        "created_at": msg.created_at.strftime("%Y-%m-%d %H:%M:%S"),
+        "username": db.query(User).filter(User.id == msg.user_id).first().username,
+        "user_id": msg.user_id
+    } for msg in messages])
+    
+    return templates.TemplateResponse(
+        "chat.html", 
+        {
+            "request": request, 
+            "username": current_user.username,
+            "user_id": current_user.id,
+            "chat_history": list(messages)
+        }
+    )
+
+@router.websocket("/ws/{user_id}")
+async def websocket_endpoint(websocket: WebSocket, user_id: int, db: Session = Depends(get_db)):
+    # Get user info
+    user = db.query(User).filter(User.id == user_id).first()
+    if not user:
+        await websocket.close(code=status.WS_1008_POLICY_VIOLATION)
+        return
+    
+    await manager.connect(websocket, user_id, user.username)
+    
+    try:
+        while True:
+            data = await websocket.receive_text()
+            message_data = json.loads(data)
+            content = message_data.get("content", "").strip()
+            
+            if content:
+                # Save message to database
+                chat_message = ChatMessage(content=content, user_id=user_id)
+                db.add(chat_message)
+                db.commit()
+                db.refresh(chat_message)
+                
+                # Broadcast message to all connected clients
+                await manager.broadcast_message({
+                    "id": chat_message.id,
+                    "content": content,
+                    "user_id": user_id,
+                    "username": user.username,
+                    "created_at": chat_message.created_at.strftime("%Y-%m-%d %H:%M:%S")
+                })
+    except WebSocketDisconnect:
+        username = manager.disconnect(user_id)
+        if username:
+            await manager.broadcast_user_left(user_id, username)
+    except Exception as e:
+        print(f"WebSocket error: {e}")
 app.mount("/static", StaticFiles(directory=os.path.join(ROOT_DIR, "app", "static")), name="static")
 
 with open(os.path.join(ROOT_DIR, "notebook", "data", "processed_player_final.json"),  "r") as f:
@@ -26,11 +252,9 @@ with open(os.path.join(ROOT_DIR, "notebook", "data", "processed_player_final.jso
 
 head_to_head_df = pd.read_csv(os.path.join(ROOT_DIR, "notebook", "data", "head_to_head_dataset.csv"))
 
-# Load ML models and scaler
 model = joblib.load(os.path.join(ROOT_DIR, "app", "model.joblib"))
 scaler = joblib.load(os.path.join(ROOT_DIR, "app", "scaler.joblib"))
 
-# Get all team names for one-hot encoding
 all_teams = list(teams_data["teams"].keys())
 # Get all venue names for one-hot encoding
 venues = [
@@ -152,10 +376,24 @@ async def index(request: Request):
     # Get list of team names
     team_names = list(teams_data["teams"].keys())
     
+    # Get current user if logged in
+    current_user = None
+    try:
+        token = request.cookies.get("access_token")
+        if token and token.startswith("Bearer "):
+            db = next(get_db())
+            current_user = get_current_active_user(token=token, db=db)
+    except Exception:
+        pass
+    
     return templates.TemplateResponse(
-        request,
         "index.html", 
-        {"team_names": team_names, "venues": venues}
+        {
+            "request": request, 
+            "team_names": team_names, 
+            "venues": venues, 
+            "user": current_user
+        }
     )
 @app.get("/playeranalyzer/", response_class=HTMLResponse)
 async def playeranalyzer(request: Request):
@@ -194,7 +432,6 @@ async def teamanalyzer(request: Request):
         "teamanalyzer.html",
         {"teams": list(team_stats.keys())}
     )
-
 
 @app.get("/venueanalyzer/", response_class=HTMLResponse)
 async def venueanalyzer(request: Request):
@@ -388,7 +625,9 @@ async def predict_match(
         }
         print(f"Error in predict: {error_details}")
         return JSONResponse(status_code=500, content=error_details)
-        
+
+app.include_router(router, prefix="")
+
 if __name__ == "__main__":
     if hasattr(model, 'feature_names_in_'):
         print("Model expects these features:")

@@ -21,27 +21,46 @@
         </div>
         
         <!-- Analysis Tools Navigation -->
-        <div class="analysis-nav">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <button id="venue-analyzer-btn" class="analyzer-btn">
-                            <i class="fas fa-map-marker-alt"></i> Venue Analyzer
-                        </button>
-                    </div>
-                    <div class="col-md-4">
-                        <button id="player-analyzer-btn" class="analyzer-btn">
-                            <i class="fas fa-user"></i> Player Analyzer
-                        </button>
-                    </div>
-                    <div class="col-md-4">
-                        <button id="team-analyzer-btn" class="analyzer-btn">
-                            <i class="fas fa-users"></i> Team Analyzer
-                        </button>
-                    </div>
-                </div>
+        <!-- Navigation Pills -->
+<div class="analysis-nav">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <button id="venue-analyzer-btn" class="analyzer-btn">
+                    <i class="fas fa-map-marker-alt"></i> Venue Analyzer
+                </button>
+            </div>
+            <div class="col-md-3">
+                <button id="player-analyzer-btn" class="analyzer-btn">
+                    <i class="fas fa-user"></i> Player Analyzer
+                </button>
+            </div>
+            <div class="col-md-3">
+                <button id="team-analyzer-btn" class="analyzer-btn" >
+                    <i class="fas fa-users"></i> Team Analyzer
+                </button>
+            </div>
+            <div class="col-md-3">
+                <a href="/chat/" class="analyzer-btn" style="text-decoration: none;">
+                    <i class="fas fa-comments"></i> Chat Room
+                </a>
             </div>
         </div>
+        <div class="row mt-2">
+            <div class="col-12 text-end">
+                {% if user.is_authenticated %}
+                <a href="/logout" class="btn btn-danger btn-sm">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+                {% else %}
+                <a href="/login" class="btn btn-primary btn-sm">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
 
         <!-- Main Predictor Tool -->
         <div class="container main-content">
