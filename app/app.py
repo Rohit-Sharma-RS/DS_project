@@ -5,8 +5,8 @@ from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
 from datetime import timedelta
 from typing import List, Dict
-from database import User, ChatMessage, create_tables, get_db
-from auth import authenticate_user, create_access_token, get_current_active_user, ACCESS_TOKEN_EXPIRE_MINUTES
+from .database import User, ChatMessage, create_tables, get_db
+from .auth import authenticate_user, create_access_token, get_current_active_user, ACCESS_TOKEN_EXPIRE_MINUTES
 from PIL import Image
 import io
 from fastapi.staticfiles import StaticFiles
