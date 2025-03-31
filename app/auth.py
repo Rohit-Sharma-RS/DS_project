@@ -7,15 +7,8 @@ from typing import Optional
 from .database import User, get_db
 import os
 
-SECRET = os.getenv("SECRET")
-# Use a default SECRET if not found in environment variables
-if not SECRET:
-    SECRET = {"SECRET": "default_SECRET_key_for_development_only"}
-# Security settings
-if SECRET.get("SECRET") is None:
-    raise ValueError("SECRET environment variable not set.")
-else:
-    SECRET_KEY = SECRET.get("SECRET")
+SECRET_KEY = os.getenv("SECRET")
+
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
