@@ -48,13 +48,13 @@
         </div>
         <div class="row mt-2">
             <div class="col-12 text-end">
-                {% if user.is_authenticated %}
+                {% if user %}
                 <a href="/logout" class="btn btn-danger btn-sm">
                     <i class="fas fa-sign-out-alt"></i> Logout
                 </a>
                 {% else %}
-                <a href="/login" class="btn btn-primary btn-sm">
-                    <i class="fas fa-sign-in-alt"></i> Login
+                <a href="/logout" class="btn btn-danger btn-sm">
+                    <i class="fas fa-sign-out-alt"></i> Logout
                 </a>
                 {% endif %}
             </div>

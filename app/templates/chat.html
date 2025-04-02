@@ -126,19 +126,19 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-                <button id="venue-analyzer-btn" class="analyzer-btn">
-                    <i class="fas fa-map-marker-alt"></i> Venue Analyzer
-                </button>
+                <a href="/venueanalyzer/" class="analyzer-btn" style="text-decoration: none;" id="venue-analyzer-btn">
+                    <i class="fas fa-comments"></i> Venue Analyzer
+                </a>
             </div>
             <div class="col-md-3">
-                <button id="player-analyzer-btn" class="analyzer-btn">
-                    <i class="fas fa-user"></i> Player Analyzer
-                </button>
+                <a href="/playeranalyzer/" class="analyzer-btn" style="text-decoration: none;" id="player-analyzer-btn">
+                    <i class="fas fa-comments"></i> Player Analyzer
+                </a>
             </div>
             <div class="col-md-3">
-                <button id="team-analyzer-btn" class="analyzer-btn" >
-                    <i class="fas fa-users"></i> Team Analyzer
-                </button>
+                <a href="/teamanalyzer/" class="analyzer-btn" style="text-decoration: none;" id="team-analyzer-btn">
+                    <i class="fas fa-comments"></i> Team Analyzer
+                </a>
             </div>
             <div class="col-md-3">
                 <a href="/chat/" class="analyzer-btn" style="text-decoration: none;">
@@ -405,5 +405,8 @@
             scrollToBottom();
         });
     </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', path='script.js') }}"></script>
 </body>
 </html>

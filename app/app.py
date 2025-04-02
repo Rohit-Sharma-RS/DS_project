@@ -394,7 +394,9 @@ async def index(request: Request):
             "venues": venues, 
             "user": current_user
         }
+        
     )
+
 @app.get("/playeranalyzer/", response_class=HTMLResponse)
 async def playeranalyzer(request: Request):
     """

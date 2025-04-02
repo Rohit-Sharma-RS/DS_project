@@ -7,7 +7,7 @@ from typing import Optional
 from .database import User, get_db
 import os
 
-SECRET_KEY = os.getenv("SECRET")
+SECRET_KEY = os.getenv("SECRET", "YOUR_SECRET_KEY")
 
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
