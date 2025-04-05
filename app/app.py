@@ -105,13 +105,10 @@ async def register_user(
                 "register.html", 
                 {"request": request, "error": "Email already exists"}
             )
-        
-        # Create new user - modify this part based on your User model
-        # Option 1: If User.create is a static method
+    
         try:
             user = User.create(username=username, email=email, password=password)
         except AttributeError:
-            # Option 2: If User.create doesn't exist, create user directly
             from passlib.context import CryptContext
             pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
             hashed_password = pwd_context.hash(password)
@@ -121,13 +118,11 @@ async def register_user(
         db.commit()
         db.refresh(user)
         
-        # Create access token
         access_token_expires = timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
         access_token = create_access_token(
             data={"sub": user.username}, expires_delta=access_token_expires
         )
         
-        # Set cookie and redirect to home
         response = RedirectResponse(url="/home", status_code=status.HTTP_303_SEE_OTHER)
         response.set_cookie(key="access_token", value=f"Bearer {access_token}", httponly=True)
         return response
@@ -158,14 +153,14 @@ async def login_for_access_token(
         data={"sub": user.username}, expires_delta=access_token_expires
     )
     
-    # Set HTTP-only cookie with SameSite attribute
+    # Set HTTP-only cookie with samesite
     response = RedirectResponse("/home", status_code=status.HTTP_303_SEE_OTHER)
     response.set_cookie(
         key="access_token", 
         value=f"Bearer {access_token}", 
         httponly=True,
-        samesite="strict",  # Add this for better security
-        max_age=ACCESS_TOKEN_EXPIRE_MINUTES * 60  # Convert minutes to seconds
+        samesite="strict",  # this is for better security
+        max_age=ACCESS_TOKEN_EXPIRE_MINUTES * 60 
     )
     
     return response
@@ -185,15 +180,20 @@ async def logout(response: Response):
     return response
 
 # Chat room routes
+from datetime import datetime, timezone
+import pytz
+
 @router.get("/chat")
 async def get_chat_page(request: Request, current_user: User = Depends(get_current_active_user)):
-    # Get recent chat history (last 50 messages)
     db = next(get_db())
     messages = db.query(ChatMessage).order_by(ChatMessage.created_at.desc()).limit(50).all()
+    
+    ist_timezone = pytz.timezone('Asia/Kolkata')
+    
     messages = reversed([{
         "id": msg.id,
         "content": msg.content,
-        "created_at": msg.created_at.strftime("%Y-%m-%d %H:%M:%S"),
+        "created_at": msg.created_at.astimezone(ist_timezone).strftime("%Y-%m-%d %H:%M:%S IST"),
         "username": db.query(User).filter(User.id == msg.user_id).first().username,
         "user_id": msg.user_id
     } for msg in messages])
@@ -207,10 +207,9 @@ async def get_chat_page(request: Request, current_user: User = Depends(get_curre
             "chat_history": list(messages)
         }
     )
-
+            
 @router.websocket("/ws/{user_id}")
 async def websocket_endpoint(websocket: WebSocket, user_id: int, db: Session = Depends(get_db)):
-    # Get user info
     user = db.query(User).filter(User.id == user_id).first()
     if not user:
         await websocket.close(code=status.WS_1008_POLICY_VIOLATION)
@@ -231,13 +230,12 @@ async def websocket_endpoint(websocket: WebSocket, user_id: int, db: Session = D
                 db.commit()
                 db.refresh(chat_message)
                 
-                # Broadcast message to all connected clients
                 await manager.broadcast_message({
                     "id": chat_message.id,
                     "content": content,
                     "user_id": user_id,
                     "username": user.username,
-                    "created_at": chat_message.created_at.strftime("%Y-%m-%d %H:%M:%S")
+                    "created_at": chat_message.created_at.astimezone(pytz.timezone('Asia/Kolkata')).strftime("%Y-%m-%d %H:%M:%S IST")
                 })
     except WebSocketDisconnect:
         username = manager.disconnect(user_id)
@@ -310,8 +308,7 @@ def load_team_stats():
 def load_venue_stats():
     global venue_stats
     try:
-        # Load from wherever you have your venue data stored
-        # For example, from a JSON file:
+
         with open(os.path.join(ROOT_DIR, "notebook","data", "venue_stats.json"), "r") as f:
             venue_stats = json.load(f)
         print("Venue stats loaded successfully")
@@ -323,14 +320,11 @@ load_venue_stats()
 def align_feature_names(df_encoded):
     """Ensure feature names match exactly what the model was trained on"""
     
-    # Map new team names to their older versions if needed
     team_name_mapping = {
         "Punjab Kings": "Kings XI Punjab",
         "Royal Challengers Bengaluru": "Royal Challengers Bangalore",
-        # Add any other mappings here
     }
     
-    # Replace team names in the dataframe columns
     renamed_columns = {}
     for col in df_encoded.columns:
         new_col = col
@@ -373,10 +367,10 @@ async def get_landing_page(request: Request):
 
 @app.get("/home", response_class=HTMLResponse)
 async def index(request: Request):
-    # Get list of team names
+    # grab all the teams for the dropdown
     team_names = list(teams_data["teams"].keys())
     
-    # Get current user if logged in
+    # check if user is logged in from cookie
     current_user = None
     try:
         token = request.cookies.get("access_token")
@@ -399,10 +393,7 @@ async def index(request: Request):
 
 @app.get("/playeranalyzer/", response_class=HTMLResponse)
 async def playeranalyzer(request: Request):
-    """
-    Render the player analyzer page
-    """
-    # Load player stats
+    # need to load this every time cuz it might change
     load_player_stats()
     
     return templates.TemplateResponse(
@@ -413,7 +404,7 @@ async def playeranalyzer(request: Request):
 
 @app.get("/api/placeholder/{width}/{height}")
 async def placeholder_image(width: int, height: int):
-    # Create a simple placeholder image with the specified dimensions
+    # just a gray box for when images aren't ready yet
     img = Image.new('RGB', (width, height), color=(200, 200, 200))
     img_byte_arr = io.BytesIO()
     img.save(img_byte_arr, format='PNG')
@@ -423,10 +414,7 @@ async def placeholder_image(width: int, height: int):
 
 @app.get("/teamanalyzer/", response_class=HTMLResponse)
 async def teamanalyzer(request: Request):
-    """
-    Render the team analyzer page
-    """
-    # Load team stats
+    # gotta refresh this each time
     load_team_stats()
     
     return templates.TemplateResponse(
@@ -437,9 +425,7 @@ async def teamanalyzer(request: Request):
 
 @app.get("/venueanalyzer/", response_class=HTMLResponse)
 async def venueanalyzer(request: Request):
-    """
-    Render the venue analyzer page
-    """
+    # all the stadiums and stuff
     venues = list(venue_stats.keys())   
     
     return templates.TemplateResponse(
@@ -451,18 +437,15 @@ async def venueanalyzer(request: Request):
 
 @app.get("/get_players/{team_name}")
 async def get_players(team_name: str):
-    """Get players for a specific team"""
     if team_name in teams_data["teams"]:
-        # Return only the players that are present
+        # only want active players not benched ones
         players = [player for player in teams_data["teams"][team_name] if player["present"]]
-        # Extract just the name and role for the response
         players_info = [{"name": player["name"], "role": player["Role"]} for player in players]
         return {"players": players_info}
     return {"players": []}
 
 @app.get("/api/venue-stats/{venue_name}")
 async def get_venue_stats(venue_name: str):
-    """Get statistics for a specific venue"""
     if venue_name in venue_stats:
         return venue_stats[venue_name]
     else:
@@ -470,12 +453,10 @@ async def get_venue_stats(venue_name: str):
     
 @app.get("/api/venues")
 async def get_venues():
-    """Get list of available venues"""
     return {"venues": list(venue_stats.keys())}
 
 @app.get("/api/player-stats/{player_name}")
 async def get_player_stats(player_name: str):
-    """Get statistics for a specific player"""
     if player_name in player_stats:
         return player_stats[player_name]
     else:
@@ -483,7 +464,6 @@ async def get_player_stats(player_name: str):
 
 @app.get("/api/teams-stats/{team_name}")
 async def get_team_stats(team_name: str):
-    """Get statistics for a specific team"""
     if team_name in team_stats:
         return team_stats[team_name]
     else:
@@ -491,8 +471,7 @@ async def get_team_stats(team_name: str):
     
 @app.get("/get_head_to_head/{team1}/{team2}")
 async def get_head_to_head(team1: str, team2: str):
-    """Get head-to-head statistics for two teams"""
-    # Check for direct match in head_to_head_df
+    # look for matches where team1 played against team2
     match1 = head_to_head_df[(head_to_head_df['Team_A'] == team1) & (head_to_head_df['Team_B'] == team2)]
     match2 = head_to_head_df[(head_to_head_df['Team_A'] == team2) & (head_to_head_df['Team_B'] == team1)]
     
@@ -505,7 +484,7 @@ async def get_head_to_head(team1: str, team2: str):
             "total_matches": int(match1['Total_Matches'].values[0])
         }
     elif not match2.empty:
-        # Swap the results since teams are in reverse order
+        # flip it around cuz teams are backwards in the data
         return {
             "team_a": team1,
             "team_b": team2,
@@ -514,7 +493,7 @@ async def get_head_to_head(team1: str, team2: str):
             "total_matches": int(match2['Total_Matches'].values[0])
         }
     else:
-        # No head-to-head data found
+        # never played each other before
         return {
             "team_a": team1,
             "team_b": team2,
@@ -531,40 +510,36 @@ async def predict_match(
     team2_players: List[str] = Form(...),
     venue: str = Form(...)
 ):
-    """Predict match result based on selected teams and players"""
-    
-    # Calculate team strengths based on player ELOs
+    # find the right players from our data
     team1_players_data = [player for player in teams_data["teams"][team1] 
-                          if player["name"] in team1_players and player["present"]]
+                            if player["name"] in team1_players and player["present"]]
     
     team2_players_data = [player for player in teams_data["teams"][team2] 
-                          if player["name"] in team2_players and player["present"]]
+                            if player["name"] in team2_players and player["present"]]
     
-    # Calculate average ELO and form for each team
+    # avg team stats based on players
     team1_avg_elo = sum(player["ELO"] for player in team1_players_data) / len(team1_players_data)
     team2_avg_elo = sum(player["ELO"] for player in team2_players_data) / len(team2_players_data)
     
     team1_avg_form = sum(player["Form"] for player in team1_players_data) / len(team1_players_data)
     team2_avg_form = sum(player["Form"] for player in team2_players_data) / len(team2_players_data)
     
-    # Get head-to-head stats
+    # who's beaten who before
     h2h_stats = await get_head_to_head(team1, team2)
     team1_wins = h2h_stats["team_a_wins"]
     team2_wins = h2h_stats["team_b_wins"]
     total_matches = h2h_stats["total_matches"]
     
-    # Set default values for last 5 wins
+    # not using these but model needs them
     team1_last_5_wins = 0
     team2_last_5_wins = 0
     
-    # Calculate head-to-head metrics
+    # more stats for the model
     team1_vs_team2_matches = total_matches
     head_to_head_win_rate = team1_wins / total_matches if total_matches > 0 else 0.5
-    
-    # Calculate team1 win rate
     team1_win_rate = team1_wins / total_matches if total_matches > 0 else 0.5
     
-    # Create dataframe with ONLY the required features
+    # put everything in a dataframe for the model
     data = {
         'team1_avg_elo': team1_avg_elo,
         'team2_avg_elo': team2_avg_elo,
@@ -580,19 +555,18 @@ async def predict_match(
     df_new = pd.DataFrame([data])
     
     try:
-        # Scale the features
         X_scaled = scaler.transform(df_new)
         
-        # Make prediction
+        # who's gonna win
         prediction = model.predict(X_scaled)[0]
         win_probability = model.predict_proba(X_scaled)[0]
         
-        # Determine winner
+        # figure out who won and chances
         winner = team1 if prediction == 1 else team2
         prob_team1 = round(win_probability[1] * 100, 2) if len(win_probability) > 1 else 50
         prob_team2 = round(win_probability[0] * 100, 2) if len(win_probability) > 1 else 50
         
-        # Create comprehensive result
+        # package it all up nicely
         result = {
             "team1": team1,
             "team2": team2,
@@ -617,7 +591,7 @@ async def predict_match(
         return JSONResponse(content=result)
     
     except Exception as e:
-        # Return error details for debugging
+        # something went wrong better tell what happened
         error_details = {
             "error": str(e),
             "details": {
@@ -635,7 +609,7 @@ if __name__ == "__main__":
         print("Model expects these features:")
         print(sorted(model.feature_names_in_))
         
-        # Store expected features for later use
+        # keep track of what the model needs
         expected_features = set(model.feature_names_in_)
     else:
         print("Model doesn't have feature_names_in_ attribute")
